@@ -17,17 +17,17 @@ namespace blockchain
 
         public string Timestamp => timestamp;
 
-        public Transaction(string FromAddress, string ToAddress, int amount)
+        public Transaction(string fromAddress, string toAddress, int amount)
         {
-            this.fromAddress = FromAddress;
-            this.toAddress = ToAddress;
+            this.fromAddress = fromAddress;
+            this.toAddress = toAddress;
             this.amount = amount;
             this.timestamp = DateTime.Now.ToString();
         }
 
-        public string ToString()
+        public override string ToString()
         {
-            return "(Transaction){ at " + this.Timestamp + " from " + (FromAddress ?? Blockchain.name) + " ; to " + this.ToAddress + " : " + this.Amount + " }";
+            return "(Transaction){ at " + this.Timestamp + " from " + (FromAddress ?? Blockchain.Name) + " ; to " + this.ToAddress + " : " + this.Amount + " }";
         }
     }
 }

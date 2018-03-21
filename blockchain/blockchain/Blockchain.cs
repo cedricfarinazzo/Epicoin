@@ -7,70 +7,76 @@ namespace blockchain
 {
     public class Blockchain
     {
-        public const string name = "blockchain";
+        public const string Name = "blockchain";
         
         protected int difficulty = 2;
-        protected List<Block> chain;
+        protected List<Block> Chain;
 
-        protected List<Transaction> pendingTransactions;
+        protected List<Transaction> PendingTransactions;
         protected int miningReward = 10;
 
         public Blockchain()
         {
-            this.chain = new List<Block>();
-            this.pendingTransactions = new List<Transaction>();
-            this.chain.Add(this.createGenesisBlock());
+            this.Chain = new List<Block>();
+            this.PendingTransactions = new List<Transaction>();
+            this.Chain.Add(this.CreateGenesisBlock());
             
         }
 
-        private Block createGenesisBlock()
+        private Block CreateGenesisBlock()
         {
             Block genesisBlock = new Block(0, DateTime.Now.ToString());
-            genesisBlock.addTransaction(new Transaction(null, "gen", 42));
-            genesisBlock.addPreviousHash("");
-            genesisBlock.mineBlock(this.difficulty);
+            genesisBlock.AddTransaction(new Transaction(null, "gen", 42));
+            genesisBlock.AddPreviousHash("");
+            genesisBlock.MineBlock(this.difficulty);
             return genesisBlock;
         }
 
-        public Block getLatestBlock()
+        public Block GetLatestBlock()
         {
-            return this.chain[this.chain.Count - 1];
+            return this.Chain[this.Chain.Count - 1];
         }
 
-        public int getLatestIndex()
+        public int GetLatestIndex()
         {
-            return this.getLatestBlock().Index;
+            return this.GetLatestBlock().Index;
         }
 
-        private void addBlock(Block b)
+        private void AddBlock(Block b)
         {
-            this.chain.Add(b);
+            this.Chain.Add(b);
         }
         
-        private void setBlock(Block b)
+        private void SetBlock(Block b)
         {
-            b.addPreviousHash(this.getLatestBlock().Hashblock);
+            b.AddPreviousHash(this.GetLatestBlock().Hashblock);
         }
 
-        public void minePendingTransaction(string minerAdress)
+        public void MinePendingTransaction(string minerAdress)
         {
-            if (this.pendingTransactions.Count < Block.nb_trans)
+            if (this.PendingTransactions.Count < Block.nb_trans)
             {
                 return;
             }
-            Block b = new Block(this.getLatestIndex() + 1, DateTime.Now.ToString());
-            this.setBlock(b);
+            Block b = new Block(this.GetLatestIndex() + 1, DateTime.Now.ToString());
+            this.SetBlock(b);
             while (!b.IsFull())
             {
-                if (this.pendingTransactions.Count != 0)
+                if (this.PendingTransactions.Count != 0)
                 {
-                    b.addTransaction(this.pendingTransactions[0]);
-                    this.pendingTransactions.RemoveAt(0);
+                    b.AddTransaction(this.PendingTransactions[0]);
+                    this.PendingTransactions.RemoveAt(0);
                 }
             }
             
-            b.mineBlock(this.difficulty);
-            this.addBlock(b);
+            b.MineBlock(this.difficulty);
+            this.AddBlock(b);
+
+            if (!this.IsvalidChain())
+            {
+                this.Validate();
+                return;
+            }
             
             Transaction reward = new Transaction(null, minerAdress, this.miningReward);
             
@@ -79,10 +85,10 @@ namespace blockchain
 
         public bool AddTransaction(Transaction t)
         {
-            Console.Write("transaction: " + (t.FromAddress ?? Blockchain.name) + " - " + t.ToAddress + " : " + t.Amount);
-            if (this.getBalanceOfAddress(t.FromAddress) - t.Amount >= 0 || t.FromAddress == null)
+            Console.Write("transaction: " + (t.FromAddress ?? Blockchain.Name) + " - " + t.ToAddress + " : " + t.Amount);
+            if (this.GetBalanceOfAddress(t.FromAddress) - t.Amount >= 0 || t.FromAddress == null)
             {
-                this.pendingTransactions.Add(t);
+                this.PendingTransactions.Add(t);
                 Console.Write(" : accepted\n");
                 return true;
             }
@@ -93,12 +99,12 @@ namespace blockchain
 
         public bool IsvalidChain()
         {
-            for (int i = 1; i < this.chain.Count; i++)
+            for (int i = 1; i < this.Chain.Count; i++)
             {
-                Block previousBlock = this.chain[i - 1];
-                Block currentBlock = this.chain[i];
+                Block previousBlock = this.Chain[i - 1];
+                Block currentBlock = this.Chain[i];
 
-                if (currentBlock.Hashblock != currentBlock.calculateHash())
+                if (currentBlock.Hashblock != currentBlock.CalculateHash())
                 {
                     return false;
                 }
@@ -116,18 +122,18 @@ namespace blockchain
         {
             while (!this.IsvalidChain())
             {
-                this.chain.RemoveAt(this.chain.Count - 1);
+                this.Chain.RemoveAt(this.Chain.Count - 1);
             }
         }
 
-        public int getBalanceOfAddress(string address)
+        public int GetBalanceOfAddress(string address)
         {
             int amount = 0;
-            for (int i = 0; i < this.chain.Count; i++)
+            for (int i = 0; i < this.Chain.Count; i++)
             {
-                for (int j = 0; j < this.chain[i].Data.Count; j++)
+                for (int j = 0; j < this.Chain[i].Data.Count; j++)
                 {
-                    Transaction t = this.chain[i].Data[j];
+                    Transaction t = this.Chain[i].Data[j];
                     if (t.FromAddress == address)
                     {
                         amount -= t.Amount;
