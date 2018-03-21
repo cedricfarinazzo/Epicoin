@@ -36,7 +36,6 @@ namespace blockchain
             this.timestamp = timestamp;
             this.data = data;
             this.previousHash = previousHash;
-            this.hashblock = hashblock;
         }
 
         public string calculateHash()

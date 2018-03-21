@@ -33,7 +33,7 @@ namespace blockchain
 
         public void addBlock(Block b)
         {
-            b.addPreviousHash(this.getLatestBlock().PreviousHash);
+            b.addPreviousHash(this.getLatestBlock().Hashblock);
             b.Hashblock = b.calculateHash();
             this.chain.Add(b);
         }
