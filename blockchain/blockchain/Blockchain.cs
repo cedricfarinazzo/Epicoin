@@ -6,6 +6,7 @@ namespace blockchain
 {
     public class Blockchain
     {
+        protected int difficulty = 6;
         protected List<Block> chain;
 
         public Blockchain()
@@ -17,7 +18,7 @@ namespace blockchain
         private Block createGenesisBlock()
         {
             Block genesisBlock = new Block(0, DateTime.Now.ToString(), new []{0}, "");
-            genesisBlock.calculateHash();
+            genesisBlock.mineBlock(this.difficulty);
             return genesisBlock;
         }
 
@@ -34,7 +35,7 @@ namespace blockchain
         public void addBlock(Block b)
         {
             b.addPreviousHash(this.getLatestBlock().Hashblock);
-            b.Hashblock = b.calculateHash();
+            b.mineBlock(this.difficulty);
             this.chain.Add(b);
         }
 
@@ -57,6 +58,14 @@ namespace blockchain
             }
 
             return true;
+        }
+
+        public void Validate()
+        {
+            while (!this.IsvalidChain())
+            {
+                this.chain.RemoveAt(this.chain.Count - 1);
+            }
         }
     }
 }

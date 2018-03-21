@@ -14,6 +14,7 @@ namespace blockchain
         protected int[] data;
         protected string previousHash;
         protected string hashblock;
+        public int nonce = -1;
 
 
         public int Index => index;
@@ -40,13 +41,34 @@ namespace blockchain
 
         public string calculateHash()
         {
-            string hash = Hash.Create(this.index.ToString() + this.timestamp + this.data.ToString() + this.previousHash);
+            string hash = Hash.Create(this.index.ToString() + this.timestamp + this.data.ToString() + this.previousHash + this.nonce);
             return hash;
         }
 
         public void addPreviousHash(string h)
         {
             this.previousHash = h;
+        }
+
+        public void mineBlock(int difficulty)
+        {
+            Console.WriteLine("Starting mining new block ...");
+            string hash = this.calculateHash();
+            string target = "";
+            for (int i = 0; i < difficulty; i++)
+            {
+                target += "0";
+            }
+
+            while (hash.Substring(0, difficulty) != target)
+            {
+                this.nonce++;
+                hash = this.calculateHash();
+            }
+
+            this.Hashblock = hash;
+            
+            Console.WriteLine("Block mined : " + this.Hashblock);
         }
         
     }

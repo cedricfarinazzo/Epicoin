@@ -6,7 +6,7 @@ namespace blockchain
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Blockchain");
             Blockchain coin = new Blockchain();
             coin.addBlock(new Block(coin.getLatestIndex() + 1, DateTime.Now.ToString(), new []{5}));
             Console.WriteLine(coin.IsvalidChain());
