@@ -9,11 +9,13 @@ namespace blockchain
     {
         public const string Name = "blockchain";
         
-        protected int difficulty = 2;
+        protected int difficulty = 6;
         protected List<Block> Chain;
 
         protected List<Transaction> PendingTransactions;
         protected int miningReward = 10;
+
+        public List<Transaction> Pending => PendingTransactions;
 
         public Blockchain()
         {

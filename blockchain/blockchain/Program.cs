@@ -1,22 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Threading;
 
 namespace blockchain
 {
-    class Program
+    static class Program
     {
         public static Blockchain Coin;
 
-        internal delegate void MineDelegate(string worker);
-
-        public static MineDelegate mine;
+        private static bool _continue = true;
 
         public static void Main(string[] args)
         {
             Console.WriteLine("\nBlockchain init ...\n");
             Init();
-            SetDelegate();
-            Evolve();
+            
+            Thread th11 = new Thread(Mine);
+            th11.Start("ced");
+            
+            Thread th12 = new Thread(Mine);
+            th12.Start("gen");
+            Thread.Sleep(100);
+            
+            Thread th2 = new Thread(Evolve);
+            th2.Start();
+            
+            Thread.Sleep(7000);
+
+            _continue = false;
+            
             Verify();
         }
 
@@ -25,30 +39,29 @@ namespace blockchain
             Coin = new Blockchain();
         }
 
-        public static void SetDelegate()
-        {
-            mine = new MineDelegate(Coin.MinePendingTransaction);
-        }
-
         public static void Evolve()
         {
-            Coin.AddTransaction(new Transaction("gen", "ced", 1));
-            Coin.AddTransaction(new Transaction("gen", "alice", 10));
-            Coin.AddTransaction(new Transaction("bob", "alice", 2));
-            Coin.AddTransaction(new Transaction("alpha", "bob", 3));
-            Coin.AddTransaction(new Transaction("bob", "alice", 1));
-            Coin.AddTransaction(new Transaction("alpha", "beta", 0));
-            Coin.AddTransaction(new Transaction("bob", "beta", 0));
-            Coin.AddTransaction(new Transaction("alice", "beta", 1));
-            Coin.AddTransaction(new Transaction("gen", "ced", 1));
+            while (_continue)
+            {
+                Coin.AddTransaction(new Transaction("gen", "ced", 7));
+                Coin.AddTransaction(new Transaction("gen", "ced", 1));
+                Coin.AddTransaction(new Transaction("gen", "bob", 3));
+                Coin.AddTransaction(new Transaction("gen", "alice", 10));
+                Coin.AddTransaction(new Transaction("bob", "alice", 2));
+                Coin.AddTransaction(new Transaction("alpha", "bob", 3));
+                Coin.AddTransaction(new Transaction("bob", "alice", 1));
+                Coin.AddTransaction(new Transaction("gen", "ced", 1));
+                Thread.Sleep(1000);
+            }
             
-            mine("ced");
-            mine("ced");
-            mine("ced");
-            mine("ced");
-            mine("ced");
-            mine("ced");
-            mine("ced"); 
+        }
+
+        public static void Mine(object worker)
+        {
+            while (_continue)
+            {
+                Coin.MinePendingTransaction((string) worker);
+            }
         }
 
         public static void Verify()
@@ -57,9 +70,8 @@ namespace blockchain
             Console.WriteLine("gen amount : " + Coin.GetBalanceOfAddress("gen").ToString());
             Console.WriteLine("bob amount : " + Coin.GetBalanceOfAddress("bob").ToString());
             Console.WriteLine("alice amount : " + Coin.GetBalanceOfAddress("alice").ToString());
-            Console.WriteLine("beta amount : " + Coin.GetBalanceOfAddress("beta").ToString());
-            Console.WriteLine("alpha amount : " + Coin.GetBalanceOfAddress("alpha").ToString());
             Console.WriteLine("ced amount : " + Coin.GetBalanceOfAddress("ced").ToString());
+            Console.WriteLine("nb pending transactions : " + Coin.Pending.Count);
         }
     }
 }
