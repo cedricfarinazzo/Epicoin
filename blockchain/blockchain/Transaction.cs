@@ -24,5 +24,10 @@ namespace blockchain
             this.amount = amount;
             this.timestamp = DateTime.Now.ToString();
         }
+
+        public string ToString()
+        {
+            return "(Transaction){ at " + this.Timestamp + " from " + (FromAddress ?? Blockchain.name) + " ; to " + this.ToAddress + " : " + this.Amount + " }";
+        }
     }
 }

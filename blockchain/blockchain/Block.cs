@@ -7,7 +7,7 @@ namespace blockchain
 {
     public class Block
     {
-        protected const int nb_trans = 20;
+        public const int nb_trans = 3;
         
         protected int index;
         protected string timestamp;
@@ -31,17 +31,29 @@ namespace blockchain
             set => hashblock = value;
         }
 
-        public Block(int index, string timestamp, List<Transaction> data, string previousHash = "")
+        public Block(int index, string timestamp, List<Transaction> data = null, string previousHash = "")
         {
             this.index = index;
             this.timestamp = timestamp;
-            this.data = data;
+            this.data = data == null ? new List<Transaction>() : data;
             this.previousHash = previousHash;
         }
 
         public string calculateHash()
         {
-            string hash = Hash.Create(this.index.ToString() + this.timestamp + this.data.ToString() + this.previousHash + this.nonce);
+            string serialyzedata = "{";
+            for (int i = 0; i < this.data.Count; i++)
+            {
+                serialyzedata += this.data[i].ToString();
+                if (i < this.data.Count - 1)
+                {
+                    serialyzedata += " ; ";
+                }
+            }
+
+            serialyzedata += "}";
+            
+            string hash = Hash.Create(this.index.ToString() + this.timestamp + serialyzedata + this.previousHash + this.nonce);
             return hash;
         }
 
@@ -70,6 +82,19 @@ namespace blockchain
             
             Console.WriteLine("Block mined : " + this.Hashblock);
         }
-        
+
+        public void addTransaction(Transaction t)
+        {
+            if (this.data.Count < Block.nb_trans)
+            {
+                this.data.Add(t);
+            }
+            
+        }
+
+        public bool IsFull()
+        {
+            return this.data.Count == Block.nb_trans;
+        }
     }
 }
