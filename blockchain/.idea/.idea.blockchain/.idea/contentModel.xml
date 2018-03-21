@@ -8,6 +8,7 @@
         <e p="Hash.cs" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Transaction.cs" t="Include" />
+        <e p="Wallet.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="blockchain.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">

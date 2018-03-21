@@ -9,26 +9,28 @@ namespace blockchain
     {
         public const string Name = "blockchain";
         
-        protected int difficulty = 6;
+        protected int difficulty = 3;
         protected List<Block> Chain;
 
         protected List<Transaction> PendingTransactions;
         protected int miningReward = 10;
 
+        protected string addressCreator;
+        
         public List<Transaction> Pending => PendingTransactions;
 
-        public Blockchain()
+        public Blockchain(string addressCreator)
         {
             this.Chain = new List<Block>();
             this.PendingTransactions = new List<Transaction>();
             this.Chain.Add(this.CreateGenesisBlock());
-            
+            this.addressCreator = addressCreator;
         }
 
         private Block CreateGenesisBlock()
         {
             Block genesisBlock = new Block(0, DateTime.Now.ToString());
-            genesisBlock.AddTransaction(new Transaction(null, "gen", 42));
+            genesisBlock.AddTransaction(new Transaction(null, this.addressCreator, 42));
             genesisBlock.AddPreviousHash("");
             genesisBlock.MineBlock(this.difficulty);
             return genesisBlock;
@@ -72,6 +74,13 @@ namespace blockchain
             }
             
             b.MineBlock(this.difficulty);
+            foreach (var block in this.Chain)
+            {
+                if (b.Index == block.Index)
+                {
+                    return; 
+                }
+            }
             this.AddBlock(b);
 
             if (!this.IsvalidChain())
@@ -81,14 +90,23 @@ namespace blockchain
             }
             
             Transaction reward = new Transaction(null, minerAdress, this.miningReward);
-            
+            Console.WriteLine("Block mined " + b.Index + " : " + b.Hashblock + " by " + minerAdress);
             this.AddTransaction(reward);
         }
 
         public bool AddTransaction(Transaction t)
         {
             Console.Write("transaction: " + (t.FromAddress ?? Blockchain.Name) + " - " + t.ToAddress + " : " + t.Amount);
-            if (this.GetBalanceOfAddress(t.FromAddress) - t.Amount >= 0 || t.FromAddress == null)
+            int amount = this.GetBalanceOfAddress(t.FromAddress);
+            foreach (var pendingt in this.PendingTransactions)
+            {
+                if (pendingt.FromAddress == t.FromAddress)
+                {
+                    amount -= pendingt.Amount;
+                }
+            }
+            
+            if (amount - t.Amount >= 0 || t.FromAddress == null)
             {
                 this.PendingTransactions.Add(t);
                 Console.Write(" : accepted\n");

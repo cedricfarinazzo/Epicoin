@@ -41,20 +41,29 @@ namespace blockchain
 
         public string CalculateHash()
         {
-            string serialyzedata = "{";
-            for (int i = 0; i < this.data.Count; i++)
+            try
             {
-                serialyzedata += this.data[i].ToString();
-                if (i < this.data.Count - 1)
+                string serialyzedata = "{";
+                for (int i = 0; i < this.data.Count; i++)
                 {
-                    serialyzedata += " ; ";
+                    serialyzedata += this.data[i].ToString();
+                    if (i < this.data.Count - 1)
+                    {
+                        serialyzedata += " ; ";
+                    }
                 }
+                
+                serialyzedata += "}";
+                
+                string hash = Hash.Create(this.index.ToString() + this.timestamp + serialyzedata + this.previousHash + this.nonce);
+                return hash;
             }
-
-            serialyzedata += "}";
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return "";
+            }
             
-            string hash = Hash.Create(this.index.ToString() + this.timestamp + serialyzedata + this.previousHash + this.nonce);
-            return hash;
         }
 
         public void AddPreviousHash(string h)
@@ -64,7 +73,6 @@ namespace blockchain
 
         public void MineBlock(int difficulty)
         {
-            Console.WriteLine("Starting mining new block ...");
             string hash = this.CalculateHash();
             string target = "";
             for (int i = 0; i < difficulty; i++)
@@ -80,7 +88,6 @@ namespace blockchain
 
             this.Hashblock = hash;
             
-            Console.WriteLine("Block mined : " + this.Hashblock);
         }
 
         public void AddTransaction(Transaction t)
