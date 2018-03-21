@@ -11,7 +11,7 @@ namespace blockchain
         
         protected int index;
         protected string timestamp;
-        protected int[] data;
+        protected List<Transaction> data;
         protected string previousHash;
         protected string hashblock;
         public int nonce = -1;
@@ -21,7 +21,7 @@ namespace blockchain
 
         public string Timestamp => timestamp;
 
-        public int[] Data => data;
+        public List<Transaction> Data => data;
 
         public string PreviousHash => previousHash;
 
@@ -31,7 +31,7 @@ namespace blockchain
             set => hashblock = value;
         }
 
-        public Block(int index, string timestamp, int[] data, string previousHash = "")
+        public Block(int index, string timestamp, List<Transaction> data, string previousHash = "")
         {
             this.index = index;
             this.timestamp = timestamp;

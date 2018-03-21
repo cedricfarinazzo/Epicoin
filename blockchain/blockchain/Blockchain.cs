@@ -6,18 +6,23 @@ namespace blockchain
 {
     public class Blockchain
     {
-        protected int difficulty = 6;
+        protected int difficulty = 4;
         protected List<Block> chain;
+
+        protected List<Transaction> pendingTransactions;
+        protected int miningReward = 10;
 
         public Blockchain()
         {
             this.chain = new List<Block>();
+            this.pendingTransactions = new List<Transaction>();
             this.chain.Add(this.createGenesisBlock());
+            
         }
 
         private Block createGenesisBlock()
         {
-            Block genesisBlock = new Block(0, DateTime.Now.ToString(), new []{0}, "");
+            Block genesisBlock = new Block(0, DateTime.Now.ToString(), new List<Transaction>(), "");
             genesisBlock.mineBlock(this.difficulty);
             return genesisBlock;
         }
