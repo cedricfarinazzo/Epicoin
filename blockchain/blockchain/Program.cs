@@ -33,7 +33,7 @@ namespace blockchain
             ced = new Wallet("ced");
             
             
-            
+            /*
             Thread th11 = new Thread(Mine);
             th11.Start(ced.Address);
             
@@ -43,12 +43,19 @@ namespace blockchain
             
             Thread th2 = new Thread(Evolve);
             th2.Start();
+            */
             
-            Thread.Sleep(7000);
+            Thread s = new Thread(Serveur);
+            s.Start();
+            Thread.Sleep(50);
+            Thread c = new Thread(Worker);
+            c.Start();
+            
+            Thread.Sleep(30000);
 
             _continue = false;
             
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
             
             Verify();
         }
@@ -70,7 +77,7 @@ namespace blockchain
                 Coin.AddTransaction(new Transaction(alice.Address, bob.Address, 3));
                 Coin.AddTransaction(new Transaction(bob.Address, alice.Address, 1));
                 Coin.AddTransaction(new Transaction(creator.Address, ced.Address, 1));
-                Thread.Sleep(1000);
+                Thread.Sleep(1300);
             }
             
         }
@@ -80,17 +87,29 @@ namespace blockchain
             while (_continue)
             {
                 Coin.MinePendingTransaction((string) worker);
-                Thread.Sleep(500);
+                Thread.Sleep(25);
             }
+        }
+
+        public static void Serveur()
+        {
+            blockchain.Serveur s = new Serveur(Coin, "127.0.0.1", 4242);
+            s.Listen();
+        }
+
+        public static void Worker()
+        {
+            Client c = new Client("127.0.0.1", 4242, ced);
+            c.Work();
         }
 
         public static void Verify()
         {
-            Console.WriteLine("\nChain is valid : " + Coin.IsvalidChain());
-            Console.WriteLine(creator.Name + " amount : " + Coin.GetBalanceOfAddress(creator.Address).ToString());
-            Console.WriteLine(bob.Name + " amount : " + Coin.GetBalanceOfAddress(bob.Address).ToString());
-            Console.WriteLine(alice.Name + " amount : " + Coin.GetBalanceOfAddress(alice.Address).ToString());
-            Console.WriteLine(ced.Name + " amount : " + Coin.GetBalanceOfAddress(ced.Address).ToString());
+            Console.WriteLine("\n\nChain is valid : " + Coin.IsvalidChain());
+            Console.WriteLine(creator.Name + " " + creator.Address + " amount : " + Coin.GetBalanceOfAddress(creator.Address).ToString());
+            Console.WriteLine(bob.Name + " " + bob.Address + " amount : " + Coin.GetBalanceOfAddress(bob.Address).ToString());
+            Console.WriteLine(alice.Name + " " + alice.Address + " amount : " + Coin.GetBalanceOfAddress(alice.Address).ToString());
+            Console.WriteLine(ced.Name + " " + ced.Address + " amount : " + Coin.GetBalanceOfAddress(ced.Address).ToString());
             Console.WriteLine("nb pending transactions : " + Coin.Pending.Count);
         }
     }

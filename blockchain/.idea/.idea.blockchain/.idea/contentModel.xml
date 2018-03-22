@@ -5,8 +5,13 @@
       <e p="blockchain" t="IncludeRecursive">
         <e p="Block.cs" t="Include" />
         <e p="Blockchain.cs" t="Include" />
+        <e p="BlockchainNetwork.cs" t="Include" />
+        <e p="Client.cs" t="Include" />
+        <e p="DataMine.cs" t="Include" />
         <e p="Hash.cs" t="Include" />
         <e p="Program.cs" t="Include" />
+        <e p="Serialyze.cs" t="Include" />
+        <e p="Serveur.cs" t="Include" />
         <e p="Transaction.cs" t="Include" />
         <e p="Wallet.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />

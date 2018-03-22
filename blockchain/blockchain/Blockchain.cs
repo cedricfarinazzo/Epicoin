@@ -19,18 +19,23 @@ namespace blockchain
         
         public List<Transaction> Pending => PendingTransactions;
 
+        public int Difficulty => difficulty;
+
+        public Block BlockToMine;
+        
         public Blockchain(string addressCreator)
         {
             this.Chain = new List<Block>();
             this.PendingTransactions = new List<Transaction>();
-            this.Chain.Add(this.CreateGenesisBlock());
             this.addressCreator = addressCreator;
+            this.Chain.Add(this.CreateGenesisBlock());
         }
 
         private Block CreateGenesisBlock()
         {
             Block genesisBlock = new Block(0, DateTime.Now.ToString());
             genesisBlock.AddTransaction(new Transaction(null, this.addressCreator, 42));
+            genesisBlock.AddTransaction(new Transaction(null, this.addressCreator, 500));
             genesisBlock.AddPreviousHash("");
             genesisBlock.MineBlock(this.difficulty);
             return genesisBlock;
@@ -56,65 +61,111 @@ namespace blockchain
             b.AddPreviousHash(this.GetLatestBlock().Hashblock);
         }
 
-        public void MinePendingTransaction(string minerAdress)
+        public bool PrepareBlockToMine()
         {
             if (this.PendingTransactions.Count < Block.nb_trans)
             {
-                return;
+                return false;
             }
-            Block b = new Block(this.GetLatestIndex() + 1, DateTime.Now.ToString());
-            this.SetBlock(b);
-            while (!b.IsFull())
+            this.BlockToMine = new Block(this.GetLatestIndex() + 1, DateTime.Now.ToString());
+            this.SetBlock(this.BlockToMine);
+            while (!this.BlockToMine.IsFull())
             {
                 if (this.PendingTransactions.Count != 0)
                 {
-                    b.AddTransaction(this.PendingTransactions[0]);
+                    this.BlockToMine.AddTransaction(this.PendingTransactions[0]);
                     this.PendingTransactions.RemoveAt(0);
                 }
             }
+
+            return true;
+        }
+        
+        public bool MinePendingTransaction(string minerAdress)
+        {
+            try
+            {
+                this.PrepareBlockToMine();
             
-            b.MineBlock(this.difficulty);
+                this.BlockToMine.MineBlock(this.difficulty);
+            
+                this.AddBlock(this.BlockToMine);
+
+                if (!this.IsvalidChain())
+                {
+                    this.Validate();
+                    return false;
+                }
+            
+                Transaction reward = new Transaction(null, minerAdress, this.miningReward);
+                Console.WriteLine("Block mined " + this.BlockToMine.Index + " : " + this.BlockToMine.Hashblock + " by " + minerAdress);
+                this.AddTransaction(reward);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool NetworkMinePendingTransaction(string minerAdress, Block b)
+        {
+            if (this.BlockToMine.Index != b.Index)
+            {
+                return false;
+            }
+            
             foreach (var block in this.Chain)
             {
                 if (b.Index == block.Index)
                 {
-                    return; 
+                    return false; 
                 }
             }
+            
             this.AddBlock(b);
 
             if (!this.IsvalidChain())
             {
                 this.Validate();
-                return;
+                return false;
             }
             
             Transaction reward = new Transaction(null, minerAdress, this.miningReward);
             Console.WriteLine("Block mined " + b.Index + " : " + b.Hashblock + " by " + minerAdress);
             this.AddTransaction(reward);
+            return true;
         }
 
         public bool AddTransaction(Transaction t)
         {
-            Console.Write("transaction: " + (t.FromAddress ?? Blockchain.Name) + " - " + t.ToAddress + " : " + t.Amount);
-            int amount = this.GetBalanceOfAddress(t.FromAddress);
-            foreach (var pendingt in this.PendingTransactions)
+            try
             {
-                if (pendingt.FromAddress == t.FromAddress)
+                Console.Write("transaction: " + (t.FromAddress ?? Blockchain.Name) + " - " + t.ToAddress + " : " + t.Amount);
+                int amount = this.GetBalanceOfAddress(t.FromAddress);
+                foreach (var pendingt in this.PendingTransactions)
                 {
-                    amount -= pendingt.Amount;
+                    if (pendingt.FromAddress == t.FromAddress)
+                    {
+                        amount -= pendingt.Amount;
+                    }
                 }
+                
+                if (amount - t.Amount >= 0 || t.FromAddress == null)
+                {
+                    this.PendingTransactions.Add(t);
+                    Console.Write(" : accepted\n");
+                    return true;
+                }
+                
+                Console.Write(" : rejeted\n");
+                return false;
             }
-            
-            if (amount - t.Amount >= 0 || t.FromAddress == null)
+            catch (Exception e)
             {
-                this.PendingTransactions.Add(t);
-                Console.Write(" : accepted\n");
-                return true;
+                return false;
             }
             
-            Console.Write(" : rejeted\n");
-            return false;
         }
 
         public bool IsvalidChain()
