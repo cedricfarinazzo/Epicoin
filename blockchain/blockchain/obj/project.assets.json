@@ -702,7 +702,7 @@
     ]
   },
   "packageFolders": {
-    "/root/.nuget/packages/": {},
+    "/home/lecodeur/.nuget/packages/": {},
     "/opt/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
@@ -711,14 +711,14 @@
       "projectUniqueName": "/home/lecodeur/Documents/blockchain/blockchain/blockchain/blockchain.csproj",
       "projectName": "blockchain",
       "projectPath": "/home/lecodeur/Documents/blockchain/blockchain/blockchain/blockchain.csproj",
-      "packagesPath": "/root/.nuget/packages/",
+      "packagesPath": "/home/lecodeur/.nuget/packages/",
       "outputPath": "/home/lecodeur/Documents/blockchain/blockchain/blockchain/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/opt/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/root/.config/NuGet/NuGet.Config"
+        "/home/lecodeur/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"

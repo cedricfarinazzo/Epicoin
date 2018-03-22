@@ -10,7 +10,7 @@ namespace blockchain
         public const int nb_trans = 3;
         
         protected int index;
-        protected string timestamp;
+        protected long timestamp;
         protected List<Transaction> data;
         protected string previousHash;
         protected string hashblock;
@@ -19,19 +19,24 @@ namespace blockchain
 
         public int Index => index;
 
-        public string Timestamp => timestamp;
+        public long Timestamp
+        {
+            get => timestamp;
+            set => timestamp = value;
+        }
 
         public List<Transaction> Data => data;
 
-        public string PreviousHash => previousHash;
-
-        public string Hashblock
+        public string PreviousHash
         {
-            get => hashblock;
-            set => hashblock = value;
+            get => previousHash;
+            set => previousHash = value;
         }
 
-        public Block(int index, string timestamp, List<Transaction> data = null, string previousHash = "")
+        public string Hashblock => hashblock;
+        
+
+        public Block(int index, long timestamp, List<Transaction> data = null, string previousHash = "")
         {
             this.index = index;
             this.timestamp = timestamp;
@@ -86,7 +91,7 @@ namespace blockchain
                 hash = this.CalculateHash();
             }
 
-            this.Hashblock = hash;
+            this.hashblock = hash;
             
         }
 
@@ -96,7 +101,6 @@ namespace blockchain
             {
                 this.data.Add(t);
             }
-            
         }
 
         public bool IsFull()
