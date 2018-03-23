@@ -10,14 +10,13 @@ namespace blockchain
     {
         public static Blockchain Coin;
 
-        private static bool _continue = true;
+        public static bool _continue = true;
 
 
         private static Wallet creator;
         private static Wallet alice;
         private static Wallet bob;
         private static Wallet ced;
-        
         
 
         public static void Main(string[] args)
@@ -32,33 +31,33 @@ namespace blockchain
             alice = new Wallet("alice");
             ced = new Wallet("ced");
             
-            Thread th0 = new Thread(CreateBlock);
+            Thread th0 = new Thread(CreateBlock);/*
             Thread th11 = new Thread(Mine);     
             Thread th12 = new Thread(Mine);        
-            Thread th13 = new Thread(Mine);
+            Thread th13 = new Thread(Mine);*/
             Thread th2 = new Thread(Evolve);
 
             
             th0.Start();
-            Thread.Sleep(1000);
+            Thread.Sleep(1000);/*
             th11.Start(ced.Address);
             Thread.Sleep(72);
             th12.Start(creator.Address);
             Thread.Sleep(70);
-            th13.Start(bob.Address);
+            th13.Start(bob.Address);*/
             th2.Start();            
             
-            Thread.Sleep(60000);
 
-            _continue = false;
             
-            /*
+            
             Thread s = new Thread(Serveur);
             s.Start();
             Thread.Sleep(50);
             Thread c = new Thread(Worker);
-            c.Start();
-            */
+            c.Start(creator);
+            Thread.Sleep(30000);
+
+            Program._continue = false;
             
             Thread.Sleep(2000);
             
@@ -117,18 +116,17 @@ namespace blockchain
             Console.WriteLine(ced.Name + " " + ced.Address + " amount : " +
                               Coin.GetBalanceOfAddress(ced.Address).ToString());
             Console.WriteLine("nb pending transactions : " + Coin.Pending.Count);
-            Console.WriteLine("nb block : " + Coin.Chainlist.Count);
+            Console.WriteLine("nb block : " + (Coin.Chainlist.Count + Coin.BlockToMines.Count));
         }
 
         public static void Serveur()
         {
             blockchain.Serveur s = new Serveur(Coin, "127.0.0.1", 4242);
-            s.Listen();
         }
 
-        public static void Worker()
+        public static void Worker(object worker)
         {
-            Client c = new Client("127.0.0.1", 4242, ced);
+            Client c = new Client("127.0.0.1", 4242, (Wallet) worker);
             c.Work();
         }
     }

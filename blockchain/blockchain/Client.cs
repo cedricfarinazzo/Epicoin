@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -11,6 +12,8 @@ namespace blockchain
         protected Wallet Worker;
         protected Block BlockToMine;
         protected int difficulty;
+
+        protected TcpClient _tcpClient;
         
         public Client(string host, int port, Wallet worker)
             : base(host, port)
@@ -18,70 +21,70 @@ namespace blockchain
             this.Worker = worker;
         }
 
-        public void WaitBlock()
+        private void Init()
         {
-            UdpClient listener = null;
-            try
-            {
-                listener = new UdpClient(this.port+1);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Can't connet to port " + (this.port+1));
-                WaitBlock();
-            }
-
-            listener.Client.ReceiveTimeout = 1000;
-            
-            bool continu = true;
-            int start = 1000000;
-            while (continu && start >= 0)
+            this._tcpClient = new TcpClient();
+            while (!this._tcpClient.Connected)
             {
                 try
                 {
-                    IPEndPoint ip = null;
-                    byte[] data = listener.Receive(ref ip);
-                    if (ip.Address.ToString() == this.host)
-                    {
-                        string msgdata = Encoding.Default.GetString(data);
-                        DataMine datamine = (DataMine)Serialyze.unserialize(msgdata);
-                        this.difficulty = datamine.difficulty;
-                        this.BlockToMine = datamine.b;
-                        continu = false;
-                    }
+                    this._tcpClient.Connect(this.host, this.port);
                 }
                 catch (Exception e)
                 {
                 }
-
-                start--;
+                
             }
-            listener.Close();
-            Console.WriteLine("Block received");
+            //Console.WriteLine("Worker connected");
+        }
+
+        public void GetBlock(byte[] data)
+        {
+            string msgdata = Encoding.Default.GetString(data);
+            var datamine = Serialyze.unserialize(msgdata);
+
+            this.BlockToMine = null;
+            this.difficulty = datamine.difficulty;
+            if (datamine.b != null)
+            {
+                this.BlockToMine = new Block(datamine.b.Index, datamine.b.Timestamp, datamine.b.Data, datamine.b.PreviousHash);
+            }
+            
+            //Console.WriteLine("Block received");
+        }
+
+        public byte[] SendBlock(long time)
+        {
+            DataMine dataMine = new DataMine(this.difficulty, this.BlockToMine, this.Worker, time);
+            byte[] datasend = Encoding.Default.GetBytes(Serialyze.serialize(dataMine));
+            return datasend;
         }
 
         public void Work()
         {
-            UdpClient client = new UdpClient();
-            client.Connect(host, port);
-            Console.WriteLine("Connected client");
-            
-            while (true)
+            while (Program._continue)
             {
-                string askmsg = "block";
-                byte[] msg = Encoding.Default.GetBytes(askmsg);
-
-                client.Send(msg, msg.Length);
+                this.BlockToMine = null;
+                this.Init();
+                Stream stm = this._tcpClient.GetStream();
+                byte[] buffer = new byte[4096];
+                stm.Read(buffer,0,4096);
+                this.GetBlock(buffer);
+                if (this.BlockToMine != null)
+                {
+                    Console.WriteLine("Mining ...");
+                    long start = DateTime.Now.Ticks;
+                    this.BlockToMine.MineBlock(this.difficulty);
+                    long miningtime = DateTime.Now.Ticks - start;
+                    byte[] datamine = this.SendBlock(miningtime);
+                    Console.WriteLine("Sending block mined ...");
+                    stm.Write(datamine, 0, datamine.Length);
+                }
                 
-                WaitBlock();
-                
-                this.BlockToMine.MineBlock(this.difficulty);
-                
-                DataMine datamine = new DataMine(this.difficulty, this.BlockToMine, this.Worker);
-                byte[] bytedata = Encoding.Default.GetBytes(Serialyze.serialize(datamine));
-                client.Send(bytedata, bytedata.Length);
-
+                stm.Close();
+                this._tcpClient.Close();
             }
+            
         }
     }
 }

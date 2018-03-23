@@ -1,0 +1,10 @@
+/home/lecodeur/Documents/blockchain/blockchain-serveur/blockchain-serveur/blockchain-serveur/bin/Debug/netcoreapp2.0/blockchain-serveur.deps.json
+/home/lecodeur/Documents/blockchain/blockchain-serveur/blockchain-serveur/blockchain-serveur/bin/Debug/netcoreapp2.0/blockchain-serveur.runtimeconfig.json
+/home/lecodeur/Documents/blockchain/blockchain-serveur/blockchain-serveur/blockchain-serveur/bin/Debug/netcoreapp2.0/blockchain-serveur.runtimeconfig.dev.json
+/home/lecodeur/Documents/blockchain/blockchain-serveur/blockchain-serveur/blockchain-serveur/bin/Debug/netcoreapp2.0/blockchain-serveur.dll
+/home/lecodeur/Documents/blockchain/blockchain-serveur/blockchain-serveur/blockchain-serveur/bin/Debug/netcoreapp2.0/blockchain-serveur.pdb
+/home/lecodeur/Documents/blockchain/blockchain-serveur/blockchain-serveur/blockchain-serveur/obj/Debug/netcoreapp2.0/blockchain-serveur.csproj.CoreCompileInputs.cache
+/home/lecodeur/Documents/blockchain/blockchain-serveur/blockchain-serveur/blockchain-serveur/obj/Debug/netcoreapp2.0/blockchain-serveur.AssemblyInfoInputs.cache
+/home/lecodeur/Documents/blockchain/blockchain-serveur/blockchain-serveur/blockchain-serveur/obj/Debug/netcoreapp2.0/blockchain-serveur.AssemblyInfo.cs
+/home/lecodeur/Documents/blockchain/blockchain-serveur/blockchain-serveur/blockchain-serveur/obj/Debug/netcoreapp2.0/blockchain-serveur.dll
+/home/lecodeur/Documents/blockchain/blockchain-serveur/blockchain-serveur/blockchain-serveur/obj/Debug/netcoreapp2.0/blockchain-serveur.pdb
