@@ -5,33 +5,25 @@ namespace blockchain
 {
     public class Wallet
     {
-        protected string name;
+        public string Name;
 
-        protected string address;
+        public string Address;
+
+        public string PrivKey;
+        public string PubKey;
         
         public Wallet(string name)
         {
-            this.name = name;
-            this.GenAddress();
+            this.Name = name;
+            this.GenNewAddress();
         }
 
-        public void GenAddress()
+        public void GenNewAddress()
         {
-            Random r = new Random();
-            int randomint = 0;
-            for (int i = 0; i < 100; i++)
-            {
-                randomint += (i * 10) * r.Next();
-            }
-
-            this.address = Hash.Create(this.name + DateTime.Now.ToString() + randomint.ToString());
+            string[] data = Rsa.GenKey(2048);
+            this.PrivKey = data[0];
+            this.PubKey = data[1];
+            this.Address = Hash.Create(this.PubKey);
         }
-
-        public string Address
-        {
-            get => address;
-        }
-
-        public string Name => name;
     }
 }

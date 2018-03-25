@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace blockchain
 {
-    public class Client : BlockchainNetwork
+    public class ClientMine : BlockchainNetwork
     {
         protected Wallet Worker;
         protected Block BlockToMine;
@@ -15,7 +15,7 @@ namespace blockchain
 
         protected TcpClient _tcpClient;
         
-        public Client(string host, int port, Wallet worker)
+        public ClientMine(string host, int port, Wallet worker)
             : base(host, port)
         {
             this.Worker = worker;
@@ -45,9 +45,9 @@ namespace blockchain
 
             this.BlockToMine = null;
             this.difficulty = datamine.difficulty;
-            if (datamine.b != null)
+            if (datamine.block != null)
             {
-                this.BlockToMine = new Block(datamine.b.Index, datamine.b.Timestamp, datamine.b.Data, datamine.b.PreviousHash);
+                this.BlockToMine = new Block(datamine.block.Index, datamine.block.Timestamp, datamine.block.Data, datamine.block.PreviousHash);
             }
             
             //Console.WriteLine("Block received");
@@ -55,7 +55,7 @@ namespace blockchain
 
         public byte[] SendBlock(long time)
         {
-            DataMine dataMine = new DataMine(this.difficulty, this.BlockToMine, this.Worker, time);
+            DataMine dataMine = new DataMine(this.difficulty, this.BlockToMine, this.Worker.Address, time);
             byte[] datasend = Encoding.Default.GetBytes(Serialyze.serialize(dataMine));
             return datasend;
         }

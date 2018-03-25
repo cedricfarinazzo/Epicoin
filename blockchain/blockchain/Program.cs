@@ -39,7 +39,7 @@ namespace blockchain
 
             
             th0.Start();
-            Thread.Sleep(1000);/*
+            Thread.Sleep(5000);/*
             th11.Start(ced.Address);
             Thread.Sleep(72);
             th12.Start(creator.Address);
@@ -50,12 +50,12 @@ namespace blockchain
 
             
             
-            Thread s = new Thread(Serveur);
+            Thread s = new Thread(ServeurMine);
             s.Start();
             Thread.Sleep(50);
             Thread c = new Thread(Worker);
             c.Start(creator);
-            Thread.Sleep(30000);
+            Thread.Sleep(1000);
 
             Program._continue = false;
             
@@ -115,19 +115,19 @@ namespace blockchain
                               Coin.GetBalanceOfAddress(alice.Address).ToString());
             Console.WriteLine(ced.Name + " " + ced.Address + " amount : " +
                               Coin.GetBalanceOfAddress(ced.Address).ToString());
-            Console.WriteLine("nb pending transactions : " + Coin.Pending.Count);
-            Console.WriteLine("nb block : " + (Coin.Chainlist.Count + Coin.BlockToMines.Count));
+            Console.WriteLine("nb pending transactions : " + (Coin.Pending.Count + (Coin.BlockToMines.Count * Block.nb_trans)));
+            Console.WriteLine("nb block : " + Coin.Chainlist.Count);
         }
 
-        public static void Serveur()
+        public static void ServeurMine()
         {
-            blockchain.Serveur s = new Serveur(Coin, "127.0.0.1", 4242);
+            blockchain.ServeurMine serveurMine = new ServeurMine(Coin, "127.0.0.1", 4243);
         }
 
         public static void Worker(object worker)
         {
-            Client c = new Client("127.0.0.1", 4242, (Wallet) worker);
-            c.Work();
+            ClientMine cminer = new ClientMine("127.0.0.1", 4243, (Wallet) worker);
+            cminer.Work();
         }
     }
 }

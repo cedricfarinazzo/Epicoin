@@ -106,7 +106,7 @@ namespace blockchain
         {
             if (this.PrepareBlockToMine())
             {
-                //Console.WriteLine("[C] Creating Block " + this.BlockToMine.Index + " with difficulty " + this.Difficulty);
+                Console.WriteLine("[C] Creating Block " + this.BlockToMine.Index + " with difficulty " + this.Difficulty);
                 this.BlockToMine = null;
             }
         }
@@ -117,7 +117,7 @@ namespace blockchain
             {
                 this.BlockToMines[0].PreviousHash = this.GetLatestBlock().Hashblock;
                 this.BlockToMines[0].Timestamp = DateTime.Now.Ticks;
-                //Console.WriteLine("[NB] Next to block " + this.BlockToMines[0].Index + " with difficulty " + this.Difficulty);
+                Console.WriteLine("[NB] Next to block " + this.BlockToMines[0].Index + " with difficulty " + this.Difficulty);
             }
         }
         
@@ -220,7 +220,7 @@ namespace blockchain
         {
             try
             {
-                //Console.Write("[T] transaction: " + (t.FromAddress ?? Blockchain.Name) + " - " + t.ToAddress + " : " + t.Amount);
+                Console.Write("[T] transaction: " + (t.FromAddress ?? Blockchain.Name) + " - " + t.ToAddress + " : " + t.Amount);
                 int amount = this.GetBalanceOfAddress(t.FromAddress);
                 foreach (var pendingt in this.PendingTransactions)
                 {
@@ -244,11 +244,11 @@ namespace blockchain
                 if (amount - t.Amount >= 0 || t.FromAddress == null)
                 {
                     this.PendingTransactions.Add(t);
-                  //  Console.Write(" : accepted\n");
+                    Console.Write(" : accepted\n");
                     return true;
                 }
                 
-                //Console.Write(" : rejeted\n");
+                Console.Write(" : rejeted\n");
                 return false;
             }
             catch (Exception e)
