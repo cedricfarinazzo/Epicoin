@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f17a9142-11e1-492e-bed7-9fe24ff0341b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../blockchain-mine-client/blockchain-mine-client/.idea/.idea.blockchain-mine-client/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../blockchain-mine-client/blockchain-mine-client/.idea/.idea.blockchain-mine-client/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../blockchain-serveur/blockchain-serveur/.idea/.idea.blockchain-serveur/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../blockchain-serveur/blockchain-serveur/.idea/.idea.blockchain-serveur/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.blockchain/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.blockchain/.idea/contentModel.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.blockchain/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.blockchain/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/blockchain/Block.cs" afterPath="$PROJECT_DIR$/blockchain/Block.cs" />
-      <change beforePath="$PROJECT_DIR$/blockchain/Blockchain.cs" afterPath="$PROJECT_DIR$/blockchain/Blockchain.cs" />
-      <change beforePath="$PROJECT_DIR$/blockchain/Client.cs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/blockchain/DataMine.cs" afterPath="$PROJECT_DIR$/blockchain/DataMine.cs" />
       <change beforePath="$PROJECT_DIR$/blockchain/Program.cs" afterPath="$PROJECT_DIR$/blockchain/Program.cs" />
-      <change beforePath="$PROJECT_DIR$/blockchain/Serveur.cs" afterPath="$PROJECT_DIR$/blockchain/Serveur.cs" />
-      <change beforePath="$PROJECT_DIR$/blockchain/Wallet.cs" afterPath="$PROJECT_DIR$/blockchain/Wallet.cs" />
       <change beforePath="$PROJECT_DIR$/blockchain/bin/Debug/netcoreapp2.0/blockchain.dll" afterPath="$PROJECT_DIR$/blockchain/bin/Debug/netcoreapp2.0/blockchain.dll" />
       <change beforePath="$PROJECT_DIR$/blockchain/bin/Debug/netcoreapp2.0/blockchain.pdb" afterPath="$PROJECT_DIR$/blockchain/bin/Debug/netcoreapp2.0/blockchain.pdb" />
-      <change beforePath="$PROJECT_DIR$/blockchain/obj/Debug/netcoreapp2.0/blockchain.csproj.CoreCompileInputs.cache" afterPath="$PROJECT_DIR$/blockchain/obj/Debug/netcoreapp2.0/blockchain.csproj.CoreCompileInputs.cache" />
       <change beforePath="$PROJECT_DIR$/blockchain/obj/Debug/netcoreapp2.0/blockchain.dll" afterPath="$PROJECT_DIR$/blockchain/obj/Debug/netcoreapp2.0/blockchain.dll" />
       <change beforePath="$PROJECT_DIR$/blockchain/obj/Debug/netcoreapp2.0/blockchain.pdb" afterPath="$PROJECT_DIR$/blockchain/obj/Debug/netcoreapp2.0/blockchain.pdb" />
     </list>
@@ -28,28 +17,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Program.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blockchain/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="116" column="67" lean-forward="false" selection-start-line="116" selection-start-column="67" selection-end-line="116" selection-end-column="67" />
+            <state relative-caret-position="532">
+              <caret line="64" column="26" lean-forward="false" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
               <folding>
-                <marker date="1522014858653" expanded="false" signature="6:139" ph="..." />
-                <marker date="1522014858653" expanded="true" signature="161:4393" ph="{...}" />
-                <marker date="1522014858653" expanded="true" signature="188:4391" ph="{...}" />
-                <marker date="1522014858653" expanded="true" signature="484:1691" ph="{...}" />
-                <marker date="1522014858653" expanded="true" signature="834:983" ph="/* Thread th11 = new Thread(Mine); ... */" />
-                <marker date="1522014858653" expanded="true" signature="1099:1278" ph="/* th11.Start(ced.Address); ... */" />
-                <marker date="1522014858653" expanded="true" signature="1726:1798" ph="{...}" />
-                <marker date="1522014858653" expanded="true" signature="1835:2655" ph="{...}" />
-                <marker date="1522014858653" expanded="true" signature="1875:2632" ph="{...}" />
-                <marker date="1522014858653" expanded="true" signature="2697:2884" ph="{...}" />
-                <marker date="1522014858653" expanded="true" signature="2737:2874" ph="{...}" />
-                <marker date="1522014858653" expanded="true" signature="2932:3072" ph="{...}" />
-                <marker date="1522014858653" expanded="true" signature="2972:3062" ph="{...}" />
-                <marker date="1522014858653" expanded="true" signature="3109:4051" ph="{...}" />
-                <marker date="1522014858653" expanded="true" signature="4093:4204" ph="{...}" />
-                <marker date="1522014858653" expanded="true" signature="4254:4385" ph="{...}" />
+                <marker date="1522015259932" expanded="false" signature="6:139" ph="..." />
+                <marker date="1522015259932" expanded="true" signature="161:4575" ph="{...}" />
+                <marker date="1522015259932" expanded="true" signature="188:4573" ph="{...}" />
+                <marker date="1522015259932" expanded="true" signature="643:1849" ph="{...}" />
+                <marker date="1522015259932" expanded="true" signature="993:1142" ph="/* Thread th11 = new Thread(Mine); ... */" />
+                <marker date="1522015259932" expanded="true" signature="1257:1436" ph="/* th11.Start(ced.Address); ... */" />
+                <marker date="1522015259932" expanded="true" signature="1884:1956" ph="{...}" />
+                <marker date="1522015259932" expanded="true" signature="1993:2813" ph="{...}" />
+                <marker date="1522015259932" expanded="true" signature="2033:2790" ph="{...}" />
+                <marker date="1522015259932" expanded="true" signature="2855:3042" ph="{...}" />
+                <marker date="1522015259932" expanded="true" signature="2895:3032" ph="{...}" />
+                <marker date="1522015259932" expanded="true" signature="3090:3230" ph="{...}" />
+                <marker date="1522015259932" expanded="true" signature="3130:3220" ph="{...}" />
+                <marker date="1522015259932" expanded="true" signature="3267:4209" ph="{...}" />
+                <marker date="1522015259932" expanded="true" signature="4251:4374" ph="{...}" />
+                <marker date="1522015259932" expanded="true" signature="4424:4567" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -150,11 +139,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientMine.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClientMine.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blockchain/ClientMine.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-680">
-              <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+            <state relative-caret-position="0">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
                 <marker date="1522014450050" expanded="false" signature="6:117" ph="..." />
                 <marker date="1522014450050" expanded="true" signature="139:2763" ph="{...}" />
@@ -260,8 +249,8 @@
         <option value="$PROJECT_DIR$/blockchain/Block.cs" />
         <option value="$PROJECT_DIR$/blockchain/Serveur.cs" />
         <option value="$PROJECT_DIR$/blockchain/ClientMine.cs" />
-        <option value="$PROJECT_DIR$/blockchain/Program.cs" />
         <option value="$PROJECT_DIR$/blockchain/ServeurMine.cs" />
+        <option value="$PROJECT_DIR$/blockchain/Program.cs" />
       </list>
     </option>
   </component>
@@ -377,12 +366,12 @@
       <workItem from="1521807543919" duration="2032000" />
       <workItem from="1521837730148" duration="3824000" />
       <workItem from="1521841722113" duration="1546000" />
-      <workItem from="1522010665681" duration="4184000" />
+      <workItem from="1522010665681" duration="4600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58818000" />
+    <option name="totallyTimeSpent" value="59234000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,13 +384,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="19" width="1920" height="1061" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.5020877" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5020877" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.49791232" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.49791232" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.49791232" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827103" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -667,22 +655,22 @@
         <state relative-caret-position="450">
           <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
           <folding>
-            <marker date="1522014858653" expanded="false" signature="6:139" ph="..." />
-            <marker date="1522014858653" expanded="true" signature="161:4393" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="188:4391" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="484:1691" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="834:983" ph="/* Thread th11 = new Thread(Mine); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1099:1278" ph="/* th11.Start(ced.Address); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1726:1798" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1835:2655" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1875:2632" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2697:2884" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2737:2874" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2932:3072" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2972:3062" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="3109:4051" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4093:4204" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4254:4385" ph="{...}" />
+            <marker date="1522015259932" expanded="false" signature="6:139" ph="..." />
+            <marker date="1522015259932" expanded="true" signature="161:4575" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="188:4573" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="643:1849" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="993:1142" ph="/* Thread th11 = new Thread(Mine); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1257:1436" ph="/* th11.Start(ced.Address); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1884:1956" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="1993:2813" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2033:2790" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2855:3042" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2895:3032" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3090:3230" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3130:3220" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3267:4209" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4251:4374" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4424:4567" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -692,22 +680,22 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1522014858653" expanded="false" signature="6:139" ph="..." />
-            <marker date="1522014858653" expanded="true" signature="161:4393" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="188:4391" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="484:1691" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="834:983" ph="/* Thread th11 = new Thread(Mine); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1099:1278" ph="/* th11.Start(ced.Address); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1726:1798" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1835:2655" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1875:2632" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2697:2884" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2737:2874" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2932:3072" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2972:3062" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="3109:4051" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4093:4204" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4254:4385" ph="{...}" />
+            <marker date="1522015259932" expanded="false" signature="6:139" ph="..." />
+            <marker date="1522015259932" expanded="true" signature="161:4575" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="188:4573" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="643:1849" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="993:1142" ph="/* Thread th11 = new Thread(Mine); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1257:1436" ph="/* th11.Start(ced.Address); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1884:1956" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="1993:2813" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2033:2790" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2855:3042" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2895:3032" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3090:3230" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3130:3220" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3267:4209" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4251:4374" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4424:4567" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -823,22 +811,22 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1522014858653" expanded="false" signature="6:139" ph="..." />
-            <marker date="1522014858653" expanded="true" signature="161:4393" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="188:4391" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="484:1691" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="834:983" ph="/* Thread th11 = new Thread(Mine); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1099:1278" ph="/* th11.Start(ced.Address); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1726:1798" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1835:2655" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1875:2632" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2697:2884" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2737:2874" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2932:3072" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2972:3062" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="3109:4051" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4093:4204" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4254:4385" ph="{...}" />
+            <marker date="1522015259932" expanded="false" signature="6:139" ph="..." />
+            <marker date="1522015259932" expanded="true" signature="161:4575" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="188:4573" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="643:1849" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="993:1142" ph="/* Thread th11 = new Thread(Mine); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1257:1436" ph="/* th11.Start(ced.Address); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1884:1956" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="1993:2813" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2033:2790" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2855:3042" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2895:3032" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3090:3230" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3130:3220" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3267:4209" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4251:4374" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4424:4567" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -954,22 +942,22 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1522014858653" expanded="false" signature="6:139" ph="..." />
-            <marker date="1522014858653" expanded="true" signature="161:4393" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="188:4391" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="484:1691" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="834:983" ph="/* Thread th11 = new Thread(Mine); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1099:1278" ph="/* th11.Start(ced.Address); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1726:1798" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1835:2655" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1875:2632" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2697:2884" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2737:2874" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2932:3072" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2972:3062" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="3109:4051" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4093:4204" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4254:4385" ph="{...}" />
+            <marker date="1522015259932" expanded="false" signature="6:139" ph="..." />
+            <marker date="1522015259932" expanded="true" signature="161:4575" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="188:4573" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="643:1849" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="993:1142" ph="/* Thread th11 = new Thread(Mine); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1257:1436" ph="/* th11.Start(ced.Address); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1884:1956" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="1993:2813" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2033:2790" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2855:3042" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2895:3032" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3090:3230" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3130:3220" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3267:4209" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4251:4374" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4424:4567" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1085,22 +1073,22 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1522014858653" expanded="false" signature="6:139" ph="..." />
-            <marker date="1522014858653" expanded="true" signature="161:4393" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="188:4391" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="484:1691" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="834:983" ph="/* Thread th11 = new Thread(Mine); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1099:1278" ph="/* th11.Start(ced.Address); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1726:1798" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1835:2655" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1875:2632" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2697:2884" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2737:2874" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2932:3072" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2972:3062" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="3109:4051" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4093:4204" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4254:4385" ph="{...}" />
+            <marker date="1522015259932" expanded="false" signature="6:139" ph="..." />
+            <marker date="1522015259932" expanded="true" signature="161:4575" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="188:4573" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="643:1849" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="993:1142" ph="/* Thread th11 = new Thread(Mine); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1257:1436" ph="/* th11.Start(ced.Address); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1884:1956" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="1993:2813" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2033:2790" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2855:3042" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2895:3032" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3090:3230" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3130:3220" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3267:4209" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4251:4374" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4424:4567" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1216,22 +1204,22 @@
         <state relative-caret-position="288">
           <caret line="16" column="114" lean-forward="false" selection-start-line="16" selection-start-column="114" selection-end-line="16" selection-end-column="114" />
           <folding>
-            <marker date="1522014858653" expanded="false" signature="6:139" ph="..." />
-            <marker date="1522014858653" expanded="true" signature="161:4393" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="188:4391" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="484:1691" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="834:983" ph="/* Thread th11 = new Thread(Mine); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1099:1278" ph="/* th11.Start(ced.Address); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1726:1798" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1835:2655" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1875:2632" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2697:2884" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2737:2874" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2932:3072" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2972:3062" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="3109:4051" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4093:4204" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4254:4385" ph="{...}" />
+            <marker date="1522015259932" expanded="false" signature="6:139" ph="..." />
+            <marker date="1522015259932" expanded="true" signature="161:4575" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="188:4573" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="643:1849" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="993:1142" ph="/* Thread th11 = new Thread(Mine); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1257:1436" ph="/* th11.Start(ced.Address); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1884:1956" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="1993:2813" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2033:2790" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2855:3042" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2895:3032" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3090:3230" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3130:3220" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3267:4209" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4251:4374" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4424:4567" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1539,31 +1527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="116" column="67" lean-forward="false" selection-start-line="116" selection-start-column="67" selection-end-line="116" selection-end-column="67" />
-          <folding>
-            <marker date="1522014858653" expanded="false" signature="6:139" ph="..." />
-            <marker date="1522014858653" expanded="true" signature="161:4393" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="188:4391" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="484:1691" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="834:983" ph="/* Thread th11 = new Thread(Mine); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1099:1278" ph="/* th11.Start(ced.Address); ... */" />
-            <marker date="1522014858653" expanded="true" signature="1726:1798" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1835:2655" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="1875:2632" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2697:2884" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2737:2874" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2932:3072" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="2972:3062" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="3109:4051" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4093:4204" ph="{...}" />
-            <marker date="1522014858653" expanded="true" signature="4254:4385" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blockchain/ServeurMine.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-228">
@@ -1593,8 +1556,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blockchain/ClientMine.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-680">
-          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+        <state relative-caret-position="0">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <marker date="1522014450050" expanded="false" signature="6:117" ph="..." />
             <marker date="1522014450050" expanded="true" signature="139:2763" ph="{...}" />
@@ -1610,6 +1573,31 @@
             <marker date="1522014450050" expanded="true" signature="1801:2755" ph="{...}" />
             <marker date="1522014450050" expanded="true" signature="1849:2732" ph="{...}" />
             <marker date="1522014450050" expanded="true" signature="2165:2631" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blockchain/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="64" column="26" lean-forward="false" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+          <folding>
+            <marker date="1522015259932" expanded="false" signature="6:139" ph="..." />
+            <marker date="1522015259932" expanded="true" signature="161:4575" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="188:4573" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="643:1849" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="993:1142" ph="/* Thread th11 = new Thread(Mine); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1257:1436" ph="/* th11.Start(ced.Address); ... */" />
+            <marker date="1522015259932" expanded="true" signature="1884:1956" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="1993:2813" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2033:2790" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2855:3042" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="2895:3032" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3090:3230" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3130:3220" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="3267:4209" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4251:4374" ph="{...}" />
+            <marker date="1522015259932" expanded="true" signature="4424:4567" ph="{...}" />
           </folding>
         </state>
       </provider>

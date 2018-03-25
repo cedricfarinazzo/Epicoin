@@ -12,11 +12,14 @@ namespace blockchain
 
         public static bool _continue = true;
 
-
         private static Wallet creator;
         private static Wallet alice;
         private static Wallet bob;
         private static Wallet ced;
+
+        private static readonly int mineport = 4240;
+        private static readonly int transport = 4241;
+        private static readonly int getport = 4242;
         
 
         public static void Main(string[] args)
@@ -39,7 +42,7 @@ namespace blockchain
 
             
             th0.Start();
-            Thread.Sleep(5000);/*
+            Thread.Sleep(100);/*
             th11.Start(ced.Address);
             Thread.Sleep(72);
             th12.Start(creator.Address);
@@ -55,11 +58,11 @@ namespace blockchain
             Thread.Sleep(50);
             Thread c = new Thread(Worker);
             c.Start(creator);
-            Thread.Sleep(1000);
+            Thread.Sleep(6000);
 
             Program._continue = false;
             
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             
             Verify();
         }
@@ -121,12 +124,12 @@ namespace blockchain
 
         public static void ServeurMine()
         {
-            blockchain.ServeurMine serveurMine = new ServeurMine(Coin, "127.0.0.1", 4243);
+            blockchain.ServeurMine serveurMine = new ServeurMine(Coin, "127.0.0.1", Program.mineport);
         }
 
         public static void Worker(object worker)
         {
-            ClientMine cminer = new ClientMine("127.0.0.1", 4243, (Wallet) worker);
+            ClientMine cminer = new ClientMine("127.0.0.1", Program.mineport, (Wallet) worker);
             cminer.Work();
         }
     }
