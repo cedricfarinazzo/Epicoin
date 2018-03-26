@@ -40,7 +40,12 @@ namespace blockchain
 
         public void Send()
         {
-            DataTransaction datatrans = new DataTransaction(this.Sender.PubKey, Rsa.Encrypt(this.Sender.PrivKey, this.Sender.Address), this.ToAddress, this.Amount);
+            DataTransaction datatrans = new DataTransaction(
+                            this.Sender.PubKey, 
+                            Rsa.Encrypt(this.Sender.PrivKey, this.Sender.Address), 
+                            Rsa.Encrypt(this.Sender.PrivKey, this.ToAddress), 
+                            Rsa.Encrypt(this.Sender.PrivKey, this.Amount.ToString())
+                        );
             byte[] datasend = Encoding.Default.GetBytes(Serialyze.serialize(datatrans));
             bool send = false;
             while (Program._continue && !send)

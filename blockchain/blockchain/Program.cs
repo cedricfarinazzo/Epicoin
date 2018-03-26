@@ -51,7 +51,7 @@ namespace blockchain
             s.Start();
             Thread.Sleep(50);
             Thread c = new Thread(ClientMine);
-            c.Start(creator);
+            c.Start(ced);
             Thread.Sleep(20000);
 
             Program._continue = false;
@@ -124,7 +124,7 @@ namespace blockchain
 
         public static void ServeurMine()
         {
-            blockchain.ServeurMine serveurMine = new ServeurMine(Coin, Program.host, Program.mineport);
+            blockchain.ServeurMine serveurMine = new ServeurMine(Program.Coin, Program.host, Program.mineport);
         }
 
         public static void ClientMine(object worker)
@@ -143,6 +143,17 @@ namespace blockchain
             ClientGet cget = new ClientGet(Program.host, Program.getport);
             cget.Get();
             return cget.chain;
+        }
+
+        public static void ServeurTrans()
+        {
+            blockchain.ServeurTrans serveurTrans = new ServeurTrans(Program.Coin, Program.host, Program.transport);
+        }
+
+        public static void ClientTrans(Wallet sender, string toAddress, int amount)
+        {
+            blockchain.ClientTrans ctrans = new ClientTrans(Program.host, Program.transport, sender, toAddress, amount);
+            ctrans.Send();
         }
     }
 }

@@ -7,7 +7,7 @@ namespace blockchain
 {
     public class Blockchain
     {
-        public const string Name = "blockchain";
+        public const string Name = "epicoin";
         
         protected int difficulty = 3;
         protected List<Block> Chain;
