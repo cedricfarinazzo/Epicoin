@@ -24,32 +24,35 @@ namespace blockchain
             this.ServeurChain = TcpListener.Create(this.port);
         }
 
-        private byte[] GenData()
+        private void GetData(byte[] data)
         {
-            DataMine dataMine;
-            byte[] datasend;
-            if (this.Coin.BlockToMines.Count != 0)
+            DataTransaction dataTransaction = Serialyze.UnserializeDataTransaction(Encoding.Default.GetString(data));
+            Console.WriteLine("[ST] Analyse transaction");
+            string EncodeFrAd = Rsa.Encrypt(dataTransaction.PubKey, Hash.Create(dataTransaction.PubKey));
+            if (EncodeFrAd != dataTransaction.EncodeFromAddress)
             {
-                dataMine = new DataMine(this.Coin.Difficulty, this.Coin.BlockToMines[0], null);
-                datasend = Encoding.Default.GetBytes(Serialyze.serialize(dataMine));
+                return;
             }
-            else
-            {
-                dataMine = new DataMine(this.Coin.Difficulty, null, null);
-                datasend = Encoding.Default.GetBytes(Serialyze.serialize(dataMine));
-            }
-            
-            return datasend;
-            
+
+            string FromAddress = Hash.Create(dataTransaction.PubKey);
+            Transaction newTransaction = new Transaction(FromAddress, dataTransaction.ToAddress, dataTransaction.Amount);
+            this.Coin.AddTransaction(newTransaction);
         }
 
         public void ClientManager(object o)
         {
             TcpClient tcpClient = (TcpClient)o;
             NetworkStream clientStream = tcpClient.GetStream();
-            byte[] buffer = this.GenData();
-            clientStream.Write(buffer, 0, buffer.Length);
-            clientStream.Flush();
+            byte[] bufferblock = new byte[4096];
+            int bytesRead = 0;
+            try
+            {
+                bytesRead = clientStream.Read(bufferblock, 0, 4096);
+                this.GetData(bufferblock);  
+            }
+            catch
+            {
+            }
             clientStream.Close();
             tcpClient.Close();
         }

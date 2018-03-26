@@ -124,7 +124,6 @@ namespace blockchain
                     }
                     
                 }
-                
             }
             clientStream.Close();
             tcpClient.Close();

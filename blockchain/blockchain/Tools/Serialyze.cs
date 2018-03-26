@@ -20,5 +20,9 @@ namespace blockchain
             return JsonConvert.DeserializeObject<Blockchain>(s);
         }
         
+        public static DataTransaction UnserializeDataTransaction(string s)
+        {
+            return JsonConvert.DeserializeObject<DataTransaction>(s);
+        }
     }
 }
