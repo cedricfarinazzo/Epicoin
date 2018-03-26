@@ -64,22 +64,21 @@ namespace blockchain
                 {
                     return;
                 }
-                
+
                 if (this.Coin.BlockToMines[0].Data[i].FromAddress != dataMine.block.Data[i].FromAddress)
                 {
                     return;
                 }
-                
+
                 if (this.Coin.BlockToMines[0].Data[i].ToAddress != dataMine.block.Data[i].ToAddress)
                 {
                     return;
                 }
-                
-                /*  // issue : timestamp change : + 1 secondes ... miner sucks 
+
                 if (this.Coin.BlockToMines[0].Data[i].Timestamp != dataMine.block.Data[i].Timestamp)
                 {
                     return;
-                }*/
+                }
             }
 
             if (this.Coin.BlockToMines[0].PreviousHash != dataMine.block.PreviousHash)

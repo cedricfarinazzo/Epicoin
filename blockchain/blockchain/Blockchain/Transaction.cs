@@ -4,11 +4,12 @@ namespace blockchain
 {
     public class Transaction
     {
-        protected string fromAddress;
-        protected string toAddress;
-        protected int amount;
-        protected string timestamp;
+        public string FromAddress;
+        public string ToAddress;
+        public int Amount;
+        public string Timestamp;
 
+        /*
         public string FromAddress => fromAddress;
 
         public string ToAddress => toAddress;
@@ -16,13 +17,14 @@ namespace blockchain
         public int Amount => amount;
 
         public string Timestamp => timestamp;
+        */
 
         public Transaction(string fromAddress, string toAddress, int amount)
         {
-            this.fromAddress = fromAddress;
-            this.toAddress = toAddress;
-            this.amount = amount;
-            this.timestamp = DateTime.Now.ToString();
+            this.FromAddress = fromAddress;
+            this.ToAddress = toAddress;
+            this.Amount = amount;
+            this.Timestamp = DateTime.Now.ToString();
         }
 
         public override string ToString()
