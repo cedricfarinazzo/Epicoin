@@ -41,7 +41,7 @@ namespace blockchain
         public void GetBlock(byte[] data)
         {
             string msgdata = Encoding.Default.GetString(data);
-            var datamine = Serialyze.unserialize(msgdata);
+            var datamine = Serialyze.unserializeDataMine(msgdata);
 
             this.BlockToMine = null;
             this.difficulty = datamine.difficulty;

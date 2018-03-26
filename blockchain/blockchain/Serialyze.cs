@@ -10,11 +10,15 @@ namespace blockchain
             return JsonConvert.SerializeObject(o);
         }
 
-        public static DataMine unserialize(string s)
+        public static DataMine unserializeDataMine(string s)
         {
             return JsonConvert.DeserializeObject<DataMine>(s);
         }
         
+        public static Blockchain unserializeBlockchain(string s)
+        {
+            return JsonConvert.DeserializeObject<Blockchain>(s);
+        }
         
     }
 }

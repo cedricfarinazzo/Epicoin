@@ -9,4 +9,7 @@
   <ItemGroup>
     <Compile Remove="DataNetwork.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Serveur.cs" />
+  </ItemGroup>
 </Project>

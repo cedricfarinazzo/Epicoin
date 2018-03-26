@@ -46,12 +46,48 @@ namespace blockchain
 
         private void AnalyzeMine(byte[] data)
         {
-            DataMine dataMine = Serialyze.unserialize(Encoding.Default.GetString(data));
-            Console.WriteLine("Analyse bloc mined");
-            Block b = new Block(this.Coin.BlockToMines[0].Index, this.Coin.BlockToMines[0].Timestamp, this.Coin.BlockToMines[0].Data, this.Coin.BlockToMines[0].PreviousHash);
-            b.nonce = dataMine.block.nonce;
-            b.Hashblock = dataMine.block.Hashblock;
-            this.Coin.NetworkMinePendingTransaction(dataMine.address, b, dataMine.timemining);
+            DataMine dataMine = Serialyze.unserializeDataMine(Encoding.Default.GetString(data));
+            Console.WriteLine("[SM] Analyse bloc mined");
+            if (this.Coin.BlockToMines[0].Index != dataMine.block.Index)
+            {
+                return;
+            }
+
+            if (this.Coin.BlockToMines[0].Timestamp != dataMine.block.Timestamp)
+            {
+                return;
+            }
+
+            for (int i = 0; i < Block.nb_trans; i++)
+            {
+                if (this.Coin.BlockToMines[0].Data[i].Amount != dataMine.block.Data[i].Amount)
+                {
+                    return;
+                }
+                
+                if (this.Coin.BlockToMines[0].Data[i].FromAddress != dataMine.block.Data[i].FromAddress)
+                {
+                    return;
+                }
+                
+                if (this.Coin.BlockToMines[0].Data[i].ToAddress != dataMine.block.Data[i].ToAddress)
+                {
+                    return;
+                }
+                
+                /*  // issue : timestamp change : + 1 secondes ... miner sucks 
+                if (this.Coin.BlockToMines[0].Data[i].Timestamp != dataMine.block.Data[i].Timestamp)
+                {
+                    return;
+                }*/
+            }
+
+            if (this.Coin.BlockToMines[0].PreviousHash != dataMine.block.PreviousHash)
+            {
+                return;
+            }
+            
+            this.Coin.NetworkMinePendingTransaction(dataMine.address, dataMine.block, dataMine.timemining);
         }
 
         public void ClientManager(object o)
@@ -64,7 +100,7 @@ namespace blockchain
 
             byte[] bufferblock = new byte[4096];
             int bytesRead = 0;
-            while (Program._continue && tcpClient.Connected && Program._continue)
+            while (Program._continue && tcpClient.Connected)
             {
                 bytesRead = 0;
 
@@ -97,7 +133,7 @@ namespace blockchain
         private void Listen()
         {
             this.ServeurChain.Start();
-            Console.WriteLine("Serveur started");
+            Console.WriteLine("[SM] Miner Serveur started");
             while (Program._continue)
             {
                 TcpClient client = this.ServeurChain.AcceptTcpClient();
@@ -105,7 +141,7 @@ namespace blockchain
                 clientThread.Start(client);
             }
             this.ServeurChain.Stop();
-            Console.WriteLine("Serveur closed");
+            Console.WriteLine("[SM] Miner Serveur closed");
         }
     }
 }

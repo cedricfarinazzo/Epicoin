@@ -194,9 +194,8 @@ namespace blockchain
                 }
                 
                 this.AddBlock(b);
-                this.BlockToMines.RemoveAt(0);
                 this.manageDifficulty(miningtime);
-                this.NextBlock();
+
 
 
                 if (!this.IsvalidChain())
@@ -204,7 +203,10 @@ namespace blockchain
                     this.Validate();
                     return false;
                 }
-            
+                
+                this.BlockToMines.RemoveAt(0);
+                this.NextBlock();
+                
                 Transaction reward = new Transaction(null, minerAdress, this.miningReward);
                 Console.WriteLine("[M] Block mined " + b.Index + " : " + b.Hashblock + " by " + minerAdress);
                 this.AddTransaction(reward);

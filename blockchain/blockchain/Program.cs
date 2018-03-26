@@ -17,6 +17,8 @@ namespace blockchain
         private static Wallet bob;
         private static Wallet ced;
 
+
+        private static readonly string host = "127.0.0.1";
         private static readonly int mineport = 4240;
         private static readonly int transport = 4241;
         private static readonly int getport = 4242;
@@ -34,20 +36,12 @@ namespace blockchain
             alice = new Wallet("alice");
             ced = new Wallet("ced");
             
-            Thread th0 = new Thread(CreateBlock);/*
-            Thread th11 = new Thread(Mine);     
-            Thread th12 = new Thread(Mine);        
-            Thread th13 = new Thread(Mine);*/
+            Thread th0 = new Thread(CreateBlock);
             Thread th2 = new Thread(Evolve);
 
             
             th0.Start();
-            Thread.Sleep(100);/*
-            th11.Start(ced.Address);
-            Thread.Sleep(72);
-            th12.Start(creator.Address);
-            Thread.Sleep(70);
-            th13.Start(bob.Address);*/
+            Thread.Sleep(100);
             th2.Start();            
             
 
@@ -56,9 +50,9 @@ namespace blockchain
             Thread s = new Thread(ServeurMine);
             s.Start();
             Thread.Sleep(50);
-            Thread c = new Thread(Worker);
+            Thread c = new Thread(ClientMine);
             c.Start(creator);
-            Thread.Sleep(6000);
+            Thread.Sleep(20000);
 
             Program._continue = false;
             
@@ -72,6 +66,8 @@ namespace blockchain
             Coin = new Blockchain(creator.Address);
         }
 
+        // local 
+        
         public static void Evolve()
         {
             while (_continue)
@@ -106,6 +102,8 @@ namespace blockchain
                 Coin.MinePendingTransaction((string) worker);
             }
         }
+        
+        // verify
 
         public static void Verify()
         {
@@ -121,16 +119,30 @@ namespace blockchain
             Console.WriteLine("nb pending transactions : " + (Coin.Pending.Count + (Coin.BlockToMines.Count * Block.nb_trans)));
             Console.WriteLine("nb block : " + Coin.Chainlist.Count);
         }
+        
+        // network
 
         public static void ServeurMine()
         {
-            blockchain.ServeurMine serveurMine = new ServeurMine(Coin, "127.0.0.1", Program.mineport);
+            blockchain.ServeurMine serveurMine = new ServeurMine(Coin, Program.host, Program.mineport);
         }
 
-        public static void Worker(object worker)
+        public static void ClientMine(object worker)
         {
-            ClientMine cminer = new ClientMine("127.0.0.1", Program.mineport, (Wallet) worker);
+            ClientMine cminer = new ClientMine(Program.host, Program.mineport, (Wallet) worker);
             cminer.Work();
+        }
+
+        public static void ServeurData()
+        {
+            blockchain.ServeurGet serveurGet= new ServeurGet(Program.Coin, Program.host, Program.getport);
+        }
+
+        public static Blockchain ClientData()
+        {
+            ClientGet cget = new ClientGet(Program.host, Program.getport);
+            cget.Get();
+            return cget.chain;
         }
     }
 }
