@@ -146,7 +146,7 @@ namespace blockchain
                 
                 this.AddBlock(mineblock);
                 this.BlockToMines.RemoveAt(0);
-                this.manageDifficulty(miningtime);
+                this.ManageDifficulty(miningtime);
                 this.NextBlock();
 
 
@@ -167,7 +167,7 @@ namespace blockchain
             }
         }
 
-        private void manageDifficulty(long miningtime)
+        private void ManageDifficulty(long miningtime)
         {
             if (miningtime <= this.timebtwblock * 1000000)
             {
@@ -194,7 +194,7 @@ namespace blockchain
                 }
                 
                 this.AddBlock(b);
-                this.manageDifficulty(miningtime);
+                this.ManageDifficulty(miningtime);
 
 
 

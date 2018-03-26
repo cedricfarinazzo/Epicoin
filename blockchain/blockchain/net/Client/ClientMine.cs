@@ -55,7 +55,7 @@ namespace blockchain
 
         public byte[] SendBlock(long time)
         {
-            DataMine dataMine = new DataMine(this.difficulty, this.BlockToMine, this.Worker.Address, time);
+            DataMine dataMine = new DataMine(this.difficulty, this.BlockToMine, this.Worker.Address[0], time);
             byte[] datasend = Encoding.Default.GetBytes(Serialyze.serialize(dataMine));
             return datasend;
         }

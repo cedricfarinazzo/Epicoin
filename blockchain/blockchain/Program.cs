@@ -18,10 +18,10 @@ namespace blockchain
         private static Wallet ced;
 
 
-        private static readonly string host = "127.0.0.1";
-        private static readonly int mineport = 4240;
-        private static readonly int transport = 4241;
-        private static readonly int getport = 4242;
+        public static readonly string host = "127.0.0.1";
+        public static readonly int mineport = 4240;
+        public static readonly int transport = 4241;
+        public static readonly int getport = 4242;
         
 
         public static void Main(string[] args)
@@ -47,8 +47,10 @@ namespace blockchain
 
             
             
-            Thread s = new Thread(ServeurMine);
-            s.Start();
+            Thread sm = new Thread(ServeurMine);
+            sm.Start();
+            Thread sd = new Thread(ServeurData);
+            sd.Start();
             Thread.Sleep(50);
             Thread c = new Thread(ClientMine);
             c.Start(ced);
@@ -63,7 +65,7 @@ namespace blockchain
 
         public static void Init()
         {
-            Coin = new Blockchain(creator.Address);
+            Coin = new Blockchain(creator.Address[0]);
         }
 
         // local 
@@ -72,14 +74,14 @@ namespace blockchain
         {
             while (_continue)
             {
-                Coin.AddTransaction(new Transaction(creator.Address, ced.Address, 7));
-                Coin.AddTransaction(new Transaction(creator.Address, ced.Address, 1));
-                Coin.AddTransaction(new Transaction(creator.Address, bob.Address, 3));
-                Coin.AddTransaction(new Transaction(creator.Address, alice.Address, 10));
-                Coin.AddTransaction(new Transaction(bob.Address, alice.Address, 2));
-                Coin.AddTransaction(new Transaction(alice.Address, bob.Address, 3));
-                Coin.AddTransaction(new Transaction(bob.Address, alice.Address, 1));
-                Coin.AddTransaction(new Transaction(creator.Address, ced.Address, 1));
+                Coin.AddTransaction(new Transaction(creator.Address[0], ced.Address[0], 7));
+                Coin.AddTransaction(new Transaction(creator.Address[0], ced.Address[0], 1));
+                Coin.AddTransaction(new Transaction(creator.Address[0], bob.Address[0], 3));
+                Coin.AddTransaction(new Transaction(creator.Address[0], alice.Address[0], 10));
+                Coin.AddTransaction(new Transaction(bob.Address[0], alice.Address[0], 2));
+                Coin.AddTransaction(new Transaction(alice.Address[0], bob.Address[0], 3));
+                Coin.AddTransaction(new Transaction(bob.Address[0], alice.Address[0], 1));
+                Coin.AddTransaction(new Transaction(creator.Address[0], ced.Address[0], 1));
                 Thread.Sleep(2500);
             }
             
@@ -108,14 +110,14 @@ namespace blockchain
         public static void Verify()
         {
             Console.WriteLine("\n\nChain is valid : " + Coin.IsvalidChain());
-            Console.WriteLine(creator.Name + " " + creator.Address + " amount : " +
-                              Coin.GetBalanceOfAddress(creator.Address).ToString());
-            Console.WriteLine(bob.Name + " " + bob.Address + " amount : " +
-                              Coin.GetBalanceOfAddress(bob.Address).ToString());
-            Console.WriteLine(alice.Name + " " + alice.Address + " amount : " +
-                              Coin.GetBalanceOfAddress(alice.Address).ToString());
-            Console.WriteLine(ced.Name + " " + ced.Address + " amount : " +
-                              Coin.GetBalanceOfAddress(ced.Address).ToString());
+            Console.WriteLine(creator.Name + " ; amount : " +
+                              creator.TotalAmount().ToString());
+            Console.WriteLine(bob.Name + " ; amount : " +
+                              bob.TotalAmount().ToString());
+            Console.WriteLine(alice.Name + " ; amount : " +
+                              alice.TotalAmount().ToString());
+            Console.WriteLine(ced.Name + " ; amount : " +
+                              ced.TotalAmount().ToString());
             Console.WriteLine("nb pending transactions : " + (Coin.Pending.Count + (Coin.BlockToMines.Count * Block.nb_trans)));
             Console.WriteLine("nb block : " + Coin.Chainlist.Count);
         }
@@ -150,10 +152,19 @@ namespace blockchain
             blockchain.ServeurTrans serveurTrans = new ServeurTrans(Program.Coin, Program.host, Program.transport);
         }
 
-        public static void ClientTrans(Wallet sender, string toAddress, int amount)
+        public static void ClientTrans(DataTransaction trans)
         {
-            blockchain.ClientTrans ctrans = new ClientTrans(Program.host, Program.transport, sender, toAddress, amount);
+            blockchain.ClientTrans ctrans = new ClientTrans(Program.host, Program.transport, trans);
             ctrans.Send();
+        }
+
+        public static void Transaction(Wallet sender, string toAddress, int amount)
+        {
+            List<DataTransaction> listTrans = sender.GenTransactions(amount, toAddress);
+            foreach (var trans in listTrans)
+            {
+                Program.ClientTrans(trans);
+            }
         }
     }
 }

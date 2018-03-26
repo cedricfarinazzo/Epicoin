@@ -9,18 +9,12 @@ namespace blockchain
     {
         protected TcpClient _tcpClient;
 
-        protected Wallet Sender;
-
-        protected string ToAddress;
-
-        protected int Amount;
+        protected DataTransaction DataTrans;
         
-        public ClientTrans(string host, int port, Wallet sender, string toAddressn, int amount)
+        public ClientTrans(string host, int port, DataTransaction datatrans)
             : base(host, port)
         {
-            this.Sender = sender;
-            this.ToAddress = ToAddress;
-            this.Amount = amount;
+            this.DataTrans = datatrans;
         }
 
         private void Init()
@@ -40,13 +34,8 @@ namespace blockchain
 
         public void Send()
         {
-            DataTransaction datatrans = new DataTransaction(
-                            this.Sender.PubKey, 
-                            Rsa.Encrypt(this.Sender.PrivKey, this.Sender.Address), 
-                            Rsa.Encrypt(this.Sender.PrivKey, this.ToAddress), 
-                            Rsa.Encrypt(this.Sender.PrivKey, this.Amount.ToString())
-                        );
-            byte[] datasend = Encoding.Default.GetBytes(Serialyze.serialize(datatrans));
+
+            byte[] datasend = Encoding.Default.GetBytes(Serialyze.serialize(DataTrans));
             bool send = false;
             while (Program._continue && !send)
             {
@@ -57,6 +46,8 @@ namespace blockchain
                 stm.Close();
                 this._tcpClient.Close();
             }
+
+            this.DataTrans = null;
         }
     }
 }
