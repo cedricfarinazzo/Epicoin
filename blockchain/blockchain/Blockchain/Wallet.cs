@@ -85,10 +85,14 @@ namespace blockchain
                     amount -= this.Amount[i];
                 }
                 DataTransaction datatrans = new DataTransaction(
-                    this.PubKey[i], 
+                    this.PubKey[i], /*
                     Rsa.Encrypt(this.PrivKey[i], this.Address[i]), 
                     Rsa.Encrypt(this.PrivKey[i], toAddress), 
                     Rsa.Encrypt(this.PrivKey[i], tmpamount.ToString())
+                    */
+                    this.Address[i],
+                    toAddress,
+                    tmpamount.ToString()
                 );
                 transList.Add(datatrans);
             }

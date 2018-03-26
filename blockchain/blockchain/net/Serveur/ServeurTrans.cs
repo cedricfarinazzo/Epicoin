@@ -29,21 +29,20 @@ namespace blockchain
             DataTransaction dataTransaction = Serialyze.UnserializeDataTransaction(Encoding.Default.GetString(data));
             Console.WriteLine("[ST] Analyse transaction");
             string PubKeySender = dataTransaction.PubKey;
-            string SenderAddress = Rsa.Decrypt(PubKeySender, dataTransaction.EncodeFromAddress);
-            string ToAddress = Rsa.Decrypt(PubKeySender, dataTransaction.ToAddress);
-            string Amount = Rsa.Decrypt(PubKeySender, dataTransaction.Amount);
-            int AmountLong;
+            string SenderAddress = dataTransaction.EncodeFromAddress; //Rsa.Decrypt(PubKeySender, dataTransaction.EncodeFromAddress);
+            string ToAddress = dataTransaction.ToAddress; // Rsa.Decrypt(PubKeySender, dataTransaction.ToAddress);
+            string Amount = dataTransaction.Amount; //Rsa.Decrypt(PubKeySender, dataTransaction.Amount);
+            int Amountint;
             try
             {
-                AmountLong = int.Parse(Amount);
+                Amountint = int.Parse(Amount);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                throw;
+                return;
             }
             
-            if (AmountLong <= 0)
+            if (Amountint <= 0)
             {
                 return;
             }
@@ -52,7 +51,7 @@ namespace blockchain
                 return;
             }
 
-            Transaction newTransaction = new Transaction(SenderAddress, ToAddress, AmountLong);
+            Transaction newTransaction = new Transaction(SenderAddress, ToAddress, Amountint);
             this.Coin.AddTransaction(newTransaction);
         }
 

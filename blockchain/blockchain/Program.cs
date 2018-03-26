@@ -21,9 +21,9 @@ namespace blockchain
 
 
         public static readonly string host = "127.0.0.1";
-        public static readonly int mineport = 4247;
-        public static readonly int transport = 4248;
-        public static readonly int getport = 4249;
+        public static readonly int mineport = 4246;
+        public static readonly int transport = 4247;
+        public static readonly int getport = 4248;
         
 
         public static void Main(string[] args)
