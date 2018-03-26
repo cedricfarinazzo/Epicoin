@@ -40,14 +40,21 @@ namespace blockchain
 
         public void GetBlock(byte[] data)
         {
-            string msgdata = Encoding.Default.GetString(data);
-            var datamine = Serialyze.UnserializeDataMine(msgdata);
-
-            this.BlockToMine = null;
-            this.difficulty = datamine.difficulty;
-            if (datamine.block != null)
+            try
             {
-                this.BlockToMine = new Block(datamine.block.Index, datamine.block.Timestamp, datamine.block.Data, datamine.block.PreviousHash);
+                string msgdata = Encoding.Default.GetString(data);
+                var datamine = Serialyze.UnserializeDataMine(msgdata);
+    
+                this.BlockToMine = null;
+                this.difficulty = datamine.difficulty;
+                if (datamine.block != null)
+                {
+                    this.BlockToMine = new Block(datamine.block.Index, datamine.block.Timestamp, datamine.block.Data, datamine.block.PreviousHash);
+                }
+            }
+            catch (Exception e)
+            {
+                return;
             }
             
             //Console.WriteLine("Block received");

@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace blockchain
 {
-    public class Client : BlockchainNetwork
+    public class ClientMine : BlockchainNetwork
     {
         protected Wallet Worker;
         protected Block BlockToMine;
@@ -15,7 +15,7 @@ namespace blockchain
 
         protected TcpClient _tcpClient;
         
-        public Client(string host, int port, Wallet worker)
+        public ClientMine(string host, int port, Wallet worker)
             : base(host, port)
         {
             this.Worker = worker;
@@ -40,14 +40,21 @@ namespace blockchain
 
         public void GetBlock(byte[] data)
         {
-            string msgdata = Encoding.Default.GetString(data);
-            var datamine = Serialyze.unserialize(msgdata);
-
-            this.BlockToMine = null;
-            this.difficulty = datamine.difficulty;
-            if (datamine.b != null)
+            try
             {
-                this.BlockToMine = new Block(datamine.b.Index, datamine.b.Timestamp, datamine.b.Data, datamine.b.PreviousHash);
+                string msgdata = Encoding.Default.GetString(data);
+                var datamine = Serialyze.UnserializeDataMine(msgdata);
+    
+                this.BlockToMine = null;
+                this.difficulty = datamine.difficulty;
+                if (datamine.block != null)
+                {
+                    this.BlockToMine = new Block(datamine.block.Index, datamine.block.Timestamp, datamine.block.Data, datamine.block.PreviousHash);
+                }
+            }
+            catch (Exception e)
+            {
+                return;
             }
             
             //Console.WriteLine("Block received");
@@ -55,8 +62,8 @@ namespace blockchain
 
         public byte[] SendBlock(long time)
         {
-            DataMine dataMine = new DataMine(this.difficulty, this.BlockToMine, this.Worker, time);
-            byte[] datasend = Encoding.Default.GetBytes(Serialyze.serialize(dataMine));
+            DataMine dataMine = new DataMine(this.difficulty, this.BlockToMine, this.Worker.Address[0], time);
+            byte[] datasend = Encoding.Default.GetBytes(Serialyze.Serialize(dataMine));
             return datasend;
         }
 
@@ -72,12 +79,12 @@ namespace blockchain
                 this.GetBlock(buffer);
                 if (this.BlockToMine != null)
                 {
-                    //Console.WriteLine("Mining ...");
+                    Console.WriteLine("[CM] Mining ...");
                     long start = DateTime.Now.Ticks;
                     this.BlockToMine.MineBlock(this.difficulty);
                     long miningtime = DateTime.Now.Ticks - start;
                     byte[] datamine = this.SendBlock(miningtime);
-                    //Console.WriteLine("Sending block mined ...");
+                    Console.WriteLine("[CM] Sending block mined ...");
                     stm.Write(datamine, 0, datamine.Length);
                 }
                 

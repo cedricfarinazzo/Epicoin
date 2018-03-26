@@ -4,18 +4,37 @@
     <e p="$USER_HOME$/.Rider2017.3/system/resharper-host/local/Transient/ReSharperHost/v11/SolutionCaches/_blockchain-mine-client.246777631.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="blockchain-mine-client" t="IncludeRecursive">
-        <e p="Block.cs" t="Include" />
-        <e p="Blockchain.cs" t="Include" />
-        <e p="BlockchainNetwork.cs" t="Include" />
-        <e p="Client.cs" t="Include" />
-        <e p="DataMine.cs" t="Include" />
-        <e p="Hash.cs" t="Include" />
+        <e p="Blockchain" t="Include">
+          <e p="Block.cs" t="Include" />
+          <e p="Blockchain.cs" t="Include" />
+          <e p="Transaction.cs" t="Include" />
+          <e p="Wallet.cs" t="Include" />
+        </e>
+        <e p="DataContainer" t="Include">
+          <e p="DataMine.cs" t="Include" />
+          <e p="DataTransaction.cs" t="Include" />
+        </e>
         <e p="Program.cs" t="Include" />
-        <e p="Serialyze.cs" t="Include" />
-        <e p="Transaction.cs" t="Include" />
-        <e p="Wallet.cs" t="Include" />
+        <e p="Tools" t="Include">
+          <e p="Hash.cs" t="Include" />
+          <e p="Rsa.cs" t="Include" />
+          <e p="Serialyze.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="blockchain-mine-client.csproj" t="IncludeRecursive" />
+        <e p="net" t="Include">
+          <e p="BlockchainNetwork.cs" t="Include" />
+          <e p="Client" t="Include">
+            <e p="ClientGet.cs" t="Include" />
+            <e p="ClientMine.cs" t="Include" />
+            <e p="ClientTrans.cs" t="Include" />
+          </e>
+          <e p="Serveur" t="Include">
+            <e p="ServeurGet.cs" t="Include" />
+            <e p="ServeurMine.cs" t="Include" />
+            <e p="ServeurTrans.cs" t="Include" />
+          </e>
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.0" t="Include">

@@ -57,30 +57,21 @@ namespace blockchain
         }
 
         public string CalculateHash()
-        {/*
-            try
-            {*/
-                string serialyzedata = "{";
-                for (int i = 0; i < this.data.Count; i++)
-                {
-                    serialyzedata += this.data[i].ToString();
-                    if (i < this.data.Count - 1)
-                    {
-                        serialyzedata += " ; ";
-                    }
-                }
-                
-                serialyzedata += "}";
-                
-                string hash = Hash.Create(this.index.ToString() + this.timestamp + serialyzedata + this.previousHash + this.nonce);
-                return hash;
-            /*}
-            catch (Exception e)
+        {
+            string serialyzedata = "{";
+            for (int i = 0; i < this.data.Count; i++)
             {
-                Console.WriteLine(e);
-                return "";
-            }*/
+                serialyzedata += this.data[i].ToString();
+                if (i < this.data.Count - 1)
+                {
+                    serialyzedata += " ; ";
+                }
+            }
             
+            serialyzedata += "}";
+            
+            string hash = Hash.Create(this.index.ToString() + this.timestamp + serialyzedata + this.previousHash + this.nonce);
+            return hash;
         }
 
         public void AddPreviousHash(string h)

@@ -7,10 +7,10 @@ namespace blockchain
 {
     public class Blockchain
     {
-        public const string Name = "blockchain";
+        public const string Name = "epicoin";
         
         protected int difficulty = 3;
-        protected List<Block> Chain;
+        protected List<Block> Chain = null;
 
         protected List<Transaction> PendingTransactions;
         
@@ -27,18 +27,21 @@ namespace blockchain
 
         public int Difficulty => difficulty;
 
-        public List<Block> Chainlist => Chain;
+        public List<Block> Chainlist
+        {
+            get => Chain;
+            set => Chain = value;
+        }
 
         public Blockchain(string addressCreator)
         {
             this.Chain = new List<Block>();
             this.PendingTransactions = new List<Transaction>();
             this.addressCreator = addressCreator;
-            this.Chain.Add(this.CreateGenesisBlock());
-            this.BlockToMines =  new List<Block>();
+            this.BlockToMines =  new List<Block>();                
         }
 
-        private Block CreateGenesisBlock()
+        public Block CreateGenesisBlock()
         {
             Block genesisBlock = new Block(0, DateTime.Now.Ticks);
             genesisBlock.AddTransaction(new Transaction(null, this.addressCreator, 42));
@@ -59,7 +62,7 @@ namespace blockchain
             return this.GetLatestBlock().Index;
         }
 
-        private void AddBlock(Block b)
+        public void AddBlock(Block b)
         {
             this.Chain.Add(b);
         }
@@ -146,7 +149,7 @@ namespace blockchain
                 
                 this.AddBlock(mineblock);
                 this.BlockToMines.RemoveAt(0);
-                this.manageDifficulty(miningtime);
+                this.ManageDifficulty(miningtime);
                 this.NextBlock();
 
 
@@ -167,7 +170,7 @@ namespace blockchain
             }
         }
 
-        private void manageDifficulty(long miningtime)
+        private void ManageDifficulty(long miningtime)
         {
             if (miningtime <= this.timebtwblock * 1000000)
             {
@@ -194,9 +197,8 @@ namespace blockchain
                 }
                 
                 this.AddBlock(b);
-                this.BlockToMines.RemoveAt(0);
-                this.manageDifficulty(miningtime);
-                this.NextBlock();
+                this.ManageDifficulty(miningtime);
+
 
 
                 if (!this.IsvalidChain())
@@ -204,7 +206,10 @@ namespace blockchain
                     this.Validate();
                     return false;
                 }
-            
+                
+                this.BlockToMines.RemoveAt(0);
+                this.NextBlock();
+                
                 Transaction reward = new Transaction(null, minerAdress, this.miningReward);
                 Console.WriteLine("[M] Block mined " + b.Index + " : " + b.Hashblock + " by " + minerAdress);
                 this.AddTransaction(reward);
