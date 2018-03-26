@@ -10,7 +10,7 @@ namespace blockchain
         public const string Name = "epicoin";
         
         protected int difficulty = 3;
-        protected List<Block> Chain;
+        protected List<Block> Chain = null;
 
         protected List<Transaction> PendingTransactions;
         
@@ -27,18 +27,21 @@ namespace blockchain
 
         public int Difficulty => difficulty;
 
-        public List<Block> Chainlist => Chain;
+        public List<Block> Chainlist
+        {
+            get => Chain;
+            set => Chain = value;
+        }
 
         public Blockchain(string addressCreator)
         {
             this.Chain = new List<Block>();
             this.PendingTransactions = new List<Transaction>();
             this.addressCreator = addressCreator;
-            this.Chain.Add(this.CreateGenesisBlock());
-            this.BlockToMines =  new List<Block>();
+            this.BlockToMines =  new List<Block>();                
         }
 
-        private Block CreateGenesisBlock()
+        public Block CreateGenesisBlock()
         {
             Block genesisBlock = new Block(0, DateTime.Now.Ticks);
             genesisBlock.AddTransaction(new Transaction(null, this.addressCreator, 42));
@@ -59,7 +62,7 @@ namespace blockchain
             return this.GetLatestBlock().Index;
         }
 
-        private void AddBlock(Block b)
+        public void AddBlock(Block b)
         {
             this.Chain.Add(b);
         }

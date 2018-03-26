@@ -26,7 +26,7 @@ namespace blockchain
 
         private byte[] GenData()
         {
-            return Encoding.Default.GetBytes(Serialyze.serialize(this.Coin));
+            return Encoding.Default.GetBytes(Serialyze.Serialize(this.Coin));
         }
 
         public void ClientManager(object o)
@@ -34,6 +34,9 @@ namespace blockchain
             TcpClient tcpClient = (TcpClient)o;
             NetworkStream clientStream = tcpClient.GetStream();
             byte[] buffer = this.GenData();
+            byte[] bufferlenght = Encoding.Default.GetBytes(buffer.Length.ToString());
+            clientStream.Write(bufferlenght, 0, bufferlenght.Length);
+            Thread.Sleep(250);
             clientStream.Write(buffer, 0, buffer.Length);
             clientStream.Flush();
             clientStream.Close();
@@ -44,7 +47,7 @@ namespace blockchain
         {
             this.ServeurChain.Start();
             Console.WriteLine("[SG] GetData Serveur started");
-            while (Program._continue)
+            while (Program._continue2)
             {
                 TcpClient client = this.ServeurChain.AcceptTcpClient();
                 Thread clientThread = new Thread(new ParameterizedThreadStart(this.ClientManager));

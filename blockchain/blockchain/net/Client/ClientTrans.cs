@@ -35,7 +35,7 @@ namespace blockchain
         public void Send()
         {
 
-            byte[] datasend = Encoding.Default.GetBytes(Serialyze.serialize(DataTrans));
+            byte[] datasend = Encoding.Default.GetBytes(Serialyze.Serialize(DataTrans));
             bool send = false;
             while (Program._continue && !send)
             {

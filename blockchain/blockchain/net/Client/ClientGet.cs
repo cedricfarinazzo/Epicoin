@@ -2,6 +2,7 @@
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 
 namespace blockchain
 {
@@ -34,18 +35,22 @@ namespace blockchain
         private void GetBlockchain(byte[] data)
         {
             string msgdata = Encoding.Default.GetString(data);
-            this.chain = Serialyze.unserializeBlockchain(msgdata);
-
+            this.chain = Serialyze.UnserializeBlockchain(msgdata);
         }
 
         public void Get()
         {
-            while (Program._continue && this.chain == null)
+            this.Reset();
+            while (Program._continue2 && this.chain == null)
             {
                 this.Init();
                 Stream stm = this._tcpClient.GetStream();
-                byte[] buffer = new byte[4096];
-                stm.Read(buffer,0,4096);
+                byte[] bufferlenght = new byte[4096];
+                stm.Read(bufferlenght,0,4096);
+                int bufferlen = int.Parse(Encoding.Default.GetString(bufferlenght));
+                Thread.Sleep(250);
+                byte[] buffer = new byte[bufferlen + 1000];
+                stm.Read(buffer, 0, bufferlen + 1000);
                 this.GetBlockchain(buffer);
                 stm.Close();
                 this._tcpClient.Close();

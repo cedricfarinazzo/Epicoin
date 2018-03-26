@@ -32,12 +32,12 @@ namespace blockchain
             if (this.Coin.BlockToMines.Count != 0)
             {
                 dataMine = new DataMine(this.Coin.Difficulty, this.Coin.BlockToMines[0], null);
-                datasend = Encoding.Default.GetBytes(Serialyze.serialize(dataMine));
+                datasend = Encoding.Default.GetBytes(Serialyze.Serialize(dataMine));
             }
             else
             {
                 dataMine = new DataMine(this.Coin.Difficulty, null, null);
-                datasend = Encoding.Default.GetBytes(Serialyze.serialize(dataMine));
+                datasend = Encoding.Default.GetBytes(Serialyze.Serialize(dataMine));
             }
             
             return datasend;
@@ -46,7 +46,7 @@ namespace blockchain
 
         private void AnalyzeMine(byte[] data)
         {
-            DataMine dataMine = Serialyze.unserializeDataMine(Encoding.Default.GetString(data));
+            DataMine dataMine = Serialyze.UnserializeDataMine(Encoding.Default.GetString(data));
             Console.WriteLine("[SM] Analyse bloc mined");
             if (this.Coin.BlockToMines[0].Index != dataMine.block.Index)
             {

@@ -11,6 +11,8 @@ namespace blockchain
         public static Blockchain Coin;
 
         public static bool _continue = true;
+        public static bool _continue2 = true;
+            
 
         private static Wallet creator;
         private static Wallet alice;
@@ -19,9 +21,9 @@ namespace blockchain
 
 
         public static readonly string host = "127.0.0.1";
-        public static readonly int mineport = 4240;
-        public static readonly int transport = 4241;
-        public static readonly int getport = 4242;
+        public static readonly int mineport = 4247;
+        public static readonly int transport = 4248;
+        public static readonly int getport = 4249;
         
 
         public static void Main(string[] args)
@@ -42,11 +44,10 @@ namespace blockchain
             
             th0.Start();
             Thread.Sleep(100);
-            th2.Start();            
+            th2.Start(); 
             
-
-            
-            
+            Thread st = new Thread(ServeurTrans);
+            st.Start();
             Thread sm = new Thread(ServeurMine);
             sm.Start();
             Thread sd = new Thread(ServeurData);
@@ -54,26 +55,39 @@ namespace blockchain
             Thread.Sleep(50);
             Thread c = new Thread(ClientMine);
             c.Start(ced);
-            Thread.Sleep(20000);
+            Thread.Sleep(30000);
 
             Program._continue = false;
             
             Thread.Sleep(1000);
             
             Verify();
+            
+            Thread.Sleep(1000);
+            Program._continue2 = false;
         }
 
         public static void Init()
         {
             Coin = new Blockchain(creator.Address[0]);
+            Coin.AddBlock(Coin.CreateGenesisBlock());
         }
 
         // local 
         
         public static void Evolve()
         {
-            while (_continue)
+            while (Program._continue)
             {
+                Transaction(creator, ced.Address[0], 7);
+                Transaction(creator, ced.Address[0], 1);
+                Transaction(creator, bob.Address[0], 3);
+                Transaction(creator, alice.Address[0], 10);
+                Transaction(bob, alice.Address[0], 2);
+                Transaction(alice, bob.Address[0], 3);
+                Transaction(bob, alice.Address[0], 1);
+                Transaction(creator, ced.Address[0], 1);
+                /*
                 Coin.AddTransaction(new Transaction(creator.Address[0], ced.Address[0], 7));
                 Coin.AddTransaction(new Transaction(creator.Address[0], ced.Address[0], 1));
                 Coin.AddTransaction(new Transaction(creator.Address[0], bob.Address[0], 3));
@@ -82,6 +96,7 @@ namespace blockchain
                 Coin.AddTransaction(new Transaction(alice.Address[0], bob.Address[0], 3));
                 Coin.AddTransaction(new Transaction(bob.Address[0], alice.Address[0], 1));
                 Coin.AddTransaction(new Transaction(creator.Address[0], ced.Address[0], 1));
+                */
                 Thread.Sleep(2500);
             }
             

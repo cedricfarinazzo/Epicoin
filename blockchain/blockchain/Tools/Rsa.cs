@@ -53,6 +53,6 @@ namespace blockchain
             byte[] bytesPlainTextData = csp.Decrypt(bytesCypherText, false);
             string plainTextData = System.Text.Encoding.Unicode.GetString(bytesPlainTextData);
             return plainTextData;
-        }
+}
     }
 }

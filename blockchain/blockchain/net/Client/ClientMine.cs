@@ -41,7 +41,7 @@ namespace blockchain
         public void GetBlock(byte[] data)
         {
             string msgdata = Encoding.Default.GetString(data);
-            var datamine = Serialyze.unserializeDataMine(msgdata);
+            var datamine = Serialyze.UnserializeDataMine(msgdata);
 
             this.BlockToMine = null;
             this.difficulty = datamine.difficulty;
@@ -56,7 +56,7 @@ namespace blockchain
         public byte[] SendBlock(long time)
         {
             DataMine dataMine = new DataMine(this.difficulty, this.BlockToMine, this.Worker.Address[0], time);
-            byte[] datasend = Encoding.Default.GetBytes(Serialyze.serialize(dataMine));
+            byte[] datasend = Encoding.Default.GetBytes(Serialyze.Serialize(dataMine));
             return datasend;
         }
 
@@ -72,12 +72,12 @@ namespace blockchain
                 this.GetBlock(buffer);
                 if (this.BlockToMine != null)
                 {
-                    Console.WriteLine("Mining ...");
+                    Console.WriteLine("[CM] Mining ...");
                     long start = DateTime.Now.Ticks;
                     this.BlockToMine.MineBlock(this.difficulty);
                     long miningtime = DateTime.Now.Ticks - start;
                     byte[] datamine = this.SendBlock(miningtime);
-                    Console.WriteLine("Sending block mined ...");
+                    Console.WriteLine("[CM] Sending block mined ...");
                     stm.Write(datamine, 0, datamine.Length);
                 }
                 

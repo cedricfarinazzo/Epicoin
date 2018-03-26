@@ -39,6 +39,10 @@ namespace blockchain
             ClientGet cget = new ClientGet(Program.host, Program.getport);
             cget.Get();
             Blockchain chain = cget.chain;
+            if (chain == null)
+            {
+                return;
+            }
             for (int i = 0; i < this.Address.Count; i++)
             {
                 this.Amount.Add(chain.GetBalanceOfAddress(this.Address[i]));
@@ -47,6 +51,7 @@ namespace blockchain
 
         public int TotalAmount()
         {
+            this.GetAmount();
             int amount = 0;
             foreach (var amountAddress in this.Amount)
             {
