@@ -76,7 +76,7 @@ namespace blockchain
         private void Listen()
         {
             this.ServeurChain.Start();
-            //Console.WriteLine("[ST] Transaction Serveur started");
+            Console.WriteLine("[ST] Transaction Serveur started");
             while (Epicoin.Continue)
             {
                 TcpClient client = this.ServeurChain.AcceptTcpClient();
@@ -84,7 +84,7 @@ namespace blockchain
                 clientThread.Start(client);
             }
             this.ServeurChain.Stop();
-            //Console.WriteLine("[ST] Transaction Serveur closed");
+            Console.WriteLine("[ST] Transaction Serveur closed");
         }
     }
 }

@@ -14,3 +14,9 @@
 /home/lecodeur/Documents/blockchain/blockchain/blockchain/blockchain/bin/Debug/epicoin.exe
 /home/lecodeur/Documents/blockchain/blockchain/blockchain/blockchain/obj/Debug/epicoin.exe
 /home/lecodeur/Documents/blockchain/blockchain/blockchain/blockchain/obj/Debug/epicoin.pdb
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Debug/.NETFramework,Version=v4.7.1.AssemblyAttribute.cs
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Debug/epicoin.pdb
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Debug/epicoin.exe
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Debug/epicoin.exe
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Debug/epicoin.pdb
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Debug/Newtonsoft.Json.dll

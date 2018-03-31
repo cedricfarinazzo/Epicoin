@@ -8,6 +8,13 @@ Ainsi elle permet de réaliser des transactions sécurisées.
 ## Comment l'utiliser ?
 
 - Télécharger l'archive epicoin.zip dans l'onglet Release et dézipper l'archive
+
+### Windows
+
+- Lancer l'éxecutable epicoin.exe dans le dossier Epicoin
+
+### Linux
+
 - ouvrer un terminal dans le dossier Epicoin
 - taper la commande : 
 ```
@@ -21,14 +28,21 @@ chmod +x epicoin.exe
 ## Comment obtenir des epicoins ?
 
 Vous avez 2 possibilités de gagner des epicoins :
-- Vous pouvez devenir mineur et avoir une chance d'en gagner tout en contribuant au réseau
-- Vous pouvez demander à un ami de vous envoyer des epicoins
+- Vous pouvez devenir mineur et avoir une chance d'en gagner tout en contribuant au réseau.
+- Vous pouvez demander à un ami de vous envoyer des epicoins.
 
 ## Le fichier wallet.epi ?
 
 Ce fichier contient vos informations tels que votre addresse epicoin.
-Il est important de ne pas supprimer ou modifier ce fichier au risque de perdre vos epicoins
+Il est important de ne pas supprimer ou modifier ce fichier au risque de perdre vos epicoins.
 
 ## Le fichier blockchain.epi ?
 
 Il contient la totalité de la blockchain actuelle.
+
+## Ports utilisés
+
+- TCP 4246
+- TCP 4247
+- TCP 4248
+
