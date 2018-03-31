@@ -7,7 +7,7 @@ namespace blockchain
 {
     public class Blockchain
     {
-        public const string Name = "epicoin";
+        public static readonly string Name = "epicoin";
         
         protected int difficulty = 3;
         protected List<Block> Chain = null;
@@ -48,7 +48,7 @@ namespace blockchain
             genesisBlock.AddTransaction(new Transaction(null, this.addressCreator, 500));
             genesisBlock.AddPreviousHash("");
             genesisBlock.MineBlock(this.difficulty);
-            Console.WriteLine("[B] Add genesis block");
+            //Console.WriteLine("[B] Add genesis block");
             return genesisBlock;
         }
 
@@ -109,7 +109,7 @@ namespace blockchain
         {
             if (this.PrepareBlockToMine())
             {
-                Console.WriteLine("[C] Creating Block " + this.BlockToMine.Index + " with difficulty " + this.Difficulty);
+                //Console.WriteLine("[C] Creating Block " + this.BlockToMine.Index + " with difficulty " + this.Difficulty);
                 this.BlockToMine = null;
             }
         }
@@ -120,7 +120,7 @@ namespace blockchain
             {
                 this.BlockToMines[0].PreviousHash = this.GetLatestBlock().Hashblock;
                 this.BlockToMines[0].Timestamp = DateTime.Now.Ticks;
-                Console.WriteLine("[NB] Next to block " + this.BlockToMines[0].Index + " with difficulty " + this.Difficulty);
+                //Console.WriteLine("[NB] Next to block " + this.BlockToMines[0].Index + " with difficulty " + this.Difficulty);
             }
         }
         
@@ -160,7 +160,7 @@ namespace blockchain
                 }
             
                 Transaction reward = new Transaction(null, minerAdress, this.miningReward);
-                Console.WriteLine("[M] Block mined " + mineblock.Index + " : " + mineblock.Hashblock + " by " + minerAdress);
+                //Console.WriteLine("[M] Block mined " + mineblock.Index + " : " + mineblock.Hashblock + " by " + minerAdress);
                 this.AddTransaction(reward);
                 return true;
             }
@@ -211,7 +211,7 @@ namespace blockchain
                 this.NextBlock();
                 
                 Transaction reward = new Transaction(null, minerAdress, this.miningReward);
-                Console.WriteLine("[M] Block mined " + b.Index + " : " + b.Hashblock + " by " + minerAdress);
+                //Console.WriteLine("[M] Block mined " + b.Index + " : " + b.Hashblock + " by " + minerAdress);
                 this.AddTransaction(reward);
                 return true;
             }
@@ -225,7 +225,7 @@ namespace blockchain
         {
             try
             {
-                Console.Write("[T] transaction: " + (t.FromAddress ?? Blockchain.Name) + " - " + t.ToAddress + " : " + t.Amount);
+                //Console.Write("[T] transaction: " + (t.FromAddress ?? Blockchain.Name) + " - " + t.ToAddress + " : " + t.Amount);
                 int amount = this.GetBalanceOfAddress(t.FromAddress);
                 foreach (var pendingt in this.PendingTransactions)
                 {
@@ -249,11 +249,11 @@ namespace blockchain
                 if (amount - t.Amount >= 0 || t.FromAddress == null)
                 {
                     this.PendingTransactions.Add(t);
-                    Console.Write(" : accepted\n");
+                    //Console.Write(" : accepted\n");
                     return true;
                 }
                 
-                Console.Write(" : rejeted\n");
+                //Console.Write(" : rejeted\n");
                 return false;
             }
             catch (Exception e)

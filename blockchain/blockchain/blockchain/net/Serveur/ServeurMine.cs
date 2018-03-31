@@ -99,7 +99,7 @@ namespace blockchain
 
             byte[] bufferblock = new byte[4096];
             int bytesRead = 0;
-            while (Program._continue && tcpClient.Connected)
+            while (Epicoin.Continue && tcpClient.Connected)
             {
                 bytesRead = 0;
 
@@ -132,7 +132,7 @@ namespace blockchain
         {
             this.ServeurChain.Start();
             Console.WriteLine("[SM] Miner Serveur started");
-            while (Program._continue)
+            while (Epicoin.Continue)
             {
                 TcpClient client = this.ServeurChain.AcceptTcpClient();
                 Thread clientThread = new Thread(new ParameterizedThreadStart(this.ClientManager));

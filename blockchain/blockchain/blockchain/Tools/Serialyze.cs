@@ -34,5 +34,10 @@ namespace blockchain
         {
             return JsonConvert.DeserializeObject<Block>(s);
         }
+        
+        public static Wallet UnserializeWallet(string s)
+        {
+            return JsonConvert.DeserializeObject<Wallet>(s);
+        }
     }
 }

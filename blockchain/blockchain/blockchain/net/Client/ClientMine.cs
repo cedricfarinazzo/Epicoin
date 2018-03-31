@@ -69,7 +69,7 @@ namespace blockchain
 
         public void Work()
         {
-            while (Program._continue)
+            while (Epicoin.Continue)
             {
                 this.BlockToMine = null;
                 this.Init();
@@ -83,6 +83,8 @@ namespace blockchain
                     long start = DateTime.Now.Ticks;
                     this.BlockToMine.MineBlock(this.difficulty);
                     long miningtime = DateTime.Now.Ticks - start;
+                    Console.WriteLine("[C] Creating Block " + this.BlockToMine.Index + " : " + this.BlockToMine.Hashblock
+                                      + " : difficulty " + this.difficulty);
                     byte[] datamine = this.SendBlock(miningtime);
                     Console.WriteLine("[CM] Sending block mined ...");
                     stm.Write(datamine, 0, datamine.Length);

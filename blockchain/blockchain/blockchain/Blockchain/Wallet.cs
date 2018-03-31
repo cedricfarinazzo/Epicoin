@@ -36,7 +36,7 @@ namespace blockchain
         public void GetAmount()
         {
             this.Amount = new List<int>();
-            ClientGet cget = new ClientGet(Program.host, Program.getport);
+            ClientGet cget = new ClientGet(Epicoin.host, Epicoin.getport);
             cget.Get();
             Blockchain chain = cget.chain;
             if (chain == null)
@@ -98,6 +98,12 @@ namespace blockchain
             }
 
             return transList;
+        }
+
+        public string Export()
+        {
+            string wallet = Serialyze.Serialize(this);
+            return wallet;
         }
     }
 }

@@ -37,7 +37,7 @@ namespace blockchain
 
             byte[] datasend = Encoding.Default.GetBytes(Serialyze.Serialize(DataTrans));
             bool send = false;
-            while (Program._continue && !send)
+            while (Epicoin.Continue && !send)
             {
                 this.Init();
                 Stream stm = this._tcpClient.GetStream();

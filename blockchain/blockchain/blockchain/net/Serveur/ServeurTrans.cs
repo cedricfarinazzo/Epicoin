@@ -77,7 +77,7 @@ namespace blockchain
         {
             this.ServeurChain.Start();
             Console.WriteLine("[ST] Transaction Serveur started");
-            while (Program._continue)
+            while (Epicoin.Continue)
             {
                 TcpClient client = this.ServeurChain.AcceptTcpClient();
                 Thread clientThread = new Thread(new ParameterizedThreadStart(this.ClientManager));

@@ -46,15 +46,15 @@ namespace blockchain
         private void Listen()
         {
             this.ServeurChain.Start();
-            Console.WriteLine("[SG] GetData Serveur started");
-            while (Program._continue2)
+            //Console.WriteLine("[SG] GetData Serveur started");
+            while (Epicoin.Continue)
             {
                 TcpClient client = this.ServeurChain.AcceptTcpClient();
                 Thread clientThread = new Thread(new ParameterizedThreadStart(this.ClientManager));
                 clientThread.Start(client);
             }
             this.ServeurChain.Stop();
-            Console.WriteLine("[SG] GetData Serveur closed");
+            //Console.WriteLine("[SG] GetData Serveur closed");
         }
     }
 }

@@ -4,3 +4,9 @@
 /home/lecodeur/Documents/blockchain2/blockchain/blockchain/blockchain/obj/Release/blockchain.exe
 /home/lecodeur/Documents/blockchain2/blockchain/blockchain/blockchain/obj/Release/blockchain.pdb
 /home/lecodeur/Documents/blockchain2/blockchain/blockchain/blockchain/bin/Release/Newtonsoft.Json.dll
+/home/lecodeur/Documents/blockchain/blockchain/blockchain/blockchain/obj/Release/.NETFramework,Version=v4.7.1.AssemblyAttribute.cs
+/home/lecodeur/Documents/blockchain/blockchain/blockchain/blockchain/bin/Release/blockchain.pdb
+/home/lecodeur/Documents/blockchain/blockchain/blockchain/blockchain/bin/Release/blockchain.exe
+/home/lecodeur/Documents/blockchain/blockchain/blockchain/blockchain/obj/Release/blockchain.exe
+/home/lecodeur/Documents/blockchain/blockchain/blockchain/blockchain/obj/Release/blockchain.pdb
+/home/lecodeur/Documents/blockchain/blockchain/blockchain/blockchain/bin/Release/Newtonsoft.Json.dll

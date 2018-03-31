@@ -41,7 +41,7 @@ namespace blockchain
         public void Get()
         {
             this.Reset();
-            while (Program._continue2 && this.chain == null)
+            while (Epicoin.Continue && this.chain == null)
             {
                 this.Init();
                 Stream stm = this._tcpClient.GetStream();
