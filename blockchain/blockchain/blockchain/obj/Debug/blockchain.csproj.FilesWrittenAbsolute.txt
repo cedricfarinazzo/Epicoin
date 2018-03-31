@@ -1,0 +1,6 @@
+/home/lecodeur/Documents/blockchain2/blockchain/blockchain/blockchain/obj/Debug/.NETFramework,Version=v4.7.1.AssemblyAttribute.cs
+/home/lecodeur/Documents/blockchain2/blockchain/blockchain/blockchain/bin/Debug/blockchain.pdb
+/home/lecodeur/Documents/blockchain2/blockchain/blockchain/blockchain/bin/Debug/blockchain.exe
+/home/lecodeur/Documents/blockchain2/blockchain/blockchain/blockchain/obj/Debug/blockchain.exe
+/home/lecodeur/Documents/blockchain2/blockchain/blockchain/blockchain/obj/Debug/blockchain.pdb
+/home/lecodeur/Documents/blockchain2/blockchain/blockchain/blockchain/bin/Debug/Newtonsoft.Json.dll

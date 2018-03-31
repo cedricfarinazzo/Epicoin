@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51968f8f-c6c7-46eb-b483-94dd5e7ef2d3" name="Default" comment="" />
+    <list default="true" id="92a676f2-8f29-4dc4-810c-7b4d7b01a71f" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,49 +10,39 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blockchain-mine-client/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-              <folding>
-                <marker date="1522101264645" expanded="false" signature="6:139" ph="..." />
-                <marker date="1522101264645" expanded="true" signature="161:1815" ph="{...}" />
-                <marker date="1522101264645" expanded="true" signature="188:1813" ph="{...}" />
-                <marker date="1522101264645" expanded="true" signature="600:862" ph="{...}" />
-                <marker date="1522101264645" expanded="true" signature="944:1088" ph="{...}" />
-                <marker date="1522101264645" expanded="true" signature="1135:1285" ph="{...}" />
-                <marker date="1522101264645" expanded="true" signature="1348:1496" ph="{...}" />
-                <marker date="1522101264645" expanded="true" signature="1581:1807" ph="{...}" />
-                <marker date="1522101264645" expanded="true" signature="1725:1797" ph="{...}" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientMine.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/blockchain-mine-client/net/Client/ClientMine.cs">
+      <file leaf-file-name="Wallet.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/blockchain-mine-client/Blockchain/Wallet.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="86" column="108" lean-forward="false" selection-start-line="86" selection-start-column="108" selection-end-line="86" selection-end-column="108" />
+            <state relative-caret-position="-102">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1522102179286" expanded="false" signature="6:117" ph="..." />
-                <marker date="1522102179286" expanded="true" signature="139:3068" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="189:3066" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="444:498" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="527:934" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="631:871" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="665:768" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="804:840" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="977:1655" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="1003:1498" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="1300:1484" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="1530:1582" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="1699:1947" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="1975:3060" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="2023:3037" ph="{...}" />
-                <marker date="1522102179286" expanded="true" signature="2339:2936" ph="{...}" />
+                <marker date="1522098729866" expanded="false" signature="6:86" ph="..." />
+                <marker date="1522098729866" expanded="true" signature="108:2901" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="134:2899" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="358:625" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="662:857" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="890:1340" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="1116:1168" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="1225:1330" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="1374:1604" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="1497:1566" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="1688:2893" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="1848:1910" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="1991:2852" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="2081:2189" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="2210:2340" ph="{...}" />
+                <marker date="1522098729866" expanded="true" signature="2442:2668" ph="/* Rsa.Encrypt(this.PrivKey[i], this.Address[i]), ... */" />
               </folding>
             </state>
           </provider>
@@ -62,21 +52,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/blockchain-mine-client/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain-mine-client/net/Serveur/ServeurGet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain-mine-client/net/Client/ClientGet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain-mine-client/net/Client/ClientMine.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/blockchain-mine-client/Block.cs" />
-        <option value="$PROJECT_DIR$/blockchain-mine-client/Client.cs" />
-        <option value="$PROJECT_DIR$/blockchain-mine-client/net/Client/ClientGet.cs" />
-        <option value="$PROJECT_DIR$/blockchain-mine-client/net/Serveur/ServeurGet.cs" />
-        <option value="$PROJECT_DIR$/blockchain-mine-client/Program.cs" />
-        <option value="$PROJECT_DIR$/blockchain-mine-client/net/Client/ClientMine.cs" />
-      </list>
-    </option>
+    <setting file="file://$PROJECT_DIR$/blockchain-mine-client/Blockchain/Block.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain-mine-client/Blockchain/Wallet.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -117,44 +94,6 @@
               <item name="blockchain-mine-client (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="blockchain-mine-client" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="blockchain-mine-client (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="blockchain-mine-client" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Blockchain" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="blockchain-mine-client (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="blockchain-mine-client" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="DataContainer" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="blockchain-mine-client (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="blockchain-mine-client" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="net" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="blockchain-mine-client (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="blockchain-mine-client" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="net" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Client" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="blockchain-mine-client (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="blockchain-mine-client" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="net" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Serveur" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="blockchain-mine-client (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="blockchain-mine-client" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Tools" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -165,6 +104,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/blockchain-mine-client/Tools" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -180,23 +120,19 @@
   </component>
   <component name="RunManager">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/blockchain-mine-client/bin/Debug/netcoreapp2.0/blockchain-mine-client.dll" />
+      <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/blockchain-mine-client" />
+      <option name="WORKING_DIRECTORY" value="" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <envs>
-        <env name="ASPNETCORE_ENVIRONMENT" value="Development" />
-        <env name="ASPNETCORE_URLS" value="http://localhost:5000" />
-      </envs>
+      <envs />
       <option name="USE_MONO" value="0" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/blockchain-mine-client/blockchain-mine-client.csproj" />
+      <option name="PROJECT_PATH" value="" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
-      <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v2.0" />
-      <browser url="http://localhost:5000" />
+      <option name="PROJECT_KIND" value="None" />
+      <option name="PROJECT_TFM" value="" />
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -207,19 +143,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="51968f8f-c6c7-46eb-b483-94dd5e7ef2d3" name="Default" comment="" />
-      <created>1521841682507</created>
+      <changelist id="92a676f2-8f29-4dc4-810c-7b4d7b01a71f" name="Default" comment="" />
+      <created>1522500909145</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1521841682507</updated>
-      <workItem from="1521841690163" duration="2836000" />
-      <workItem from="1522100895322" duration="665000" />
-      <workItem from="1522101908334" duration="288000" />
+      <updated>1522500909145</updated>
+      <workItem from="1522500913637" duration="247000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3789000" />
+    <option name="totallyTimeSpent" value="247000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -235,26 +169,26 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43640125" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988626" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16805845" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32988626" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.124739036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -265,49 +199,36 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/blockchain-mine-client/Program.cs">
+    <entry file="file://$PROJECT_DIR$/blockchain-mine-client/Blockchain/Block.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="0">
+          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
           <folding>
-            <marker date="1522101264645" expanded="false" signature="6:139" ph="..." />
-            <marker date="1522101264645" expanded="true" signature="161:1815" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="188:1813" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="600:862" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="944:1088" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="1135:1285" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="1348:1496" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="1581:1807" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="1725:1797" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain-mine-client/net/Client/ClientMine.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-          <folding>
-            <marker date="1522102179286" expanded="false" signature="6:117" ph="..." />
-            <marker date="1522102179286" expanded="true" signature="139:3068" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="189:3066" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="444:498" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="527:934" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="631:871" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="665:768" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="804:840" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="977:1655" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="1003:1498" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="1300:1484" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="1530:1582" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="1699:1947" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="1975:3060" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="2023:3037" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="2339:2936" ph="{...}" />
+            <marker date="1522098729866" expanded="false" signature="6:122" ph="..." />
+            <marker date="1522098729866" expanded="true" signature="144:2786" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="169:2784" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="461:541" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="572:660" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="699:777" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="813:907" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="940:1028" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="1135:1344" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="1383:1921" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="1487:1698" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="1604:1684" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="1968:2023" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="2070:2491" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="2209:2268" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="2329:2432" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="2542:2674" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="2602:2664" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="2704:2778" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -315,77 +236,32 @@
     <entry file="file://$PROJECT_DIR$/blockchain-mine-client/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blockchain-mine-client/Blockchain/Wallet.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1522101264645" expanded="false" signature="6:139" ph="..." />
-            <marker date="1522101264645" expanded="true" signature="161:1815" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="188:1813" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="600:862" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="944:1088" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="1135:1285" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="1348:1496" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="1581:1807" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="1725:1797" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain-mine-client/Serialyze.cs" />
-    <entry file="file://$PROJECT_DIR$/blockchain-mine-client/Block.cs" />
-    <entry file="file://$PROJECT_DIR$/blockchain-mine-client/Client.cs" />
-    <entry file="file://$PROJECT_DIR$/blockchain-mine-client/net/Serveur/ServeurGet.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="37" column="30" lean-forward="true" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain-mine-client/net/Client/ClientGet.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain-mine-client/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding>
-            <marker date="1522101264645" expanded="false" signature="6:139" ph="..." />
-            <marker date="1522101264645" expanded="true" signature="161:1815" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="188:1813" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="600:862" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="944:1088" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="1135:1285" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="1348:1496" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="1581:1807" ph="{...}" />
-            <marker date="1522101264645" expanded="true" signature="1725:1797" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain-mine-client/net/Client/ClientMine.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="86" column="108" lean-forward="false" selection-start-line="86" selection-start-column="108" selection-end-line="86" selection-end-column="108" />
-          <folding>
-            <marker date="1522102179286" expanded="false" signature="6:117" ph="..." />
-            <marker date="1522102179286" expanded="true" signature="139:3068" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="189:3066" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="444:498" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="527:934" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="631:871" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="665:768" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="804:840" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="977:1655" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="1003:1498" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="1300:1484" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="1530:1582" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="1699:1947" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="1975:3060" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="2023:3037" ph="{...}" />
-            <marker date="1522102179286" expanded="true" signature="2339:2936" ph="{...}" />
+            <marker date="1522098729866" expanded="false" signature="6:86" ph="..." />
+            <marker date="1522098729866" expanded="true" signature="108:2901" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="134:2899" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="358:625" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="662:857" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="890:1340" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="1116:1168" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="1225:1330" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="1374:1604" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="1497:1566" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="1688:2893" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="1848:1910" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="1991:2852" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="2081:2189" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="2210:2340" ph="{...}" />
+            <marker date="1522098729866" expanded="true" signature="2442:2668" ph="/* Rsa.Encrypt(this.PrivKey[i], this.Address[i]), ... */" />
           </folding>
         </state>
       </provider>
