@@ -47,7 +47,7 @@ namespace blockchain
         private void AnalyzeMine(byte[] data)
         {
             DataMine dataMine = Serialyze.UnserializeDataMine(Encoding.Default.GetString(data));
-            Console.WriteLine("[SM] Analyse bloc mined");
+            //Console.WriteLine("[SM] Analyse bloc mined");
             if (this.Coin.BlockToMines[0].Index != dataMine.block.Index)
             {
                 return;

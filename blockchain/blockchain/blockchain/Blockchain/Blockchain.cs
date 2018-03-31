@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Runtime.CompilerServices;
+using System.Runtime.Hosting;
 
 namespace blockchain
 {
@@ -91,7 +92,7 @@ namespace blockchain
             
             this.BlockToMine = new Block(index + 1, DateTime.Now.Ticks);
             this.SetBlock(this.BlockToMine);
-            while (!this.BlockToMine.IsFull())
+            while (!this.BlockToMine.IsFull() && Epicoin.Continue)
             {
                 if (this.PendingTransactions.Count != 0)
                 {

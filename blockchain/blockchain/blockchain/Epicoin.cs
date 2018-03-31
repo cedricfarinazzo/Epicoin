@@ -20,7 +20,7 @@ namespace blockchain
         public static readonly string walletfile = "wallet.epi";
         public static readonly string blockchainfile = "blockchain.epi";
 
-        public static Wallet Wallet;
+        public static Wallet Wallet = null;
         
         public static void Serveur()
         {
@@ -29,7 +29,7 @@ namespace blockchain
             Console.Write("Your name : ");
             string name = ReadLine();
             CreateWallet(name);
-            Console.Write("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
+            Console.WriteLine("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
             
             
             Console.WriteLine("Init Blockchain ...");
@@ -48,8 +48,9 @@ namespace blockchain
             data.Start();
             mine.Start();
             transaction.Start();
-            
+            Thread.Sleep(1000);
             Console.WriteLine("\nAll serveur online\n\n\n");
+            
             
             while (Continue)
             {
@@ -97,13 +98,14 @@ namespace blockchain
                 else if (action == "5")
                 {
                     Console.WriteLine("     Wallet : " + Wallet.Name);
-                    Console.Write("Your epicoin address : " + Wallet.Address[0]);
+                    Console.WriteLine("Your epicoin address : " + Wallet.Address[0]);
                     Console.WriteLine("Epicoin amount : " + Wallet.TotalAmount());
                 }
                 else if (action == "6")
                 {
                     Console.Write("ToAddress : ");
                     string ToAddress = ReadLine();
+                    Console.Write("\nAmount : ");
                     string Samount = ReadLine();
                     int amount = 0;
                     try
@@ -144,7 +146,7 @@ namespace blockchain
             Console.Write("Your name : ");
             string name = ReadLine();
             CreateWallet(name);
-            Console.Write("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
+            Console.WriteLine("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
             
             
             Console.WriteLine("\n\n Enter to stop miner ...\n");
@@ -155,7 +157,6 @@ namespace blockchain
             worker.Start(Wallet);
 
             ReadLine();
-            ExportWallet();
             
             Continue = false;
             
@@ -169,7 +170,7 @@ namespace blockchain
             Console.Write("Your name : ");
             string name = ReadLine();
             CreateWallet(name);
-            Console.Write("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
+            Console.WriteLine("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
 
             while (Continue)
             {
@@ -211,13 +212,14 @@ namespace blockchain
                 else if (action == "4")
                 {
                     Console.WriteLine("     Wallet : " + Wallet.Name);
-                    Console.Write("Your epicoin address : " + Wallet.Address[0]);
+                    Console.WriteLine("Your epicoin address : " + Wallet.Address[0]);
                     Console.WriteLine("Epicoin amount : " + Wallet.TotalAmount());
                 }
                 else if (action == "5")
                 {
                     Console.Write("ToAddress : ");
                     string ToAddress = ReadLine();
+                    Console.Write("\nAmount : ");
                     string Samount = ReadLine();
                     int amount = 0;
                     try
@@ -342,8 +344,6 @@ namespace blockchain
                 Wallet w = Serialyze.UnserializeWallet(wa);
                 Wallet = w;
             }
-
-            Wallet = null;
         }
 
         public static void ExportChain()
