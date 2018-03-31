@@ -8,7 +8,7 @@ Ainsi elle permet de réaliser des transactions sécurisées.
 ## Comment l'utiliser ?
 
 - Télécharger l'archive epicoin.zip dans l'onglet Release et dézipper l'archive
-- ouvrer un terminal dans le dossier Release
+- ouvrer un terminal dans le dossier Epicoin
 - taper la commande : 
 ```
 chmod +x bepicoin.exe
