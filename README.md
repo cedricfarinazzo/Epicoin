@@ -10,13 +10,13 @@ Ainsi elle permet de réaliser des transactions sécurisées.
 - Télécharger l'archive epicoin.zip dans l'onglet Release et dézipper l'archive
 - ouvrer un terminal dans le dossier Release
 - taper la commande : 
-'''
+```
 chmod +x bepicoin.exe
-'''
+```
 - enfin pour éxecuter le programme
-'''
+```
 ./epicoin.exe
-'''
+```
 
 ## Comment obtenir des epicoins ?
 
