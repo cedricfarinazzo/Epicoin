@@ -1,6 +1,0 @@
-/home/lecodeur/Documents/blockchain2/blockchain-serveur/blockchain-serveur/blockchain-serveur/obj/Release/.NETFramework,Version=v4.7.1.AssemblyAttribute.cs
-/home/lecodeur/Documents/blockchain2/blockchain-serveur/blockchain-serveur/blockchain-serveur/bin/Release/blockchain_serveur.pdb
-/home/lecodeur/Documents/blockchain2/blockchain-serveur/blockchain-serveur/blockchain-serveur/bin/Release/blockchain_serveur.exe
-/home/lecodeur/Documents/blockchain2/blockchain-serveur/blockchain-serveur/blockchain-serveur/obj/Release/blockchain_serveur.exe
-/home/lecodeur/Documents/blockchain2/blockchain-serveur/blockchain-serveur/blockchain-serveur/obj/Release/blockchain_serveur.pdb
-/home/lecodeur/Documents/blockchain2/blockchain-serveur/blockchain-serveur/blockchain-serveur/bin/Release/Newtonsoft.Json.dll

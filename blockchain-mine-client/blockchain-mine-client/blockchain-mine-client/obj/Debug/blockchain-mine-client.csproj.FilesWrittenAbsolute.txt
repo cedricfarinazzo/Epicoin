@@ -1,6 +1,0 @@
-/home/lecodeur/Documents/blockchain2/blockchain-mine-client/blockchain-mine-client/blockchain-mine-client/obj/Debug/.NETFramework,Version=v4.7.1.AssemblyAttribute.cs
-/home/lecodeur/Documents/blockchain2/blockchain-mine-client/blockchain-mine-client/blockchain-mine-client/bin/Debug/blockchain_mine_client.pdb
-/home/lecodeur/Documents/blockchain2/blockchain-mine-client/blockchain-mine-client/blockchain-mine-client/bin/Debug/blockchain_mine_client.exe
-/home/lecodeur/Documents/blockchain2/blockchain-mine-client/blockchain-mine-client/blockchain-mine-client/obj/Debug/blockchain_mine_client.exe
-/home/lecodeur/Documents/blockchain2/blockchain-mine-client/blockchain-mine-client/blockchain-mine-client/obj/Debug/blockchain_mine_client.pdb
-/home/lecodeur/Documents/blockchain2/blockchain-mine-client/blockchain-mine-client/blockchain-mine-client/bin/Debug/Newtonsoft.Json.dll
