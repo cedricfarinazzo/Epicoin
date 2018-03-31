@@ -11,7 +11,7 @@ Ainsi elle permet de réaliser des transactions sécurisées.
 - ouvrer un terminal dans le dossier Epicoin
 - taper la commande : 
 ```
-chmod +x bepicoin.exe
+chmod +x epicoin.exe
 ```
 - enfin pour éxecuter le programme
 ```
