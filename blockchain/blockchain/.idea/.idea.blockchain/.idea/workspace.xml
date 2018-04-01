@@ -2,19 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e89f83f8-e2ad-46e4-80b9-532d77224edd" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/blockchain/Readme/CUDA.NET.Readme.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/blockchain/Readme/CUDAfy-License.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/blockchain/Readme/ILSpy-license.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/blockchain/Readme/README.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/blockchain/Readme/example_source_code.cs.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/blockchain/Tools/CudafyViewer.exe" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/blockchain/Tools/cudafycl.exe" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/blockchain/Tools/place_these_executables_in_same_folder_as_Cudafy.NET.dll_" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/packages/CUDAfy.NET.1.29.5576.13786/CUDAfy.NET.1.29.5576.13786.nupkg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/packages/CUDAfy.NET.1.29.5576.13786/content/Readme/CUDA.NET.Readme.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/packages/CUDAfy.NET.1.29.5576.13786/content/Readme/CUDAfy-License.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/packages/CUDAfy.NET.1.29.5576.13786/content/Readme/ILSpy-license.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/packages/CUDAfy.NET.1.29.5576.13786/content/Readme/README.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/packages/CUDAfy.NET.1.29.5576.13786/content/Readme/example_source_code.cs.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/packages/CUDAfy.NET.1.29.5576.13786/content/Tools/CudafyViewer.exe" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/packages/CUDAfy.NET.1.29.5576.13786/content/Tools/cudafycl.exe" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/packages/CUDAfy.NET.1.29.5576.13786/content/Tools/place_these_executables_in_same_folder_as_Cudafy.NET.dll_" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/packages/CUDAfy.NET.1.29.5576.13786/lib/net40/Cudafy.NET.dll" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/packages/CUDAfy.NET.1.29.5576.13786/lib/net40/Cudafy.NET.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.blockchain/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.blockchain/.idea/contentModel.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.blockchain/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.blockchain/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/blockchain/Blockchain/Block.cs" afterPath="$PROJECT_DIR$/blockchain/Blockchain/Block.cs" />
       <change beforePath="$PROJECT_DIR$/blockchain/bin/Debug/epicoin.exe" afterPath="$PROJECT_DIR$/blockchain/bin/Debug/epicoin.exe" />
       <change beforePath="$PROJECT_DIR$/blockchain/bin/Debug/epicoin.pdb" afterPath="$PROJECT_DIR$/blockchain/bin/Debug/epicoin.pdb" />
       <change beforePath="$PROJECT_DIR$/blockchain/bin/Release/epicoin.exe" afterPath="$PROJECT_DIR$/blockchain/bin/Release/epicoin.exe" />
       <change beforePath="$PROJECT_DIR$/blockchain/bin/Release/epicoin.pdb" afterPath="$PROJECT_DIR$/blockchain/bin/Release/epicoin.pdb" />
-      <change beforePath="$PROJECT_DIR$/blockchain/net/Serveur/ServeurTrans.cs" afterPath="$PROJECT_DIR$/blockchain/net/Serveur/ServeurTrans.cs" />
+      <change beforePath="$PROJECT_DIR$/blockchain/blockchain.csproj" afterPath="$PROJECT_DIR$/blockchain/blockchain.csproj" />
       <change beforePath="$PROJECT_DIR$/blockchain/obj/Debug/blockchain.csproj.FilesWrittenAbsolute.txt" afterPath="$PROJECT_DIR$/blockchain/obj/Debug/blockchain.csproj.FilesWrittenAbsolute.txt" />
       <change beforePath="$PROJECT_DIR$/blockchain/obj/Debug/epicoin.exe" afterPath="$PROJECT_DIR$/blockchain/obj/Debug/epicoin.exe" />
       <change beforePath="$PROJECT_DIR$/blockchain/obj/Debug/epicoin.pdb" afterPath="$PROJECT_DIR$/blockchain/obj/Debug/epicoin.pdb" />
       <change beforePath="$PROJECT_DIR$/blockchain/obj/Release/blockchain.csproj.FilesWrittenAbsolute.txt" afterPath="$PROJECT_DIR$/blockchain/obj/Release/blockchain.csproj.FilesWrittenAbsolute.txt" />
       <change beforePath="$PROJECT_DIR$/blockchain/obj/Release/epicoin.exe" afterPath="$PROJECT_DIR$/blockchain/obj/Release/epicoin.exe" />
       <change beforePath="$PROJECT_DIR$/blockchain/obj/Release/epicoin.pdb" afterPath="$PROJECT_DIR$/blockchain/obj/Release/epicoin.pdb" />
+      <change beforePath="$PROJECT_DIR$/blockchain/packages.config" afterPath="$PROJECT_DIR$/blockchain/packages.config" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,14 +46,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Epicoin.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Epicoin.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blockchain/Epicoin.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="1071">
               <caret line="67" column="31" lean-forward="false" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
               <folding>
                 <marker date="1522518207950" expanded="false" signature="6:107" ph="..." />
-                <marker date="1522518207950" expanded="true" signature="129:12570" ph="{...}" />
                 <marker date="1522518207950" expanded="true" signature="156:12568" ph="{...}" />
                 <marker date="1522518207950" expanded="true" signature="714:5231" ph="{...}" />
                 <marker date="1522518207950" expanded="true" signature="1152:1204" ph="{...}" />
@@ -86,27 +106,61 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Block.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/blockchain/Blockchain/Block.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="105" column="15" lean-forward="false" selection-start-line="105" selection-start-column="15" selection-end-line="105" selection-end-column="15" />
+              <folding>
+                <marker date="1522591741052" expanded="false" signature="6:180" ph="..." />
+                <marker date="1522591741052" expanded="true" signature="202:3891" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="227:3889" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="519:599" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="630:718" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="757:835" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="871:965" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="998:1086" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="1193:1402" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="1441:1979" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="1545:1756" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="1662:1742" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="2046:2584" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="2150:2361" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="2267:2347" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="2631:2686" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="2750:3578" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="2764:3148" ph="/* CudafyModule km = CudafyModule.TryDeserialize(typeof(Program).Name); ... */" />
+                <marker date="1522591741052" expanded="true" signature="3293:3352" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="3413:3519" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="3647:3779" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="3707:3769" ph="{...}" />
+                <marker date="1522591741052" expanded="true" signature="3809:3883" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/blockchain/DataContainer/DataTransaction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain/DataContainer/DataMine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain/Blockchain/Block.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain/Blockchain/Blockchain.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain/Blockchain/Transaction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain/Blockchain/Wallet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain/Epicoin.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain/Tools/Serialyze.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain/net/Serveur/ServeurGet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain/net/Serveur/ServeurTrans.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain/net/Serveur/ServeurMine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain/net/Client/ClientMine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/blockchain/net/Client/ClientTrans.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/blockchain/net/Client/ClientGet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/net/Client/ClientTrans.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/net/Client/ClientMine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/net/Serveur/ServeurMine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/net/Serveur/ServeurTrans.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/net/Serveur/ServeurGet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/Epicoin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/Tools/Serialyze.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/Blockchain/Wallet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/Blockchain/Block.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/Blockchain/Transaction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/Blockchain/Blockchain.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/DataContainer/DataMine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/blockchain/DataContainer/DataTransaction.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -126,6 +180,7 @@
         <option value="$PROJECT_DIR$/blockchain/Epicoin.cs" />
         <option value="$PROJECT_DIR$/blockchain/blockchain.csproj" />
         <option value="$PROJECT_DIR$/blockchain/net/Serveur/ServeurTrans.cs" />
+        <option value="$PROJECT_DIR$/blockchain/Blockchain/Block.cs" />
       </list>
     </option>
   </component>
@@ -138,7 +193,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="19" />
     <option name="width" value="1920" />
-    <option name="height" value="950" />
+    <option name="height" value="1061" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -156,7 +211,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -164,30 +218,13 @@
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="blockchain (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="blockchain (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="blockchain" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="blockchain (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="blockchain" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="net" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="blockchain (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="blockchain" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="net" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Serveur" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -241,11 +278,15 @@
       <workItem from="1522501565006" duration="13515000" />
       <workItem from="1522517266683" duration="525000" />
       <workItem from="1522525923424" duration="196000" />
+      <workItem from="1522575202691" duration="263000" />
+      <workItem from="1522578057411" duration="793000" />
+      <workItem from="1522585566335" duration="89000" />
+      <workItem from="1522585703260" duration="4091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14512000" />
+    <option name="totallyTimeSpent" value="19748000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -257,24 +298,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="19" width="1920" height="950" extended-state="0" />
+    <frame x="0" y="19" width="1920" height="1061" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4157187" sideWeight="0.5020877" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30490655" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30490655" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4157187" sideWeight="0.49791232" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6749482" sideWeight="0.49791232" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.124739036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -291,17 +332,256 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/blockchain/Epicoin.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="67" column="31" lean-forward="false" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+          <folding>
+            <marker date="1522518207950" expanded="false" signature="6:107" ph="..." />
+            <marker date="1522518207950" expanded="true" signature="156:12568" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="714:5231" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="1152:1204" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="1703:5180" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="2392:2564" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="2604:2766" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="2806:2961" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="3001:3633" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="3673:3949" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="3989:5021" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4268:4509" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4384:4487" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4549:4688" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4833:4921" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="5042:5137" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="5267:5958" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="5993:9490" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="6323:9439" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="6964:7101" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="7141:7296" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="7336:7892" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="7932:8208" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8248:9280" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8527:8768" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8643:8746" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8808:8947" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9092:9180" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9301:9396" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9531:9661" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9704:9832" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9882:10068" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9921:10058" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10138:10246" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10300:10428" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10470:10573" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10620:10754" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10797:10909" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10972:11104" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11189:11407" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11333:11397" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11461:11612" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11531:11602" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11663:11777" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11820:12071" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11879:12061" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="12113:12249" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="12291:12562" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="12354:12552" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blockchain/Blockchain/Block.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding>
+            <marker date="1522591741052" expanded="false" signature="6:180" ph="..." />
+            <marker date="1522591741052" expanded="true" signature="202:3891" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="227:3889" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="519:599" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="630:718" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="757:835" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="871:965" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="998:1086" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="1193:1402" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="1441:1979" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="1545:1756" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="1662:1742" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2046:2584" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2150:2361" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2267:2347" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2631:2686" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2750:3578" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2764:3148" ph="/* CudafyModule km = CudafyModule.TryDeserialize(typeof(Program).Name); ... */" />
+            <marker date="1522591741052" expanded="true" signature="3293:3352" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="3413:3519" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="3647:3779" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="3707:3769" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="3809:3883" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/blockchain/Epicoin.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <marker date="1522518207950" expanded="false" signature="6:107" ph="..." />
-            <marker date="1522518207950" expanded="true" signature="129:12570" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="156:12568" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="714:5231" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="1152:1204" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="1703:5180" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="2392:2564" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="2604:2766" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="2806:2961" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="3001:3633" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="3673:3949" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="3989:5021" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4268:4509" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4384:4487" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4549:4688" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4833:4921" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="5042:5137" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="5267:5958" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="5993:9490" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="6323:9439" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="6964:7101" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="7141:7296" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="7336:7892" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="7932:8208" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8248:9280" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8527:8768" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8643:8746" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8808:8947" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9092:9180" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9301:9396" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9531:9661" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9704:9832" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9882:10068" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9921:10058" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10138:10246" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10300:10428" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10470:10573" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10620:10754" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10797:10909" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10972:11104" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11189:11407" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11333:11397" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11461:11612" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11531:11602" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11663:11777" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11820:12071" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11879:12061" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="12113:12249" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="12291:12562" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="12354:12552" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blockchain/Epicoin.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="67" column="31" lean-forward="false" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+          <folding>
+            <marker date="1522518207950" expanded="false" signature="6:107" ph="..." />
+            <marker date="1522518207950" expanded="true" signature="156:12568" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="714:5231" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="1152:1204" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="1703:5180" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="2392:2564" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="2604:2766" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="2806:2961" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="3001:3633" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="3673:3949" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="3989:5021" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4268:4509" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4384:4487" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4549:4688" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4833:4921" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="5042:5137" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="5267:5958" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="5993:9490" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="6323:9439" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="6964:7101" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="7141:7296" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="7336:7892" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="7932:8208" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8248:9280" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8527:8768" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8643:8746" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8808:8947" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9092:9180" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9301:9396" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9531:9661" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9704:9832" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9882:10068" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9921:10058" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10138:10246" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10300:10428" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10470:10573" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10620:10754" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10797:10909" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10972:11104" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11189:11407" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11333:11397" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11461:11612" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11531:11602" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11663:11777" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11820:12071" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11879:12061" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="12113:12249" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="12291:12562" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="12354:12552" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blockchain/Blockchain/Block.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="78" column="30" lean-forward="false" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
+          <folding>
+            <marker date="1522591741052" expanded="false" signature="6:180" ph="..." />
+            <marker date="1522591741052" expanded="true" signature="202:3891" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="227:3889" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="519:599" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="630:718" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="757:835" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="871:965" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="998:1086" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="1193:1402" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="1441:1979" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="1545:1756" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="1662:1742" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2046:2584" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2150:2361" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2267:2347" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2631:2686" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2750:3578" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2764:3148" ph="/* CudafyModule km = CudafyModule.TryDeserialize(typeof(Program).Name); ... */" />
+            <marker date="1522591741052" expanded="true" signature="3293:3352" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="3413:3519" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="3647:3779" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="3707:3769" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="3809:3883" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blockchain/Epicoin.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1522518207950" expanded="false" signature="6:107" ph="..." />
             <marker date="1522518207950" expanded="true" signature="156:12568" ph="{...}" />
             <marker date="1522518207950" expanded="true" signature="714:5231" ph="{...}" />
             <marker date="1522518207950" expanded="true" signature="1152:1204" ph="{...}" />
@@ -360,7 +640,64 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <marker date="1522518207950" expanded="false" signature="6:107" ph="..." />
-            <marker date="1522518207950" expanded="true" signature="129:12570" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="156:12568" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="714:5231" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="1152:1204" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="1703:5180" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="2392:2564" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="2604:2766" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="2806:2961" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="3001:3633" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="3673:3949" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="3989:5021" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4268:4509" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4384:4487" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4549:4688" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="4833:4921" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="5042:5137" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="5267:5958" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="5993:9490" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="6323:9439" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="6964:7101" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="7141:7296" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="7336:7892" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="7932:8208" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8248:9280" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8527:8768" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8643:8746" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="8808:8947" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9092:9180" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9301:9396" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9531:9661" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9704:9832" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9882:10068" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="9921:10058" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10138:10246" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10300:10428" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10470:10573" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10620:10754" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10797:10909" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="10972:11104" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11189:11407" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11333:11397" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11461:11612" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11531:11602" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11663:11777" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11820:12071" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="11879:12061" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="12113:12249" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="12291:12562" ph="{...}" />
+            <marker date="1522518207950" expanded="true" signature="12354:12552" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blockchain/Epicoin.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1522518207950" expanded="false" signature="6:107" ph="..." />
             <marker date="1522518207950" expanded="true" signature="156:12568" ph="{...}" />
             <marker date="1522518207950" expanded="true" signature="714:5231" ph="{...}" />
             <marker date="1522518207950" expanded="true" signature="1152:1204" ph="{...}" />
@@ -471,13 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/Blockchain/Block.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-513">
-          <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blockchain/net/Client/ClientMine.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
@@ -511,34 +841,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-888">
           <caret line="49" column="14" lean-forward="false" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
-          <folding>
-            <marker date="1522518207963" expanded="false" signature="6:100" ph="..." />
-            <marker date="1522518207963" expanded="true" signature="122:4395" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="173:4393" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="365:524" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="560:643" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="677:1277" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="798:1007" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="1024:1212" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="1324:2764" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="1564:1616" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="1698:1750" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="1804:2493" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="1913:1977" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="2083:2147" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="2249:2313" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="2415:2479" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="2581:2633" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="2809:3857" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="3208:3782" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="3274:3383" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="3422:3468" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="3504:3768" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="3546:3645" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="3685:3729" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="3888:4387" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="4035:4279" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -546,23 +848,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="60" column="48" lean-forward="false" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
-          <folding>
-            <marker date="1522525980075" expanded="false" signature="6:82" ph="..." />
-            <marker date="1522525980075" expanded="true" signature="104:2916" ph="{...}" />
-            <marker date="1522525980075" expanded="true" signature="156:2914" ph="{...}" />
-            <marker date="1522525980075" expanded="true" signature="349:508" ph="{...}" />
-            <marker date="1522525980075" expanded="true" signature="544:627" ph="{...}" />
-            <marker date="1522525980075" expanded="true" signature="670:1840" ph="{...}" />
-            <marker date="1522525980075" expanded="true" signature="1312:1387" ph="{...}" />
-            <marker date="1522525980075" expanded="true" signature="1419:1471" ph="{...}" />
-            <marker date="1522525980075" expanded="true" signature="1516:1568" ph="{...}" />
-            <marker date="1522525980075" expanded="true" signature="1628:1680" ph="{...}" />
-            <marker date="1522525980075" expanded="true" signature="1885:2366" ph="{...}" />
-            <marker date="1522525980075" expanded="true" signature="2103:2245" ph="{...}" />
-            <marker date="1522525980075" expanded="true" signature="2276:2291" ph="{...}" />
-            <marker date="1522525980075" expanded="true" signature="2397:2908" ph="{...}" />
-            <marker date="1522525980075" expanded="true" signature="2550:2794" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -570,27 +855,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="710">
           <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
-          <folding>
-            <marker date="1522518207963" expanded="false" signature="6:82" ph="..." />
-            <marker date="1522518207963" expanded="true" signature="104:1863" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="154:1861" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="345:504" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="540:623" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="657:755" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="800:1321" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="1352:1855" ph="{...}" />
-            <marker date="1522518207963" expanded="true" signature="1501:1745" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blockchain/Epicoin.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="1071">
           <caret line="67" column="31" lean-forward="false" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
           <folding>
             <marker date="1522518207950" expanded="false" signature="6:107" ph="..." />
-            <marker date="1522518207950" expanded="true" signature="129:12570" ph="{...}" />
             <marker date="1522518207950" expanded="true" signature="156:12568" ph="{...}" />
             <marker date="1522518207950" expanded="true" signature="714:5231" ph="{...}" />
             <marker date="1522518207950" expanded="true" signature="1152:1204" ph="{...}" />
@@ -639,6 +912,40 @@
             <marker date="1522518207950" expanded="true" signature="12113:12249" ph="{...}" />
             <marker date="1522518207950" expanded="true" signature="12291:12562" ph="{...}" />
             <marker date="1522518207950" expanded="true" signature="12354:12552" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.cache/.fr-4gHHxJ/cedric.farinazzo/README" />
+    <entry file="file://$USER_HOME$/.cache/.fr-HST6Vl/cedric.farinazzo/README" />
+    <entry file="file://$PROJECT_DIR$/blockchain/Blockchain/Block.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="105" column="15" lean-forward="false" selection-start-line="105" selection-start-column="15" selection-end-line="105" selection-end-column="15" />
+          <folding>
+            <marker date="1522591741052" expanded="false" signature="6:180" ph="..." />
+            <marker date="1522591741052" expanded="true" signature="202:3891" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="227:3889" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="519:599" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="630:718" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="757:835" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="871:965" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="998:1086" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="1193:1402" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="1441:1979" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="1545:1756" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="1662:1742" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2046:2584" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2150:2361" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2267:2347" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2631:2686" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2750:3578" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="2764:3148" ph="/* CudafyModule km = CudafyModule.TryDeserialize(typeof(Program).Name); ... */" />
+            <marker date="1522591741052" expanded="true" signature="3293:3352" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="3413:3519" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="3647:3779" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="3707:3769" ph="{...}" />
+            <marker date="1522591741052" expanded="true" signature="3809:3883" ph="{...}" />
           </folding>
         </state>
       </provider>

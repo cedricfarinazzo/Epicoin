@@ -20,3 +20,4 @@
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Release/epicoin.exe
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Release/epicoin.pdb
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/Newtonsoft.Json.dll
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/Cudafy.NET.dll

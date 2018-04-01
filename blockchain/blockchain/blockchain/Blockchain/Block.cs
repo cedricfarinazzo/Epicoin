@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
+using Cudafy;
+using Cudafy.Host;
+using Cudafy.Translator;
 
 namespace blockchain
 {
@@ -73,15 +76,45 @@ namespace blockchain
             string hash = Hash.Create(this.index.ToString() + this.timestamp + serialyzedata + this.previousHash + this.nonce);
             return hash;
         }
+        
+        [Cudafy]
+        public string CalculateHashGpu()
+        {
+            string serialyzedata = "{";
+            for (int i = 0; i < this.data.Count; i++)
+            {
+                serialyzedata += this.data[i].ToString();
+                if (i < this.data.Count - 1)
+                {
+                    serialyzedata += " ; ";
+                }
+            }
+            
+            serialyzedata += "}";
+            
+            string hash = Hash.Create(this.index.ToString() + this.timestamp + serialyzedata + this.previousHash + this.nonce);
+            return hash;
+        }
 
         public void AddPreviousHash(string h)
         {
             this.previousHash = h;
         }
 
+        [Cudafy]
         public void MineBlock(int difficulty)
-        {
-            string hash = this.CalculateHash();
+        {    /*
+            CudafyModule km = CudafyModule.TryDeserialize(typeof(Program).Name);
+            if (km == null || !km.TryVerifyChecksums())
+            {
+                km = CudafyTranslator.Cudafy(typeof(Program));
+                km.Serialize();
+            }
+            
+            Cudafy.Host.GPGPU _gpu = CudafyHost.GetDevice(eGPUType.Cuda);
+            _gpu.LoadModule(km);*/
+            
+            string hash = this.CalculateHashGpu();
             string target = "";
             for (int i = 0; i < difficulty; i++)
             {
@@ -91,12 +124,14 @@ namespace blockchain
             while (hash.Substring(0, difficulty) != target)
             {
                 this.nonce++;
-                hash = this.CalculateHash();
+                hash = this.CalculateHashGpu();
             }
 
             this.hashblock = hash;
             
         }
+        
+        
 
         public void AddTransaction(Transaction t)
         {
