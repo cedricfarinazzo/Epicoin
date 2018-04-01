@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
-using Cudafy;
-using Cudafy.Host;
-using Cudafy.Translator;
 
 namespace blockchain
 {
@@ -77,7 +74,6 @@ namespace blockchain
             return hash;
         }
         
-        [Cudafy]
         public string CalculateHashGpu()
         {
             string serialyzedata = "{";
@@ -101,19 +97,8 @@ namespace blockchain
             this.previousHash = h;
         }
 
-        [Cudafy]
         public void MineBlock(int difficulty)
-        {    /*
-            CudafyModule km = CudafyModule.TryDeserialize(typeof(Program).Name);
-            if (km == null || !km.TryVerifyChecksums())
-            {
-                km = CudafyTranslator.Cudafy(typeof(Program));
-                km.Serialize();
-            }
-            
-            Cudafy.Host.GPGPU _gpu = CudafyHost.GetDevice(eGPUType.Cuda);
-            _gpu.LoadModule(km);*/
-            
+        {
             string hash = this.CalculateHashGpu();
             string target = "";
             for (int i = 0; i < difficulty; i++)

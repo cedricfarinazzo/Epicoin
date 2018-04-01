@@ -19,20 +19,10 @@
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
-        <e p="Readme" t="Include">
-          <e p="CUDA.NET.Readme.txt" t="Include" />
-          <e p="CUDAfy-License.txt" t="Include" />
-          <e p="ILSpy-license.txt" t="Include" />
-          <e p="README.txt" t="Include" />
-          <e p="example_source_code.cs.txt" t="Include" />
-        </e>
         <e p="Tools" t="Include">
-          <e p="CudafyViewer.exe" t="Include" />
           <e p="Hash.cs" t="Include" />
           <e p="Rsa.cs" t="Include" />
           <e p="Serialyze.cs" t="Include" />
-          <e p="cudafycl.exe" t="Include" />
-          <e p="place_these_executables_in_same_folder_as_Cudafy.NET.dll_" t="Include" />
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="blockchain.csproj" t="IncludeRecursive" />
