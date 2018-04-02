@@ -24,7 +24,7 @@ namespace blockchain
         private void Init()
         {
             this._tcpClient = new TcpClient();
-            while (!this._tcpClient.Connected)
+            while (!this._tcpClient.Connected && Epicoin.Continue)
             {
                 try
                 {

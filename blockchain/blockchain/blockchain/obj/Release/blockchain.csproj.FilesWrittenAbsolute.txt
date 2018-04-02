@@ -21,3 +21,6 @@
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Release/epicoin.pdb
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/Newtonsoft.Json.dll
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/Cudafy.NET.dll
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Release/blockchain.Properties.Resources.resources
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/Cloo.dll
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/OpenCL.Net.dll

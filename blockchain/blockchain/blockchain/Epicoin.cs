@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Threading;
 
 namespace blockchain
@@ -10,8 +11,8 @@ namespace blockchain
         public static Blockchain Coin = null;
         
         public static bool Continue = true;
-        
-        public static readonly string host = "127.0.0.1";
+
+        public static readonly string host = IPAddress.Loopback.ToString(); //"accer.ddns.net";
         public static readonly int mineport = 4246;
         public static readonly int transport = 4247;
         public static readonly int getport = 4248;
