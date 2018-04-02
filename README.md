@@ -7,15 +7,17 @@ Ainsi elle permet de réaliser des transactions sécurisées.
 
 ## Comment l'utiliser ?
 
-- Télécharger l'archive epicoin.zip dans l'onglet Release et dézipper l'archive
+- Télécharger l'archive epicoin.zip dans l'onglet Release et dézipper l'archive.
+- Ouvrer les ports 4246, 4247, 4248 sur votre routeur ou votre pare-feu permettant à Epicoin de communiquer avec le serveur.
+
 
 ### Windows
 
-- Lancer l'éxecutable epicoin.exe dans le dossier Epicoin
+- Lancer l'éxecutable epicoin.exe dans le dossier Epicoin.
 
 ### Linux
 
-- ouvrer un terminal dans le dossier Epicoin
+- ouvrer un terminal dans le dossier Epicoin.
 - taper la commande : 
 ```
 chmod +x epicoin.exe
