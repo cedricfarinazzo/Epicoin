@@ -70,7 +70,7 @@ namespace blockchain
             
             serialyzedata += "}";
             
-            string hash = Hash.Create(this.index.ToString() + this.timestamp + serialyzedata + this.previousHash + this.nonce);
+            string hash = Hash.CpuGenerate(this.index.ToString() + this.timestamp + serialyzedata + this.previousHash + this.nonce);
             return hash;
         }
         
@@ -88,7 +88,7 @@ namespace blockchain
             
             serialyzedata += "}";
             
-            string hash = Hash.Create(this.index.ToString() + this.timestamp + serialyzedata + this.previousHash + this.nonce);
+            string hash = Hash.CpuGenerate(this.index.ToString() + this.timestamp + serialyzedata + this.previousHash + this.nonce);
             return hash;
         }
 

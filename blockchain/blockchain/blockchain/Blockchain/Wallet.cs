@@ -30,7 +30,7 @@ namespace blockchain
             string[] data = Rsa.GenKey(2048);
             this.PrivKey.Add(data[0]);
             this.PubKey.Add(data[1]);
-            this.Address.Add(Hash.Create(data[1]));
+            this.Address.Add(Hash.CpuGenerate(data[1]));
         }
 
         public void GetAmount()

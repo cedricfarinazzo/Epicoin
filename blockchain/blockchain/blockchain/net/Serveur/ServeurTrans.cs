@@ -46,7 +46,7 @@ namespace blockchain
             {
                 return;
             }
-            if (Hash.Create(PubKeySender) != SenderAddress)
+            if (Hash.CpuGenerate(PubKeySender) != SenderAddress)
             {
                 return;
             }

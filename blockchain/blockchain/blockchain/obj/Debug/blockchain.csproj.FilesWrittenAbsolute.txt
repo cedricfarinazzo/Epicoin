@@ -21,3 +21,7 @@
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Debug/epicoin.pdb
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Debug/Newtonsoft.Json.dll
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Debug/Cudafy.NET.dll
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Debug/Cloo.dll
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Debug/OpenCL.Net.dll
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Debug/OpenCLTemplate.dll
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Debug/blockchain.Properties.Resources.resources
