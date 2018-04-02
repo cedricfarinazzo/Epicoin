@@ -7,3 +7,4 @@
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/Cloo.dll
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/Newtonsoft.Json.dll
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/OpenCL.Net.dll
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/System.Net.Sockets.dll
