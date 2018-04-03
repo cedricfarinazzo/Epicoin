@@ -10,6 +10,8 @@ namespace blockchain
     {
         public Blockchain chain = null;
 
+        public bool error = false;
+
         protected TcpClient _tcpClient;
         
         public ClientGet(string host, int port)
@@ -19,8 +21,9 @@ namespace blockchain
 
         private void Init()
         {
+            int timeout = 500;
             this._tcpClient = new TcpClient();
-            while (!this._tcpClient.Connected && Epicoin.Continue)
+            while (!this._tcpClient.Connected && Epicoin.Continue && timeout >= 0 && !this.error)
             {
                 try
                 {
@@ -29,19 +32,30 @@ namespace blockchain
                 catch (Exception e)
                 {
                 }
+
+                timeout--;
             }
         }
 
         private void GetBlockchain(byte[] data)
         {
             string msgdata = Encoding.Default.GetString(data);
-            this.chain = Serialyze.UnserializeBlockchain(msgdata);
+            try
+            {
+                this.chain = Serialyze.UnserializeBlockchain(msgdata);
+            }
+            catch (Exception e)
+            {
+                this.Reset();
+            }
+            
         }
 
         public void Get()
         {
+            int timeout = 10000;
             this.Reset();
-            while (Epicoin.Continue && this.chain == null)
+            while (Epicoin.Continue && this.chain == null && !error && timeout >= 0)
             {
                 this.Init();
                 Stream stm = this._tcpClient.GetStream();
@@ -54,6 +68,12 @@ namespace blockchain
                 this.GetBlockchain(buffer);
                 stm.Close();
                 this._tcpClient.Close();
+                timeout--;
+            }
+
+            if (timeout < 0 || this.chain == null)
+            {
+                this.error = true;
             }
         }
 

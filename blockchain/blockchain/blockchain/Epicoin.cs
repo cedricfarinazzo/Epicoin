@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Security.Cryptography;
 using System.Threading;
 
 namespace blockchain
@@ -22,13 +23,29 @@ namespace blockchain
 
         public static Wallet Wallet = null;
         
-        public static void Serveur()
+        public static void Serveur(string namearg = null)
         {
             Console.WriteLine("\n\n        Blochain Epicoin Serveur \n\n");
             
-            Console.Write("Your name : ");
-            string name = ReadLine();
-            CreateWallet(name);
+            ImportWallet();
+            if (Wallet == null)
+            {
+                string name = "";
+                if (namearg == null)
+                {
+                    Console.Write("Your name : ");
+                    name = ReadLine();
+                }
+                else
+                {
+                    name = namearg;
+                }
+
+                CreateWallet(name);   
+                ExportWallet();
+            }
+            
+            
             Console.WriteLine("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
             
             
@@ -43,12 +60,14 @@ namespace blockchain
             Thread data = new Thread(ServeurData);
             Thread mine = new Thread(ServeurMine);
             Thread transaction = new Thread(ServeurTrans);
+            Thread saveChain = new Thread(SaveBlockchain);
             
             block.Start();
             data.Start();
             mine.Start();
             transaction.Start();
             Thread.Sleep(1000);
+            saveChain.Start();
             Console.WriteLine("\nAll serveur online\n\n\n");
             
             
@@ -123,12 +142,20 @@ namespace blockchain
                     }
 
                     List<DataTransaction> ltrans = Wallet.GenTransactions(amount, ToAddress);
+                    bool error = false;
                     foreach (var trans in ltrans)
                     {
-                        ClientTrans(trans);
+                        error = error || ClientTrans(trans);
                     }
-                    
-                    Console.WriteLine("Transaction sended");
+
+                    if (error)
+                    {
+                        Console.WriteLine("Error");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Transaction sended");
+                    }
                 }
                 else
                 {
@@ -139,13 +166,28 @@ namespace blockchain
             Console.WriteLine("\nbye!");
         }
 
-        public static void Miner()
+        public static void Miner(string namearg = null)
         {
             Console.WriteLine("\n\n        Blochain Epicoin Miner Client \n\n");
             
-            Console.Write("Your name : ");
-            string name = ReadLine();
-            CreateWallet(name);
+            ImportWallet();
+            if (Wallet == null)
+            {
+                string name = "";
+                if (namearg == null)
+                {
+                    Console.Write("Your name : ");
+                    name = ReadLine();
+                }
+                else
+                {
+                    name = namearg;
+                }
+
+                CreateWallet(name);  
+                ExportWallet();
+            }
+
             Console.WriteLine("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
             
             
@@ -163,13 +205,28 @@ namespace blockchain
             Console.WriteLine("\nbye!");
         }
 
-        public static void User()
+        public static void User(string namearg = null)
         {
             Console.WriteLine("\n\n        Blochain Epicoin Client \n\n");
             
-            Console.Write("Your name : ");
-            string name = ReadLine();
-            CreateWallet(name);
+            ImportWallet();
+            if (Wallet == null)
+            {
+                string name = "";
+                if (namearg == null)
+                {
+                    Console.Write("Your name : ");
+                    name = ReadLine();
+                }
+                else
+                {
+                    name = namearg;
+                }
+
+                CreateWallet(name);
+                ExportWallet();
+            }
+
             Console.WriteLine("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
 
             while (Continue)
@@ -202,12 +259,20 @@ namespace blockchain
                 else if (action == "3")
                 {
                     Blockchain chain = ClientData();
-                    Console.WriteLine("     Chain " + Blockchain.Name);
-                    Console.WriteLine("Chain is valid : " + chain.IsvalidChain());
-                    Console.WriteLine("Chain lenght : " + chain.Chainlist.Count);
-                    Console.WriteLine("Chain difficulty : " + chain.Difficulty);
-                    Block last = chain.GetLatestBlock();
-                    Console.WriteLine("Last Block " + last.Index + " : " + last.Hashblock);
+                    if (chain != null)
+                    {
+                        Console.WriteLine("     Chain " + Blockchain.Name);
+                        Console.WriteLine("Chain is valid : " + chain.IsvalidChain());
+                        Console.WriteLine("Chain lenght : " + chain.Chainlist.Count);
+                        Console.WriteLine("Chain difficulty : " + chain.Difficulty);
+                        Block last = chain.GetLatestBlock();
+                        Console.WriteLine("Last Block " + last.Index + " : " + last.Hashblock);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error");
+                    }
+
                 }
                 else if (action == "4")
                 {
@@ -237,12 +302,22 @@ namespace blockchain
                     }
 
                     List<DataTransaction> ltrans = Wallet.GenTransactions(amount, ToAddress);
+                    bool error = false;
                     foreach (var trans in ltrans)
                     {
-                        ClientTrans(trans);
+                        error = error || ClientTrans(trans);
+                    }
+
+                    if (error)
+                    {
+                        Console.WriteLine("Error");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Transaction sended");
                     }
                     
-                    Console.WriteLine("Transaction sended");
+                    
                 }
                 else
                 {
@@ -306,10 +381,11 @@ namespace blockchain
             blockchain.ServeurTrans serveurTrans = new ServeurTrans(Coin, host, transport);
         }
 
-        public static void ClientTrans(DataTransaction trans)
+        public static bool ClientTrans(DataTransaction trans)
         {
             blockchain.ClientTrans ctrans = new ClientTrans(host, transport, trans);
             ctrans.Send();
+            return ctrans.error;
         }
 
         public static void Transaction(Wallet sender, string toAddress, int amount)
@@ -359,6 +435,23 @@ namespace blockchain
                 string chain = File.ReadAllText(Epicoin.blockchainfile);
                 Blockchain c = Serialyze.UnserializeBlockchain(chain);
                 Coin = c;
+            }
+        }
+
+        public static void SaveBlockchain()
+        {
+            int time = 5 * 60 * 1000;
+            while (Continue)
+            {
+                try
+                {
+                    ExportChain();
+                }
+                catch (Exception e)
+                {
+                }
+                
+                Thread.Sleep(time);
             }
         }
     }

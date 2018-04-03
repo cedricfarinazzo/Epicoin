@@ -27,7 +27,7 @@ namespace blockchain
         private void GetData(byte[] data)
         {
             DataTransaction dataTransaction = Serialyze.UnserializeDataTransaction(Encoding.Default.GetString(data));
-            Console.WriteLine("[ST] Analyse transaction");
+            //Console.WriteLine("[ST] Analyse transaction");
             string PubKeySender = dataTransaction.PubKey;
             string SenderAddress = dataTransaction.EncodeFromAddress; //Rsa.Decrypt(PubKeySender, dataTransaction.EncodeFromAddress);
             string ToAddress = dataTransaction.ToAddress; // Rsa.Decrypt(PubKeySender, dataTransaction.ToAddress);

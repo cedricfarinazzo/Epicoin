@@ -11,20 +11,27 @@ namespace blockchain
     {  
         public static void Main(string[] args)
         {
-            Console.WriteLine("Choose between [S]Serveur, [M]Miner, [U]User");
-            Console.Write("\n status : ");
-            string status = Epicoin.ReadLine();
+            string status = args.Length >= 1 ? args[0] : null;
+            string namearg = args.Length >= 2 ? args[1] : null;
+
+            if (status == null)
+            {
+                Console.WriteLine("Choose between [S]Serveur, [M]Miner, [U]User");
+                Console.Write("\n status : ");
+                status = Epicoin.ReadLine();
+            }
+            
             if (status == "S" || status == "Serveur")
             {
-                Epicoin.Serveur();
+                Epicoin.Serveur(namearg);
             }
             if (status == "M" || status == "Miner")
             {
-                Epicoin.Miner();
+                Epicoin.Miner(namearg);
             }
             if (status == "U" || status == "User")
             {
-                Epicoin.User();
+                Epicoin.User(namearg);
             }
         }
     }

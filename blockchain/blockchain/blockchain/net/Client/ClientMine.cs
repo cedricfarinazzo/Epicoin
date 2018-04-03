@@ -23,8 +23,9 @@ namespace blockchain
 
         private void Init()
         {
+            int timeout = 500;
             this._tcpClient = new TcpClient();
-            while (!this._tcpClient.Connected && Epicoin.Continue)
+            while (!this._tcpClient.Connected && Epicoin.Continue && timeout >= 0)
             {
                 try
                 {
@@ -33,7 +34,8 @@ namespace blockchain
                 catch (Exception e)
                 {
                 }
-                
+
+                timeout--;
             }
             //Console.WriteLine("Worker connected");
         }
@@ -57,7 +59,7 @@ namespace blockchain
                 return;
             }
             
-            //Console.WriteLine("Block received");
+            Console.WriteLine("Block received");
         }
 
         public byte[] SendBlock(long time)
