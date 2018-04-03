@@ -22,7 +22,6 @@ namespace blockchain
             this.PrivKey = new List<string>();
             this.PubKey = new List<string>();
             this.Amount = new List<int>();
-            this.GenNewAddress();
         }
 
         public void GenNewAddress()

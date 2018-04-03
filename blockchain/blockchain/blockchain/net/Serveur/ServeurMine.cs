@@ -93,12 +93,13 @@ namespace blockchain
         {
             this.maxthread--;
             TcpClient tcpClient = (TcpClient)o;
-            NetworkStream clientStream = tcpClient.GetStream();
+            
             
             byte[] bufferblock = new byte[4096];
             int bytesRead = 0;
             while (Epicoin.Continue && tcpClient.Connected)
             {
+                NetworkStream clientStream = tcpClient.GetStream();
                 bytesRead = 0;
 
                 try
@@ -118,14 +119,16 @@ namespace blockchain
                     try
                     {
                         this.AnalyzeMine(bufferblock);
+                        Thread.Sleep(100);
                     }
                     catch (Exception e)
                     {
                     }
                     
                 }
+                clientStream.Close();
             }
-            clientStream.Close();
+            
             tcpClient.Close();
             this.maxthread++;
             return;

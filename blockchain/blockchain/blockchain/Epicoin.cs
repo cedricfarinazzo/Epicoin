@@ -403,6 +403,7 @@ namespace blockchain
             if (Wallet == null)
             {
                 Wallet = new Wallet(name);
+                Wallet.GenNewAddress();
             }
         }
         
