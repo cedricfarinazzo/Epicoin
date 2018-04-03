@@ -75,9 +75,9 @@ namespace blockchain
             {
                 return;
             }
-            
+            Stream stm = this._tcpClient.GetStream();
             while (this._tcpClient.Connected && Epicoin.Continue)
-            {Stream stm = this._tcpClient.GetStream();
+            {
                 this.BlockToMine = null;
                 byte[] buffer = new byte[4096];
                 stm.Read(buffer,0,4096);
@@ -95,11 +95,10 @@ namespace blockchain
                     stm.Write(datamine, 0, datamine.Length);
                 }
 
-                stm.FlushAsync();
-                stm.Close();
+               
                 Thread.Sleep(100);
             }
-            
+             stm.Close();
             this._tcpClient.Close();
         }
     }

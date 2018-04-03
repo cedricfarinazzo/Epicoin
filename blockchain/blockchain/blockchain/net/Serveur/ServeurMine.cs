@@ -97,9 +97,10 @@ namespace blockchain
             
             byte[] bufferblock = new byte[4096];
             int bytesRead = 0;
+            NetworkStream clientStream = tcpClient.GetStream();
             while (Epicoin.Continue && tcpClient.Connected)
             {
-                NetworkStream clientStream = tcpClient.GetStream();
+                
                 bytesRead = 0;
 
                 try
@@ -126,9 +127,9 @@ namespace blockchain
                     }
                     
                 }
-                clientStream.Close();
+                
             }
-            
+            clientStream.Close();
             tcpClient.Close();
             this.maxthread++;
             return;
