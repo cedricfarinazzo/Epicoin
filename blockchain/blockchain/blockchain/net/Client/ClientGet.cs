@@ -61,9 +61,10 @@ namespace blockchain
                 try
                 {
                     Stream stm = this._tcpClient.GetStream();
-                    byte[] bufferlenght = new byte[4096];
-                    stm.Read(bufferlenght,0,4096);
-                    int bufferlen = int.Parse(Encoding.Default.GetString(bufferlenght));
+                    byte[] bufferlenght = new byte[512];
+                    stm.Read(bufferlenght,0,512);
+                    string slenght = Encoding.Default.GetString(bufferlenght);
+                    int bufferlen = int.Parse(slenght);
                     Thread.Sleep(100);
                     byte[] buffer = new byte[bufferlen + 1000];
                     stm.Read(buffer, 0, bufferlen + 1000);
