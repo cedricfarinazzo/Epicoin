@@ -4,6 +4,8 @@ namespace blockchain
 {
     public class BlockchainNetwork
     {
+        protected int maxthread = 50;
+        
         protected string host;
         protected int port;
 

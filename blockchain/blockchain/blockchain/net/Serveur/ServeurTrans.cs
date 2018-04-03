@@ -57,6 +57,7 @@ namespace blockchain
 
         public void ClientManager(object o)
         {
+            this.maxthread--;
             TcpClient tcpClient = (TcpClient)o;
             NetworkStream clientStream = tcpClient.GetStream();
             byte[] bufferblock = new byte[4096];
@@ -71,6 +72,8 @@ namespace blockchain
             }
             clientStream.Close();
             tcpClient.Close();
+            this.maxthread++;
+            return;
         }
 
         private void Listen()
@@ -79,9 +82,12 @@ namespace blockchain
             Console.WriteLine("[ST] Transaction Serveur started");
             while (Epicoin.Continue)
             {
-                TcpClient client = this.ServeurChain.AcceptTcpClient();
-                Thread clientThread = new Thread(new ParameterizedThreadStart(this.ClientManager));
-                clientThread.Start(client);
+                if (this.maxthread > 0)
+                {
+                    TcpClient client = this.ServeurChain.AcceptTcpClient();
+                    Thread clientThread = new Thread(new ParameterizedThreadStart(this.ClientManager));
+                    clientThread.Start(client);                    
+                }
             }
             this.ServeurChain.Stop();
             Console.WriteLine("[ST] Transaction Serveur closed");

@@ -91,6 +91,7 @@ namespace blockchain
 
         public void ClientManager(object o)
         {
+            this.maxthread--;
             TcpClient tcpClient = (TcpClient)o;
             NetworkStream clientStream = tcpClient.GetStream();
             byte[] buffer = this.GenData();
@@ -126,6 +127,8 @@ namespace blockchain
             }
             clientStream.Close();
             tcpClient.Close();
+            this.maxthread++;
+            return;
         }
 
         private void Listen()
@@ -134,9 +137,12 @@ namespace blockchain
             Console.WriteLine("[SM] Miner Serveur started");
             while (Epicoin.Continue)
             {
-                TcpClient client = this.ServeurChain.AcceptTcpClient();
-                Thread clientThread = new Thread(new ParameterizedThreadStart(this.ClientManager));
-                clientThread.Start(client);
+                if (this.maxthread > 0)
+                {
+                    TcpClient client = this.ServeurChain.AcceptTcpClient();
+                    Thread clientThread = new Thread(new ParameterizedThreadStart(this.ClientManager));
+                    clientThread.Start(client);
+                }
             }
             this.ServeurChain.Stop();
             Console.WriteLine("[SM] Miner Serveur closed");

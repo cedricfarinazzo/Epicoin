@@ -31,16 +31,18 @@ namespace blockchain
 
         public void ClientManager(object o)
         {
+            this.maxthread--;
             TcpClient tcpClient = (TcpClient)o;
             NetworkStream clientStream = tcpClient.GetStream();
             byte[] buffer = this.GenData();
             byte[] bufferlenght = Encoding.Default.GetBytes(buffer.Length.ToString());
             clientStream.Write(bufferlenght, 0, bufferlenght.Length);
-            Thread.Sleep(250);
+            Thread.Sleep(150);
             clientStream.Write(buffer, 0, buffer.Length);
-            clientStream.Flush();
             clientStream.Close();
             tcpClient.Close();
+            this.maxthread++;
+            return;
         }
 
         private void Listen()
@@ -49,9 +51,12 @@ namespace blockchain
             Console.WriteLine("[SG] GetData Serveur started");
             while (Epicoin.Continue)
             {
-                TcpClient client = this.ServeurChain.AcceptTcpClient();
-                Thread clientThread = new Thread(new ParameterizedThreadStart(this.ClientManager));
-                clientThread.Start(client);
+                if (this.maxthread > 0)
+                {
+                    TcpClient client = this.ServeurChain.AcceptTcpClient();
+                    Thread clientThread = new Thread(new ParameterizedThreadStart(this.ClientManager));
+                    clientThread.Start(client);
+                }
             }
             this.ServeurChain.Stop();
             Console.WriteLine("[SG] GetData Serveur closed");

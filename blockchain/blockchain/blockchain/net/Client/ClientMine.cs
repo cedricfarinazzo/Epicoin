@@ -52,14 +52,13 @@ namespace blockchain
                 if (datamine.block != null)
                 {
                     this.BlockToMine = new Block(datamine.block.Index, datamine.block.Timestamp, datamine.block.Data, datamine.block.PreviousHash);
+                    Console.WriteLine("Block received");
                 }
             }
             catch (Exception e)
             {
                 return;
             }
-            
-            Console.WriteLine("Block received");
         }
 
         public byte[] SendBlock(long time)
@@ -71,11 +70,15 @@ namespace blockchain
 
         public void Work()
         {
+            this.Init();
+            if (!this._tcpClient.Connected)
+            {
+                return;
+            }
+            Stream stm = this._tcpClient.GetStream();
             while (Epicoin.Continue)
             {
                 this.BlockToMine = null;
-                this.Init();
-                Stream stm = this._tcpClient.GetStream();
                 byte[] buffer = new byte[4096];
                 stm.Read(buffer,0,4096);
                 this.GetBlock(buffer);
@@ -91,11 +94,9 @@ namespace blockchain
                     Console.WriteLine("[CM] Sending block mined ...");
                     stm.Write(datamine, 0, datamine.Length);
                 }
-                
-                stm.Close();
-                this._tcpClient.Close();
             }
-            
+            stm.Close();
+            this._tcpClient.Close();
         }
     }
 }

@@ -36,28 +36,28 @@ namespace blockchain
 
                 timeout--;
             }
+
+            if (timeout < 0)
+            {
+                this.error = true;
+            }
         }
 
         public void Send()
         {
-            int timeout = 10000;
+            int timeout = 1000;
             byte[] datasend = Encoding.Default.GetBytes(Serialyze.Serialize(DataTrans));
             bool send = false;
-            while (Epicoin.Continue && !send && timeout >= 0 && !this.error)
+            this.Init();
+            while (this._tcpClient.Connected && Epicoin.Continue && !send && timeout >= 0 && !this.error)
             {
-                this.Init();
-                if (this._tcpClient.Connected)
-                {
-                    Stream stm = this._tcpClient.GetStream();
-                    stm.Write(datasend, 0, datasend.Length);
-                    send = true;
-                    stm.Close();
-                   
-                }
-                this._tcpClient.Close();
+                Stream stm = this._tcpClient.GetStream();
+                stm.Write(datasend, 0, datasend.Length);
+                send = true;
+                stm.Close();
                 timeout--;
             }
-
+            this._tcpClient.Close();
             if (timeout < 0)
             {
                 this.error = true;
