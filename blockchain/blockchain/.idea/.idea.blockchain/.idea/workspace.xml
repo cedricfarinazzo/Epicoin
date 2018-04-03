@@ -5,9 +5,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.blockchain/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.blockchain/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/blockchain/bin/Debug/epicoin.exe" afterPath="$PROJECT_DIR$/blockchain/bin/Debug/epicoin.exe" />
       <change beforePath="$PROJECT_DIR$/blockchain/bin/Debug/epicoin.pdb" afterPath="$PROJECT_DIR$/blockchain/bin/Debug/epicoin.pdb" />
-      <change beforePath="$PROJECT_DIR$/blockchain/net/Serveur/ServeurMine.cs" afterPath="$PROJECT_DIR$/blockchain/net/Serveur/ServeurMine.cs" />
+      <change beforePath="$PROJECT_DIR$/blockchain/bin/Release/epicoin.exe" afterPath="$PROJECT_DIR$/blockchain/bin/Release/epicoin.exe" />
+      <change beforePath="$PROJECT_DIR$/blockchain/bin/Release/epicoin.pdb" afterPath="$PROJECT_DIR$/blockchain/bin/Release/epicoin.pdb" />
+      <change beforePath="$PROJECT_DIR$/blockchain/net/Client/ClientGet.cs" afterPath="$PROJECT_DIR$/blockchain/net/Client/ClientGet.cs" />
       <change beforePath="$PROJECT_DIR$/blockchain/obj/Debug/epicoin.exe" afterPath="$PROJECT_DIR$/blockchain/obj/Debug/epicoin.exe" />
       <change beforePath="$PROJECT_DIR$/blockchain/obj/Debug/epicoin.pdb" afterPath="$PROJECT_DIR$/blockchain/obj/Debug/epicoin.pdb" />
+      <change beforePath="$PROJECT_DIR$/blockchain/obj/Release/epicoin.exe" afterPath="$PROJECT_DIR$/blockchain/obj/Release/epicoin.exe" />
+      <change beforePath="$PROJECT_DIR$/blockchain/obj/Release/epicoin.pdb" afterPath="$PROJECT_DIR$/blockchain/obj/Release/epicoin.pdb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -138,7 +142,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServeurMine.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServeurMine.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blockchain/net/Serveur/ServeurMine.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="489">
@@ -217,29 +221,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientGet.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ClientGet.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blockchain/net/Client/ClientGet.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="727">
+              <caret line="89" column="1" lean-forward="true" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
               <folding>
-                <marker date="1522781577224" expanded="false" signature="6:99" ph="..." />
-                <marker date="1522781577224" expanded="true" signature="121:2355" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="170:2353" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="381:401" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="430:877" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="616:867" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="650:753" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="789:825" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="926:1227" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="1015:1114" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="1146:1204" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="1254:2267" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="1420:2106" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="1454:1993" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="2029:2065" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="2194:2257" ph="{...}" />
-                <marker date="1522781577224" expanded="true" signature="2296:2347" ph="{...}" />
+                <marker date="1522782265883" expanded="false" signature="6:99" ph="..." />
+                <marker date="1522782265883" expanded="true" signature="121:2397" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="170:2395" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="381:401" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="430:877" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="616:867" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="650:753" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="789:825" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="926:1227" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="1015:1114" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="1146:1204" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="1254:2309" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="1462:2148" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="1496:2035" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="2071:2107" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="2236:2299" ph="{...}" />
+                <marker date="1522782265883" expanded="true" signature="2338:2389" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -323,8 +327,8 @@
         <option value="$PROJECT_DIR$/blockchain/net/Client/ClientTrans.cs" />
         <option value="$PROJECT_DIR$/blockchain/net/Serveur/ServeurTrans.cs" />
         <option value="$PROJECT_DIR$/blockchain/net/Serveur/ServeurGet.cs" />
-        <option value="$PROJECT_DIR$/blockchain/net/Client/ClientGet.cs" />
         <option value="$PROJECT_DIR$/blockchain/net/Serveur/ServeurMine.cs" />
+        <option value="$PROJECT_DIR$/blockchain/net/Client/ClientGet.cs" />
       </list>
     </option>
   </component>
@@ -488,12 +492,12 @@
       <workItem from="1522687119060" duration="2331000" />
       <workItem from="1522692229084" duration="1258000" />
       <workItem from="1522752631584" duration="4123000" />
-      <workItem from="1522771696421" duration="6914000" />
+      <workItem from="1522771696421" duration="7231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50927000" />
+    <option name="totallyTimeSpent" value="51244000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1833,58 +1837,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/net/Client/ClientGet.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding>
-            <marker date="1522781577224" expanded="false" signature="6:99" ph="..." />
-            <marker date="1522781577224" expanded="true" signature="121:2355" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="170:2353" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="381:401" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="430:877" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="616:867" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="650:753" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="789:825" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="926:1227" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="1015:1114" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="1146:1204" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="1254:2267" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="1420:2106" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="1454:1993" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="2029:2065" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="2194:2257" ph="{...}" />
-            <marker date="1522781577224" expanded="true" signature="2296:2347" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blockchain/net/Client/ClientMine.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="86" column="33" lean-forward="false" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
-          <folding>
-            <marker date="1522772300098" expanded="false" signature="6:117" ph="..." />
-            <marker date="1522772300098" expanded="true" signature="139:3267" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="189:3265" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="444:498" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="527:1012" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="698:949" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="732:835" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="871:907" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="1055:1727" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="1081:1633" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="1378:1619" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="1665:1717" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="1771:2019" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="2047:3259" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="2126:2178" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="2269:3187" ph="{...}" />
-            <marker date="1522772300098" expanded="true" signature="2498:3173" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blockchain/net/Serveur/ServeurMine.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
@@ -1917,6 +1869,58 @@
             <marker date="1522781956904" expanded="true" signature="3983:4570" ph="{...}" />
             <marker date="1522781956904" expanded="true" signature="4130:4462" ph="{...}" />
             <marker date="1522781956904" expanded="true" signature="4184:4448" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blockchain/net/Client/ClientMine.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="86" column="33" lean-forward="false" selection-start-line="86" selection-start-column="33" selection-end-line="86" selection-end-column="33" />
+          <folding>
+            <marker date="1522772300098" expanded="false" signature="6:117" ph="..." />
+            <marker date="1522772300098" expanded="true" signature="139:3267" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="189:3265" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="444:498" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="527:1012" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="698:949" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="732:835" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="871:907" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="1055:1727" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="1081:1633" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="1378:1619" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="1665:1717" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="1771:2019" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="2047:3259" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="2126:2178" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="2269:3187" ph="{...}" />
+            <marker date="1522772300098" expanded="true" signature="2498:3173" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blockchain/net/Client/ClientGet.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="89" column="1" lean-forward="true" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+          <folding>
+            <marker date="1522782265883" expanded="false" signature="6:99" ph="..." />
+            <marker date="1522782265883" expanded="true" signature="121:2397" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="170:2395" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="381:401" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="430:877" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="616:867" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="650:753" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="789:825" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="926:1227" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="1015:1114" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="1146:1204" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="1254:2309" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="1462:2148" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="1496:2035" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="2071:2107" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="2236:2299" ph="{...}" />
+            <marker date="1522782265883" expanded="true" signature="2338:2389" ph="{...}" />
           </folding>
         </state>
       </provider>

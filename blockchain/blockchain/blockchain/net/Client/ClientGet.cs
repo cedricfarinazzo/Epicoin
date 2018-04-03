@@ -54,8 +54,9 @@ namespace blockchain
         public void Get()
         {
             int timeout = 10000;
-            this.Reset();this.Init();
-            while (Epicoin.Continue && this.chain == null && !error && timeout >= 0)
+            this.Reset();
+            this.Init();
+            while (this._tcpClient.Connected && Epicoin.Continue && this.chain == null && !error && timeout >= 0)
             {
                 try
                 {
