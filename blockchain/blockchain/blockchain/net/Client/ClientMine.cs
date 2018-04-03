@@ -23,9 +23,8 @@ namespace blockchain
 
         private void Init()
         {
-            int timeout = 500;
             this._tcpClient = new TcpClient();
-            while (!this._tcpClient.Connected && Epicoin.Continue && timeout >= 0)
+            while (!this._tcpClient.Connected && Epicoin.Continue)
             {
                 try
                 {
@@ -34,10 +33,8 @@ namespace blockchain
                 catch (Exception e)
                 {
                 }
-
-                timeout--;
             }
-            //Console.WriteLine("Worker connected");
+            Console.WriteLine("Worker connected");
         }
 
         public void GetBlock(byte[] data)
@@ -78,6 +75,7 @@ namespace blockchain
             Stream stm = this._tcpClient.GetStream();
             while (this._tcpClient.Connected && Epicoin.Continue)
             {
+                Thread.Sleep(200);
                 this.BlockToMine = null;
                 byte[] buffer = new byte[4096];
                 stm.Read(buffer,0,4096);
@@ -94,11 +92,8 @@ namespace blockchain
                     Console.WriteLine("[CM] Sending block mined ...");
                     stm.Write(datamine, 0, datamine.Length);
                 }
-
-               
-                Thread.Sleep(100);
             }
-             stm.Close();
+            stm.Close();
             this._tcpClient.Close();
         }
     }

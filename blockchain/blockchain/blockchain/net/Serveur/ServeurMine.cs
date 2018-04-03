@@ -47,7 +47,7 @@ namespace blockchain
         private void AnalyzeMine(byte[] data)
         {
             DataMine dataMine = Serialyze.UnserializeDataMine(Encoding.Default.GetString(data));
-            //Console.WriteLine("[SM] Analyse bloc mined");
+            Console.WriteLine("[SM] Analyse bloc mined");
             if (this.Coin.BlockToMines[0].Index != dataMine.block.Index)
             {
                 return;
@@ -107,27 +107,26 @@ namespace blockchain
                 {
                     byte[] buffer = this.GenData();
                     clientStream.Write(buffer, 0, buffer.Length);
-                    
+                    buffer = null;
+                    Thread.Sleep(1000);
                     bytesRead = clientStream.Read(bufferblock, 0, 4096);
+                    if (bytesRead > 0)
+                    {
+                        try
+                        {
+                            this.AnalyzeMine(bufferblock);
+                            Thread.Sleep(100);
+                        }
+                        catch (Exception e)
+                        {
+                        }
+                        
+                    }
                 }
                 catch
                 {
                     break;
                 }
-
-                if (bytesRead > 0)
-                {
-                    try
-                    {
-                        this.AnalyzeMine(bufferblock);
-                        Thread.Sleep(100);
-                    }
-                    catch (Exception e)
-                    {
-                    }
-                    
-                }
-                
             }
             clientStream.Close();
             tcpClient.Close();
