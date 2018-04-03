@@ -94,10 +94,7 @@ namespace blockchain
             this.maxthread--;
             TcpClient tcpClient = (TcpClient)o;
             NetworkStream clientStream = tcpClient.GetStream();
-            byte[] buffer = this.GenData();
-            clientStream.Write(buffer, 0, buffer.Length);
-            clientStream.Flush();
-
+            
             byte[] bufferblock = new byte[4096];
             int bytesRead = 0;
             while (Epicoin.Continue && tcpClient.Connected)
@@ -106,6 +103,10 @@ namespace blockchain
 
                 try
                 {
+                    byte[] buffer = this.GenData();
+                    clientStream.Write(buffer, 0, buffer.Length);
+                    clientStream.Flush();
+                    
                     bytesRead = clientStream.Read(bufferblock, 0, 4096);
                 }
                 catch
