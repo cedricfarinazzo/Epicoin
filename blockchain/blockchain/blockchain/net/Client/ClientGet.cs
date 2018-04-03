@@ -55,28 +55,32 @@ namespace blockchain
         {
             int timeout = 10000;
             this.Reset();
-            this.Init();
-            while (this._tcpClient.Connected && Epicoin.Continue && this.chain == null && !error && timeout >= 0)
+            
+            while (Epicoin.Continue && this.chain == null && !error && timeout >= 0)
             {
                 try
                 {
+                    this.Init();
                     Stream stm = this._tcpClient.GetStream();
+                    /*
                     byte[] bufferlenght = new byte[512];
                     stm.Read(bufferlenght,0,512);
                     string slenght = Encoding.Default.GetString(bufferlenght);
                     int bufferlen = int.Parse(slenght);
                     Thread.Sleep(100);
-                    byte[] buffer = new byte[bufferlen + 1000];
-                    stm.Read(buffer, 0, bufferlen + 1000);
+                    */
+                    byte[] buffer = new byte[8388608];
+                    stm.Read(buffer, 0, 8388608);
                     this.GetBlockchain(buffer);
                     stm.Close();
+                    this._tcpClient.Close();
                 }
                 catch (Exception e)
                 {
                 }
                 timeout--;
             }
-            this._tcpClient.Close();
+            
             if (timeout < 0 || this.chain == null)
             {
                 this.error = true;

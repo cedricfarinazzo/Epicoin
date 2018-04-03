@@ -35,9 +35,11 @@ namespace blockchain
             TcpClient tcpClient = (TcpClient)o;
             NetworkStream clientStream = tcpClient.GetStream();
             byte[] buffer = this.GenData();
+            /*
             byte[] bufferlenght = Encoding.Default.GetBytes(buffer.Length.ToString());
             clientStream.Write(bufferlenght, 0, bufferlenght.Length);
             Thread.Sleep(500);
+            */
             clientStream.Write(buffer, 0, buffer.Length);
             clientStream.Close();
             tcpClient.Close();
