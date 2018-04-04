@@ -44,88 +44,89 @@ namespace blockchain
             
         }
 
-        private void AnalyzeMine(byte[] data)
+        private bool AnalyzeMine(byte[] data)
         {
             DataMine dataMine = Serialyze.UnserializeDataMine(Encoding.Default.GetString(data));
-            Console.WriteLine("[SM] Analyse bloc mined");
+            //Console.WriteLine("[SM] Analyse bloc mined");
             if (this.Coin.BlockToMines[0].Index != dataMine.block.Index)
             {
-                return;
+                return false;
             }
 
             if (this.Coin.BlockToMines[0].Timestamp != dataMine.block.Timestamp)
             {
-                return;
+                return false;
             }
 
             for (int i = 0; i < Block.nb_trans; i++)
             {
                 if (this.Coin.BlockToMines[0].Data[i].Amount != dataMine.block.Data[i].Amount)
                 {
-                    return;
+                    return false;
                 }
 
                 if (this.Coin.BlockToMines[0].Data[i].FromAddress != dataMine.block.Data[i].FromAddress)
                 {
-                    return;
+                    return false;
                 }
 
                 if (this.Coin.BlockToMines[0].Data[i].ToAddress != dataMine.block.Data[i].ToAddress)
                 {
-                    return;
+                    return false;
                 }
 
                 if (this.Coin.BlockToMines[0].Data[i].Timestamp != dataMine.block.Data[i].Timestamp)
                 {
-                    return;
+                    return false;
                 }
             }
 
             if (this.Coin.BlockToMines[0].PreviousHash != dataMine.block.PreviousHash)
             {
-                return;
+                return false;
             }
             
             this.Coin.NetworkMinePendingTransaction(dataMine.address, dataMine.block, dataMine.timemining);
+            return true;
         }
 
         public void ClientManager(object o)
         {
             this.maxthread--;
             TcpClient tcpClient = (TcpClient)o;
-            
-            
             byte[] bufferblock = new byte[4096];
             int bytesRead = 0;
             NetworkStream clientStream = tcpClient.GetStream();
             while (Epicoin.Continue && tcpClient.Connected)
             {
-                
-                bytesRead = 0;
-
                 try
                 {
                     byte[] buffer = this.GenData();
                     clientStream.Write(buffer, 0, buffer.Length);
                     buffer = null;
                     Thread.Sleep(1000);
-                    bytesRead = clientStream.Read(bufferblock, 0, 4096);
-                    if (bytesRead > 0)
+                    while (Epicoin.Continue && tcpClient.Connected && bytesRead == 0)
                     {
-                        try
-                        {
-                            this.AnalyzeMine(bufferblock);
-                            Thread.Sleep(100);
-                        }
-                        catch (Exception e)
-                        {
-                        }
+                        bytesRead = 0;
                         
+                        bytesRead = clientStream.Read(bufferblock, 0, 4096);
+                        clientStream.Flush();
+                        if (bytesRead > 0)
+                        {
+                            try
+                            {
+                                 this.AnalyzeMine(bufferblock);
+                            }
+                            catch (Exception e)
+                            {
+                                bytesRead = 0;
+                            }
+                        }
                     }
+                    bytesRead = 0;
                 }
                 catch
                 {
-                    break;
                 }
             }
             clientStream.Close();
