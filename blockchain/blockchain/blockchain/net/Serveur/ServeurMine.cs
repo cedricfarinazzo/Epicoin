@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 
@@ -11,6 +14,9 @@ namespace blockchain
         protected TcpListener ServeurChain;
         protected Blockchain Coin;
         
+                
+        protected List<TcpClient> ClientlList = new List<TcpClient>();
+        
         public ServeurMine(Blockchain coin, string host, int port)
             : base(host, port)
         {
@@ -19,7 +25,7 @@ namespace blockchain
             Thread serv = new Thread(this.Listen);
             serv.Start();
         }
-
+        
         private void InitServeur()
         {
             this.ServeurChain = TcpListener.Create(this.port);
@@ -46,8 +52,31 @@ namespace blockchain
 
         private bool AnalyzeMine(byte[] data)
         {
-            DataMine dataMine = Serialyze.UnserializeDataMine(Encoding.Default.GetString(data));
+            DataMine dataMine;
+            try
+            {
+                dataMine = Serialyze.UnserializeDataMine(Encoding.Default.GetString(data));
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            
             //Console.WriteLine("[SM] Analyse bloc mined");
+            if (dataMine == null)
+            {
+                return false;
+            }
+
+            if (dataMine.block == null)
+            {
+                return false;
+            }
+
+            if (dataMine.block.Data == null)
+            {
+                return false;
+            }
             if (this.Coin.BlockToMines[0].Index != dataMine.block.Index)
             {
                 return false;
@@ -58,36 +87,43 @@ namespace blockchain
                 return false;
             }
 
-            for (int i = 0; i < Block.nb_trans; i++)
+            try
             {
-                if (this.Coin.BlockToMines[0].Data[i].Amount != dataMine.block.Data[i].Amount)
+                for (int i = 0; i < Block.nb_trans; i++)
                 {
-                    return false;
-                }
+                    if (this.Coin.BlockToMines[0].Data[i].Amount != dataMine.block.Data[i].Amount)
+                    {
+                        return false;
+                    }
 
-                if (this.Coin.BlockToMines[0].Data[i].FromAddress != dataMine.block.Data[i].FromAddress)
-                {
-                    return false;
-                }
+                    if (this.Coin.BlockToMines[0].Data[i].FromAddress != dataMine.block.Data[i].FromAddress)
+                    {
+                        return false;
+                    }
 
-                if (this.Coin.BlockToMines[0].Data[i].ToAddress != dataMine.block.Data[i].ToAddress)
-                {
-                    return false;
-                }
+                    if (this.Coin.BlockToMines[0].Data[i].ToAddress != dataMine.block.Data[i].ToAddress)
+                    {
+                        return false;
+                    }
 
-                if (this.Coin.BlockToMines[0].Data[i].Timestamp != dataMine.block.Data[i].Timestamp)
-                {
-                    return false;
+                    if (this.Coin.BlockToMines[0].Data[i].Timestamp != dataMine.block.Data[i].Timestamp)
+                    {
+                        return false;
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                return false;
+            }
+            
 
             if (this.Coin.BlockToMines[0].PreviousHash != dataMine.block.PreviousHash)
             {
                 return false;
             }
             
-            this.Coin.NetworkMinePendingTransaction(dataMine.address, dataMine.block, dataMine.timemining);
-            return true;
+            return this.Coin.NetworkMinePendingTransaction(dataMine.address, dataMine.block, dataMine.timemining);
         }
 
         public void ClientManager(object o)
@@ -97,39 +133,25 @@ namespace blockchain
             byte[] bufferblock = new byte[4096];
             int bytesRead = 0;
             NetworkStream clientStream = tcpClient.GetStream();
-            while (Epicoin.Continue && tcpClient.Connected)
+            while (Epicoin.Continue && IsConnected(tcpClient))
             {
-                try
+                while (this.Coin.BlockToMines.Count == 0 && Epicoin.Continue && IsConnected(tcpClient));
+                if (!IsConnected(tcpClient))
                 {
-                    byte[] buffer = this.GenData();
-                    clientStream.Write(buffer, 0, buffer.Length);
-                    buffer = null;
-                    Thread.Sleep(1000);
-                    while (Epicoin.Continue && tcpClient.Connected && bytesRead == 0)
-                    {
-                        bytesRead = 0;
-                        
-                        bytesRead = clientStream.Read(bufferblock, 0, 4096);
-                        clientStream.Flush();
-                        if (bytesRead > 0)
-                        {
-                            try
-                            {
-                                 this.AnalyzeMine(bufferblock);
-                            }
-                            catch (Exception e)
-                            {
-                                bytesRead = 0;
-                            }
-                        }
-                    }
-                    bytesRead = 0;
+                    break;
                 }
-                catch
+                byte[] buffer = this.GenData();
+                clientStream.Write(buffer, 0, buffer.Length);
+                buffer = null;
+                bytesRead = clientStream.Read(bufferblock, 0, 4096);
+                clientStream.Flush();
+                bool NotWrong = this.AnalyzeMine(bufferblock);
+                if (!NotWrong)
                 {
+                    break;
                 }
             }
-            clientStream.Close();
+            tcpClient.Client.Disconnect(true);
             tcpClient.Close();
             this.maxthread++;
             return;
@@ -144,12 +166,20 @@ namespace blockchain
                 if (this.maxthread > 0)
                 {
                     TcpClient client = this.ServeurChain.AcceptTcpClient();
-                    Thread clientThread = new Thread(new ParameterizedThreadStart(this.ClientManager));
+                    this.ClientlList.Add(client);
+                    Thread clientThread =
+                        new Thread(new ParameterizedThreadStart(this.ClientManager)) {Priority = ThreadPriority.Lowest};
                     clientThread.Start(client);
                 }
             }
+            
+            foreach (var client in this.ClientlList)
+            {
+                client.Close();
+            }
             this.ServeurChain.Stop();
             Console.WriteLine("[SM] Miner Serveur closed");
+            return;
         }
     }
 }

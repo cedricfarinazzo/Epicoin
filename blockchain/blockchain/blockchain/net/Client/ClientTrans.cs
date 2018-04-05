@@ -24,7 +24,7 @@ namespace blockchain
         {
             int timeout = 500;
             this._tcpClient = new TcpClient();
-            while (!this._tcpClient.Connected && Epicoin.Continue && timeout >= 0 && !this.error)
+            while (!IsConnected(this._tcpClient) && Epicoin.Continue && timeout >= 0 && !this.error)
             {
                 try
                 {
@@ -63,6 +63,7 @@ namespace blockchain
                 this.error = true;
             }
             this.DataTrans = null;
+            return;
         }
     }
 }

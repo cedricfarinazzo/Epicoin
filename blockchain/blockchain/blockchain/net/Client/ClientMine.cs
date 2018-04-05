@@ -24,7 +24,7 @@ namespace blockchain
         private void Init()
         {
             this._tcpClient = new TcpClient();
-            while (!this._tcpClient.Connected && Epicoin.Continue)
+            while (!IsConnected(this._tcpClient) && Epicoin.Continue)
             {
                 try
                 {
@@ -34,7 +34,7 @@ namespace blockchain
                 {
                 }
             }
-            Console.WriteLine("Worker connected");
+            Console.WriteLine("[CM] Worker connected");
         }
 
         public void GetBlock(byte[] data)
@@ -49,7 +49,7 @@ namespace blockchain
                 if (datamine.block != null)
                 {
                     this.BlockToMine = new Block(datamine.block.Index, datamine.block.Timestamp, datamine.block.Data, datamine.block.PreviousHash);
-                    Console.WriteLine("Block received");
+                    Console.WriteLine("[CM] Block received");
                 }
             }
             catch (Exception e)
@@ -73,28 +73,38 @@ namespace blockchain
                 return;
             }
             Stream stm = this._tcpClient.GetStream();
-            while (this._tcpClient.Connected && Epicoin.Continue)
+            while (IsConnected(this._tcpClient) && Epicoin.Continue)
             {
-                Thread.Sleep(200);
                 this.BlockToMine = null;
+                this.difficulty = -1;
                 byte[] buffer = new byte[4096];
                 stm.Read(buffer,0,4096);
+                stm.Flush();
                 this.GetBlock(buffer);
-                if (this.BlockToMine != null)
+                if (this.BlockToMine != null && this.difficulty != -1)
                 {
                     Console.WriteLine("[CM] Mining ...");
                     long start = DateTime.Now.Ticks;
                     this.BlockToMine.MineBlock(this.difficulty);
                     long miningtime = DateTime.Now.Ticks - start;
-                    Console.WriteLine("[C] Creating Block " + this.BlockToMine.Index + " : " + this.BlockToMine.Hashblock
+                    Console.WriteLine("[CM] Creating Block " + this.BlockToMine.Index + " : " + this.BlockToMine.Hashblock
                                       + " : difficulty " + this.difficulty);
                     byte[] datamine = this.SendBlock(miningtime);
                     Console.WriteLine("[CM] Sending block mined ...");
                     stm.Write(datamine, 0, datamine.Length);
                 }
             }
-            stm.Close();
             this._tcpClient.Close();
+            stm.Close();
+            this._tcpClient = null;
+            this.BlockToMine = null;
+            Console.WriteLine("[CM] Disconnection ...");
+            if (Epicoin.Continue)
+            {
+                Console.WriteLine("[CM] Reconnection ...");
+                this.Work();
+            }
+            return;
         }
     }
 }

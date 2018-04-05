@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -9,6 +10,8 @@ namespace blockchain
     {
         protected TcpListener ServeurChain;
         protected Blockchain Coin;
+        
+        protected List<TcpClient> ClientlList = new List<TcpClient>();
         
         public ServeurTrans(Blockchain coin, string host, int port)
             : base(host, port)
@@ -85,12 +88,18 @@ namespace blockchain
                 if (this.maxthread > 0)
                 {
                     TcpClient client = this.ServeurChain.AcceptTcpClient();
+                    this.ClientlList.Add(client);
                     Thread clientThread = new Thread(new ParameterizedThreadStart(this.ClientManager));
                     clientThread.Start(client);                    
                 }
             }
+            foreach (var client in this.ClientlList)
+            {
+                client.Close();
+            }
             this.ServeurChain.Stop();
             Console.WriteLine("[ST] Transaction Serveur closed");
+            return;
         }
     }
 }

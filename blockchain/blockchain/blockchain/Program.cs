@@ -33,6 +33,7 @@ namespace blockchain
             {
                 Epicoin.User(namearg);
             }
+            Environment.Exit(Environment.ExitCode);
         }
     }
 }

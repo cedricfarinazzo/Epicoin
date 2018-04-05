@@ -10,7 +10,7 @@ namespace blockchain
     {
         public static readonly string Name = "epicoin";
         
-        protected int difficulty = 3;
+        protected int difficulty = 4;
         protected List<Block> Chain = null;
 
         protected List<Transaction> PendingTransactions;
@@ -20,7 +20,7 @@ namespace blockchain
         public List<Block> BlockToMines;
         public Block BlockToMine;
 
-        public readonly int timebtwblock = 1;
+        public readonly int timebtwblock = 5;
         
         protected string addressCreator;
         

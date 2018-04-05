@@ -13,7 +13,7 @@ namespace blockchain
         
         public static bool Continue = true;
 
-        public static readonly string host = "accer.ddns.net"; //IPAddress.Loopback.ToString(); //"accer.ddns.net";
+        public static readonly string host = "127.0.0.1"; //IPAddress.Loopback.ToString(); //"accer.ddns.net";
         public static readonly int mineport = 4246;
         public static readonly int transport = 4247;
         public static readonly int getport = 4248;
@@ -55,13 +55,13 @@ namespace blockchain
             {
                 Init();
             }
-            
-            Thread block = new Thread(CreateBlock);
-            Thread data = new Thread(ServeurData);
-            Thread mine = new Thread(ServeurMine);
-            Thread transaction = new Thread(ServeurTrans);
-            Thread saveChain = new Thread(SaveBlockchain);
-            
+
+            Thread block = new Thread(CreateBlock) {Priority = ThreadPriority.Highest};
+            Thread data = new Thread(ServeurData) {Priority = ThreadPriority.Lowest};
+            Thread mine = new Thread(ServeurMine) {Priority = ThreadPriority.Normal};
+            Thread transaction = new Thread(ServeurTrans) {Priority = ThreadPriority.Normal};
+            Thread saveChain = new Thread(SaveBlockchain) {Priority = ThreadPriority.Lowest};
+
             block.Start();
             data.Start();
             mine.Start();
@@ -71,7 +71,7 @@ namespace blockchain
             Console.WriteLine("\nAll serveur online\n\n\n");
             
             
-            while (Continue)
+            while (Epicoin.Continue)
             {
                 Console.WriteLine("\n      MENU SERVEUR");
                 Console.WriteLine();
@@ -89,7 +89,7 @@ namespace blockchain
                 Console.WriteLine();
                 if (action == "1")
                 {
-                    Continue = false;
+                    Epicoin.Continue = false;
                     ExportChain();
                     ExportWallet();
                     break;
@@ -127,6 +127,7 @@ namespace blockchain
                     Console.Write("\nAmount : ");
                     string Samount = ReadLine();
                     int amount = 0;
+                    bool error = false;
                     try
                     {
                         amount = int.Parse(Samount);
@@ -134,20 +135,19 @@ namespace blockchain
                         {
                             throw new Exception();
                         }
+                        
+                        List<DataTransaction> ltrans = Wallet.GenTransactions(amount, ToAddress);
+                        foreach (var trans in ltrans)
+                        {
+                            error = error || ClientTrans(trans);
+                        }
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine("Invalid amount");
                         continue;
                     }
-
-                    List<DataTransaction> ltrans = Wallet.GenTransactions(amount, ToAddress);
-                    bool error = false;
-                    foreach (var trans in ltrans)
-                    {
-                        error = error || ClientTrans(trans);
-                    }
-
+                    
                     if (error)
                     {
                         Console.WriteLine("Error");
@@ -194,13 +194,16 @@ namespace blockchain
             Console.WriteLine("\n\n Enter to stop miner ...\n");
             
             Console.WriteLine("Start miner ...");
-            
-            Thread worker = new Thread(ClientMine);
+
+            Thread worker = new Thread(ClientMine) {Priority = ThreadPriority.Highest};
             worker.Start(Wallet);
 
             ReadLine();
             
             Continue = false;
+
+            worker.Abort();
+            worker = null;
             
             Console.WriteLine("\nbye!");
         }
@@ -347,8 +350,8 @@ namespace blockchain
             {
                 Coin.CreateBlock();
                 Thread.Sleep(Coin.timebtwblock * 1000);
-                
             }
+            return;
         }
         
         // network
@@ -356,17 +359,22 @@ namespace blockchain
         public static void ServeurMine()
         {
             blockchain.ServeurMine serveurMine = new ServeurMine(Coin, host, mineport);
+            Thread.CurrentThread.Abort();
+            return;
         }
 
         public static void ClientMine(object worker)
         {
             ClientMine cminer = new ClientMine(host, mineport, (Wallet) worker);
             cminer.Work();
+            return;
         }
 
         public static void ServeurData()
         {
             blockchain.ServeurGet serveurGet= new ServeurGet(Coin, host, getport);
+            Thread.CurrentThread.Abort();
+            return;
         }
 
         public static Blockchain ClientData()
@@ -379,6 +387,8 @@ namespace blockchain
         public static void ServeurTrans()
         {
             blockchain.ServeurTrans serveurTrans = new ServeurTrans(Coin, host, transport);
+            Thread.CurrentThread.Abort();
+            return;
         }
 
         public static bool ClientTrans(DataTransaction trans)
@@ -454,6 +464,7 @@ namespace blockchain
                 
                 Thread.Sleep(time);
             }
+            return;
         }
     }
 }
