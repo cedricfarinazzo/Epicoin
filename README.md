@@ -2,8 +2,8 @@
 
 ## Qu'est-ce que c'est ?
 
-Epicoin est une blockchain réalisé en C#
-Ainsi elle permet de réaliser des transactions sécurisées.
+Epicoin est une blockchain réalisé en C#.
+Ainsi elle permet de réaliser des transactions sécurisées et anonymes.
 
 ## Comment l'utiliser ?
 
@@ -58,3 +58,12 @@ Il contient la totalité de la blockchain actuelle.
 - TCP 4247
 - TCP 4248
 
+## Contributions
+
+Toutes contributions est la bienvenue !
+La liste des choses à faire se trouve dans le fichier [TO_DO.md](/TO_DO.md)
+- forker le projet
+- créer une nouvelle branche 
+
+Vos modifications terminées, vous pouvez effectuer une Pull Request.
+Elle sera accepter selon votre travail.
