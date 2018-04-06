@@ -69,6 +69,7 @@
     <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="TestOpenCl.cs" />
     <Compile Include="Tools\Hash.cs" />
+    <Compile Include="Tools\Logger.cs" />
     <Compile Include="Tools\Rsa.cs" />
     <Compile Include="Tools\Serialyze.cs" />
   </ItemGroup>

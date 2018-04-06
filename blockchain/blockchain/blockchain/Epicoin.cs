@@ -22,6 +22,8 @@ namespace blockchain
         public static readonly string blockchainfile = "blockchain.epi";
 
         public static Wallet Wallet = null;
+
+        public static Logger log;
         
         public static void Serveur(string namearg = null)
         {
@@ -366,6 +368,7 @@ namespace blockchain
         public static void ClientMine(object worker)
         {
             ClientMine cminer = new ClientMine(host, mineport, (Wallet) worker);
+            Epicoin.log = cminer.log;
             cminer.Work();
             return;
         }
