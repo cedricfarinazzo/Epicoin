@@ -15,8 +15,13 @@ namespace EpicoinGraphics
     {
         public Menu()
         {
-            Console.SetOut(new StreamWriter("log.out"));
             InitializeComponent();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            Environment.Exit(0);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using blockchain;
 
@@ -28,7 +21,10 @@ namespace EpicoinGraphics
                 Epicoin.CreateWallet(name);
                 Epicoin.ExportWallet();
             }
+            
             InitializeComponent();
+
+
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -52,6 +48,8 @@ namespace EpicoinGraphics
                 this.work = true;
                 this.worker = new Thread(Epicoin.ClientMine) { Priority = ThreadPriority.Highest };
                 this.worker.Start(Epicoin.Wallet);
+                logWorker = new Thread(UpdateLog);
+                logWorker.Start();
             }
         }
 
@@ -59,13 +57,49 @@ namespace EpicoinGraphics
         {
             if (this.work)
             {
+                try
+                {
+                    logWorker.Abort();
+                    logWorker = null;
+                }
+                catch(Exception)
+                { }
                 Epicoin.Continue = false;
                 this.worker.Abort();
                 this.worker = null;
                 this.work = false;
+                Invoke(new MethodInvoker(delegate { StopLog(); }));
             }
         }
 
+        protected void UpdateLog()
+        {
+            while (this.work)
+            {
+                Invoke(new MethodInvoker(delegate { RefreshLog(); }));
+                Thread.Sleep(200);
+            }
+        }
+
+        protected void RefreshLog()
+        {
+            this.LogMiner.Clear();
+            try
+            {
+                this.LogMiner.AppendText(Epicoin.log.Read());
+            }
+            catch(Exception)
+            { }
+            this.LogMiner.Refresh();
+        }
+
+        protected void StopLog()
+        {
+            this.LogMiner.AppendText("[CM] Stop");
+            this.LogMiner.Refresh();
+        }
+
+        protected Thread logWorker;
         protected bool work = false;
         protected Thread worker = null;
     }

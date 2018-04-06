@@ -35,16 +35,16 @@ namespace EpicoinGraphics
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.ToAddressTrans = new System.Windows.Forms.RichTextBox();
+            this.StartMiner = new System.Windows.Forms.Button();
+            this.LogMiner = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.StopMiner = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.TextBoxAddress = new System.Windows.Forms.RichTextBox();
             this.TextBoxName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.TextBoxAddress = new System.Windows.Forms.RichTextBox();
-            this.StartMiner = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,7 +72,7 @@ namespace EpicoinGraphics
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.StartMiner);
-            this.panel5.Controls.Add(this.ToAddressTrans);
+            this.panel5.Controls.Add(this.LogMiner);
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.label17);
             this.panel5.Controls.Add(this.StopMiner);
@@ -81,13 +81,23 @@ namespace EpicoinGraphics
             this.panel5.Size = new System.Drawing.Size(680, 488);
             this.panel5.TabIndex = 19;
             // 
-            // ToAddressTrans
+            // StartMiner
             // 
-            this.ToAddressTrans.Location = new System.Drawing.Point(16, 124);
-            this.ToAddressTrans.Name = "ToAddressTrans";
-            this.ToAddressTrans.Size = new System.Drawing.Size(658, 359);
-            this.ToAddressTrans.TabIndex = 18;
-            this.ToAddressTrans.Text = "";
+            this.StartMiner.Location = new System.Drawing.Point(108, 46);
+            this.StartMiner.Name = "StartMiner";
+            this.StartMiner.Size = new System.Drawing.Size(182, 51);
+            this.StartMiner.TabIndex = 19;
+            this.StartMiner.Text = "Start";
+            this.StartMiner.UseVisualStyleBackColor = true;
+            this.StartMiner.Click += new System.EventHandler(this.StartClick);
+            // 
+            // LogMiner
+            // 
+            this.LogMiner.Location = new System.Drawing.Point(16, 124);
+            this.LogMiner.Name = "LogMiner";
+            this.LogMiner.Size = new System.Drawing.Size(645, 354);
+            this.LogMiner.TabIndex = 18;
+            this.LogMiner.Text = "";
             // 
             // label15
             // 
@@ -117,7 +127,7 @@ namespace EpicoinGraphics
             this.StopMiner.TabIndex = 1;
             this.StopMiner.Text = "Stop";
             this.StopMiner.UseVisualStyleBackColor = true;
-            this.StopMiner.Click += new System.EventHandler(StopClick);
+            this.StopMiner.Click += new System.EventHandler(this.StopClick);
             // 
             // panel2
             // 
@@ -131,6 +141,16 @@ namespace EpicoinGraphics
             this.panel2.Size = new System.Drawing.Size(680, 123);
             this.panel2.TabIndex = 20;
             // 
+            // TextBoxAddress
+            // 
+            this.TextBoxAddress.BackColor = System.Drawing.SystemColors.Control;
+            this.TextBoxAddress.Location = new System.Drawing.Point(8, 71);
+            this.TextBoxAddress.Name = "TextBoxAddress";
+            this.TextBoxAddress.ReadOnly = true;
+            this.TextBoxAddress.Size = new System.Drawing.Size(653, 47);
+            this.TextBoxAddress.TabIndex = 3;
+            this.TextBoxAddress.Text = Epicoin.Wallet.Address[0];
+            // 
             // TextBoxName
             // 
             this.TextBoxName.Location = new System.Drawing.Point(134, 10);
@@ -139,6 +159,7 @@ namespace EpicoinGraphics
             this.TextBoxName.Size = new System.Drawing.Size(237, 26);
             this.TextBoxName.TabIndex = 2;
             this.TextBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxName.Text = Epicoin.Wallet.Name;
             // 
             // label3
             // 
@@ -158,26 +179,6 @@ namespace EpicoinGraphics
             this.label2.TabIndex = 0;
             this.label2.Text = "Votre nom : ";
             // 
-            // TextBoxAddress
-            // 
-            this.TextBoxAddress.BackColor = System.Drawing.SystemColors.Control;
-            this.TextBoxAddress.Location = new System.Drawing.Point(8, 71);
-            this.TextBoxAddress.Name = "TextBoxAddress";
-            this.TextBoxAddress.ReadOnly = true;
-            this.TextBoxAddress.Size = new System.Drawing.Size(667, 47);
-            this.TextBoxAddress.TabIndex = 3;
-            this.TextBoxAddress.Text = "";
-            // 
-            // StartMiner
-            // 
-            this.StartMiner.Location = new System.Drawing.Point(108, 46);
-            this.StartMiner.Name = "StartMiner";
-            this.StartMiner.Size = new System.Drawing.Size(182, 51);
-            this.StartMiner.TabIndex = 19;
-            this.StartMiner.Text = "Start";
-            this.StartMiner.UseVisualStyleBackColor = true;
-            this.StartMiner.Click += new EventHandler(StartClick);
-            // 
             // Miner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -195,7 +196,6 @@ namespace EpicoinGraphics
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -203,7 +203,7 @@ namespace EpicoinGraphics
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.RichTextBox ToAddressTrans;
+        public System.Windows.Forms.RichTextBox LogMiner;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button StopMiner;
