@@ -43,6 +43,7 @@ namespace EpicoinGraphics
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(6, 6);
             this.panel1.Name = "panel1";
@@ -61,6 +62,7 @@ namespace EpicoinGraphics
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.m_MinerButton);
             this.panel2.Controls.Add(this.m_UserButton);
             this.panel2.Controls.Add(this.m_ServeurButton);
@@ -77,7 +79,7 @@ namespace EpicoinGraphics
             this.m_MinerButton.TabIndex = 3;
             this.m_MinerButton.Text = "Miner";
             this.m_MinerButton.UseVisualStyleBackColor = true;
-            this.m_MinerButton.Click += new EventHandler(this.MinerClick);
+            this.m_MinerButton.Click += new System.EventHandler(this.MinerClick);
             // 
             // m_UserButton
             // 
@@ -87,7 +89,7 @@ namespace EpicoinGraphics
             this.m_UserButton.TabIndex = 2;
             this.m_UserButton.Text = "User";
             this.m_UserButton.UseVisualStyleBackColor = true;
-            this.m_UserButton.Click += new EventHandler(this.UserClick);
+            this.m_UserButton.Click += new System.EventHandler(this.UserClick);
             // 
             // m_ServeurButton
             // 

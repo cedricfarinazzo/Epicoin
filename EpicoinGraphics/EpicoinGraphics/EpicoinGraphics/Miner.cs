@@ -16,5 +16,10 @@ namespace EpicoinGraphics
         {
             InitializeComponent();
         }
+
+        private void SendTransaction_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
