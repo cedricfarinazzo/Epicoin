@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using blockchain;
 
 namespace EpicoinGraphics
 {
@@ -14,6 +15,17 @@ namespace EpicoinGraphics
     {
         public Serveur()
         {
+            Epicoin.ImportWallet();
+            if (Epicoin.Wallet == null)
+            {
+                string name = "";
+                while (name == "")
+                {
+                    name = Microsoft.VisualBasic.Interaction.InputBox("Your pseudo :  ", "Your pseudo", "Bob");
+                }
+                Epicoin.CreateWallet(name);
+                Epicoin.ExportWallet();
+            }
             InitializeComponent();
         }
 

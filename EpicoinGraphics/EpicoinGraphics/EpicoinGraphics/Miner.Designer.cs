@@ -1,4 +1,8 @@
-﻿namespace EpicoinGraphics
+﻿using System;
+using System.Threading;
+using blockchain;
+
+namespace EpicoinGraphics
 {
     partial class Miner
     {
@@ -113,7 +117,7 @@
             this.StopMiner.TabIndex = 1;
             this.StopMiner.Text = "Stop";
             this.StopMiner.UseVisualStyleBackColor = true;
-            this.StopMiner.Click += new System.EventHandler(this.SendTransaction_Click);
+            this.StopMiner.Click += new System.EventHandler(StopClick);
             // 
             // panel2
             // 
@@ -172,6 +176,7 @@
             this.StartMiner.TabIndex = 19;
             this.StartMiner.Text = "Start";
             this.StartMiner.UseVisualStyleBackColor = true;
+            this.StartMiner.Click += new EventHandler(StartClick);
             // 
             // Miner
             // 
