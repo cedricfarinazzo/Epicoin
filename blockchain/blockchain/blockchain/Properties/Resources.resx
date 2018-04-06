@@ -17,12 +17,5 @@
     </resheader>
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </resheader>
-    <data name="sha256_kernal" type="System.Resources.ResXFileRef">
-        <value>../blockchain/OpenClkernel/sha256_kernal.cl;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </data>
-    <data name="sha256_kernal_wMin" type="System.Resources.ResXFileRef">
-        <value>../blockchain/OpenClkernel/sha256_kernal_wMin.cl;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-    </data>
-    
+    </resheader>    
 </root>

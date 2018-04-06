@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0377349F-6308-4946-8F2C-01934F33D22E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EpicoinGraphics</RootNamespace>
+    <AssemblyName>EpicoinGraphics</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Miner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Miner.Designer.cs">
+      <DependentUpon>Miner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serveur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Serveur.Designer.cs">
+      <DependentUpon>Serveur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Miner.resx">
+      <DependentUpon>Miner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Serveur.resx">
+      <DependentUpon>Serveur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Cloo, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\blockchain\blockchain\packages\Cloo.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\..\..\blockchain\blockchain\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCL.Net, Version=2.2.9.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\blockchain\blockchain\packages\OpenCL.Net.2.2.9.0\lib\net40\OpenCL.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Blockchain\Block.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Blockchain\Blockchain.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Blockchain\Transaction.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Blockchain\Wallet.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\DataContainer\DataMine.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\DataContainer\DataTransaction.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Epicoin.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\BlockchainNetwork.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\Client\ClientGet.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\Client\ClientMine.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\Client\ClientTrans.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\Serveur\ServeurGet.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\Serveur\ServeurMine.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\Serveur\ServeurTrans.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\TestOpenCl.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Tools\Hash.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Tools\Rsa.cs" />
+    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Tools\Serialyze.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\blockchain\blockchain\blockchain\packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\blockchain\blockchain\blockchain\OpenClkernel\sha256_kernal.cl" />
+    <Content Include="..\..\..\blockchain\blockchain\blockchain\OpenClkernel\sha256_kernal_wMin.cl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\..\blockchain\blockchain\blockchain\Properties\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
