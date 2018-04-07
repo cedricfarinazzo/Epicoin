@@ -21,7 +21,7 @@ namespace blockchain
 
         private void Init()
         {
-            int timeout = 500;
+            int timeout = 10;
             this._tcpClient = new TcpClient();
             while (!IsConnected(this._tcpClient) && Epicoin.Continue && timeout >= 0 && !this.error)
             {
@@ -29,7 +29,7 @@ namespace blockchain
                 {
                     this._tcpClient.Connect(this.host, this.port);
                 }
-                catch (Exception e)
+                catch
                 {
                 }
 
@@ -44,7 +44,7 @@ namespace blockchain
             {
                 this.chain = Serialyze.UnserializeBlockchain(msgdata);
             }
-            catch (Exception e)
+            catch
             {
                 this.Reset();
             }
@@ -61,6 +61,10 @@ namespace blockchain
                 try
                 {
                     this.Init();
+                    if (!IsConnected(this._tcpClient))
+                    {
+                        break;
+                    }
                     Stream stm = this._tcpClient.GetStream();
                     Thread.Sleep(500);
                     /*
@@ -76,7 +80,7 @@ namespace blockchain
                     stm.Close();
                     this._tcpClient.Close();
                 }
-                catch (Exception e)
+                catch
                 {
                 }
                 timeout--;

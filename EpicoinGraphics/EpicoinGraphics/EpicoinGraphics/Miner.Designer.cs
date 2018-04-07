@@ -32,19 +32,23 @@ namespace EpicoinGraphics
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.cpubar = new System.Windows.Forms.ProgressBar();
+            this.label4 = new System.Windows.Forms.Label();
             this.StartMiner = new System.Windows.Forms.Button();
             this.LogMiner = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.StopMiner = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.TextBoxAddress = new System.Windows.Forms.RichTextBox();
             this.TextBoxName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.TextBoxAddress = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -71,6 +75,8 @@ namespace EpicoinGraphics
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.cpubar);
+            this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.StartMiner);
             this.panel5.Controls.Add(this.LogMiner);
             this.panel5.Controls.Add(this.label15);
@@ -81,11 +87,27 @@ namespace EpicoinGraphics
             this.panel5.Size = new System.Drawing.Size(680, 488);
             this.panel5.TabIndex = 19;
             // 
+            // cpubar
+            // 
+            this.cpubar.Location = new System.Drawing.Point(391, 45);
+            this.cpubar.Name = "cpubar";
+            this.cpubar.Size = new System.Drawing.Size(270, 23);
+            this.cpubar.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(282, 45);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 20);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "CPU usage : ";
+            // 
             // StartMiner
             // 
-            this.StartMiner.Location = new System.Drawing.Point(108, 46);
+            this.StartMiner.Location = new System.Drawing.Point(96, 11);
             this.StartMiner.Name = "StartMiner";
-            this.StartMiner.Size = new System.Drawing.Size(182, 51);
+            this.StartMiner.Size = new System.Drawing.Size(149, 37);
             this.StartMiner.TabIndex = 19;
             this.StartMiner.Text = "Start";
             this.StartMiner.UseVisualStyleBackColor = true;
@@ -104,9 +126,9 @@ namespace EpicoinGraphics
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(300, 11);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(48, 20);
+            this.label15.Size = new System.Drawing.Size(92, 20);
             this.label15.TabIndex = 17;
-            this.label15.Text = "Miner";
+            this.label15.Text = "Miner Client";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label17
@@ -121,9 +143,9 @@ namespace EpicoinGraphics
             // 
             // StopMiner
             // 
-            this.StopMiner.Location = new System.Drawing.Point(364, 46);
+            this.StopMiner.Location = new System.Drawing.Point(96, 54);
             this.StopMiner.Name = "StopMiner";
-            this.StopMiner.Size = new System.Drawing.Size(182, 51);
+            this.StopMiner.Size = new System.Drawing.Size(149, 40);
             this.StopMiner.TabIndex = 1;
             this.StopMiner.Text = "Stop";
             this.StopMiner.UseVisualStyleBackColor = true;
@@ -141,16 +163,6 @@ namespace EpicoinGraphics
             this.panel2.Size = new System.Drawing.Size(680, 123);
             this.panel2.TabIndex = 20;
             // 
-            // TextBoxAddress
-            // 
-            this.TextBoxAddress.BackColor = System.Drawing.SystemColors.Control;
-            this.TextBoxAddress.Location = new System.Drawing.Point(8, 71);
-            this.TextBoxAddress.Name = "TextBoxAddress";
-            this.TextBoxAddress.ReadOnly = true;
-            this.TextBoxAddress.Size = new System.Drawing.Size(653, 47);
-            this.TextBoxAddress.TabIndex = 3;
-            this.TextBoxAddress.Text = Epicoin.Wallet.Address[0];
-            // 
             // TextBoxName
             // 
             this.TextBoxName.Location = new System.Drawing.Point(134, 10);
@@ -159,7 +171,6 @@ namespace EpicoinGraphics
             this.TextBoxName.Size = new System.Drawing.Size(237, 26);
             this.TextBoxName.TabIndex = 2;
             this.TextBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TextBoxName.Text = Epicoin.Wallet.Name;
             // 
             // label3
             // 
@@ -179,6 +190,21 @@ namespace EpicoinGraphics
             this.label2.TabIndex = 0;
             this.label2.Text = "Votre nom : ";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 400;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // TextBoxAddress
+            // 
+            this.TextBoxAddress.Location = new System.Drawing.Point(8, 82);
+            this.TextBoxAddress.Name = "TextBoxAddress";
+            this.TextBoxAddress.ReadOnly = true;
+            this.TextBoxAddress.Size = new System.Drawing.Size(653, 26);
+            this.TextBoxAddress.TabIndex = 4;
+            this.TextBoxAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Miner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -189,6 +215,7 @@ namespace EpicoinGraphics
             this.Controls.Add(this.panel1);
             this.Name = "Miner";
             this.Text = "Epicoin Miner";
+            this.Load += new System.EventHandler(this.Miner_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -196,6 +223,7 @@ namespace EpicoinGraphics
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -208,10 +236,13 @@ namespace EpicoinGraphics
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button StopMiner;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RichTextBox TextBoxAddress;
         private System.Windows.Forms.TextBox TextBoxName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button StartMiner;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ProgressBar cpubar;
+        private System.Windows.Forms.TextBox TextBoxAddress;
     }
 }

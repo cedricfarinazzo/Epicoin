@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 using blockchain;
@@ -10,6 +11,7 @@ namespace EpicoinGraphics
     {
         public Miner()
         {
+            Epicoin.Continue = false;
             Epicoin.ImportWallet();
             if (Epicoin.Wallet == null)
             {
@@ -23,8 +25,6 @@ namespace EpicoinGraphics
             }
             
             InitializeComponent();
-
-
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -37,6 +37,7 @@ namespace EpicoinGraphics
             }
             this.worker = null;
             this.work = false;
+            Epicoin.ExportWallet();
             Environment.Exit(0);
         }
 
@@ -83,24 +84,50 @@ namespace EpicoinGraphics
 
         protected void RefreshLog()
         {
-            this.LogMiner.Clear();
             try
             {
-                this.LogMiner.AppendText(Epicoin.log.Read());
+                string msg = Epicoin.log.Last();
+                if (msg != null)
+                {
+                    this.LogMiner.AppendText(msg + "\n");
+                }
             }
-            catch(Exception)
-            { }
+            catch (Exception e)
+            { } 
             this.LogMiner.Refresh();
         }
 
         protected void StopLog()
         {
-            this.LogMiner.AppendText("[CM] Stop");
+            this.LogMiner.AppendText("[CM] Stop\n");
             this.LogMiner.Refresh();
+            Thread.Sleep(1100);
         }
 
         protected Thread logWorker;
         protected bool work = false;
         protected Thread worker = null;
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            float fcpu = perfcpu.NextValue();
+            if (fcpu > cpubar.Maximum)
+            {
+                fcpu = cpubar.Maximum;
+            }
+            cpubar.Value = (int)fcpu;
+            cpubar.Invalidate();
+            cpubar.Update();
+        }
+
+        private void Miner_Load(object sender, EventArgs e)
+        {
+            this.TextBoxName.Text = Epicoin.Wallet.Name;
+            this.TextBoxAddress.Text = Epicoin.Wallet.Address[0];
+            perfcpu = new PerformanceCounter("Processor Information", "% Processor Time", "_Total");
+            timer1.Start();
+        }
+
+        PerformanceCounter perfcpu;
     }
 }

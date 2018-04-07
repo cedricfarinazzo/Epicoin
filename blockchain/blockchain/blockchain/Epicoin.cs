@@ -27,8 +27,7 @@ namespace blockchain
         
         public static void Serveur(string namearg = null)
         {
-            Console.WriteLine("\n\n        Blochain Epicoin Serveur \n\n");
-            
+            Epicoin.Continue = false;            
             ImportWallet();
             if (Wallet == null)
             {
@@ -423,7 +422,13 @@ namespace blockchain
         public static void ExportWallet()
         {
             string w = Wallet.Export();
-            File.WriteAllText(Epicoin.walletfile, w);
+            try
+            {
+                File.WriteAllText(Epicoin.walletfile, w);
+            }
+            catch (Exception)
+            { }
+            
         }
 
         public static void ImportWallet()
@@ -439,7 +444,13 @@ namespace blockchain
         public static void ExportChain()
         {
             string chain = Serialyze.Serialize(Coin);
-            File.WriteAllText(Epicoin.blockchainfile, chain);
+            try
+            {
+                File.WriteAllText(Epicoin.blockchainfile, chain);
+            }
+            catch(Exception)
+            { }
+            
         }
 
         public static void ImportChain()
@@ -455,7 +466,7 @@ namespace blockchain
         public static void SaveBlockchain()
         {
             int time = 5 * 60 * 1000;
-            while (Continue)
+            while (Epicoin.Continue)
             {
                 try
                 {

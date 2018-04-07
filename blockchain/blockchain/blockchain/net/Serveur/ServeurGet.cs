@@ -52,7 +52,12 @@ namespace blockchain
 
         private void Listen()
         {
-            this.ServeurChain.Start();
+            try
+            {
+                this.ServeurChain.Start();
+            }
+            catch (SocketException)
+            { return;  }
             Console.WriteLine("[SG] GetData Serveur started");
             while (Epicoin.Continue)
             {
@@ -69,6 +74,7 @@ namespace blockchain
                 client.Close();
             }
             this.ServeurChain.Stop();
+            this.ServeurChain = null;
             Console.WriteLine("[SG] GetData Serveur closed");
             return;
         }

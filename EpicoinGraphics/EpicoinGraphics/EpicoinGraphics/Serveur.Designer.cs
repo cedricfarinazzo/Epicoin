@@ -28,16 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.EpicoinAmount = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.TextBoxAddress = new System.Windows.Forms.TextBox();
             this.TextBoxName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ChainLastHash = new System.Windows.Forms.RichTextBox();
+            this.ChainPending = new System.Windows.Forms.TextBox();
+            this.ChainLastIndex = new System.Windows.Forms.TextBox();
+            this.ChainDifficulty = new System.Windows.Forms.TextBox();
+            this.ChainLenght = new System.Windows.Forms.TextBox();
             this.ChainIsValid = new System.Windows.Forms.TextBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.NextBlockBar = new System.Windows.Forms.ProgressBar();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -47,29 +56,25 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.ServeurTransStatus = new System.Windows.Forms.TextBox();
+            this.ServeurMinerStatus = new System.Windows.Forms.TextBox();
+            this.ServeurDataStatus = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.StopServeur = new System.Windows.Forms.Button();
             this.StartServeur = new System.Windows.Forms.Button();
-            this.ChainLenght = new System.Windows.Forms.TextBox();
-            this.ChainDifficulty = new System.Windows.Forms.TextBox();
-            this.ChainLastIndex = new System.Windows.Forms.TextBox();
-            this.ChainPending = new System.Windows.Forms.TextBox();
-            this.ServeurDataStatus = new System.Windows.Forms.TextBox();
-            this.ServeurMinerStatus = new System.Windows.Forms.TextBox();
-            this.ServeurTransStatus = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.TransactionLog = new System.Windows.Forms.TextBox();
+            this.ToAddressTrans = new System.Windows.Forms.RichTextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.AmountTrans = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.SendTransaction = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.ToAddressTrans = new System.Windows.Forms.RichTextBox();
-            this.ChainLastHash = new System.Windows.Forms.RichTextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.EpicoinAmount = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.timerAmount = new System.Windows.Forms.Timer(this.components);
+            this.timerServeur = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -109,6 +114,35 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1029, 84);
             this.panel2.TabIndex = 2;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(801, 16);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(61, 20);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Epicoin";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EpicoinAmount
+            // 
+            this.EpicoinAmount.Location = new System.Drawing.Point(552, 13);
+            this.EpicoinAmount.Name = "EpicoinAmount";
+            this.EpicoinAmount.ReadOnly = true;
+            this.EpicoinAmount.Size = new System.Drawing.Size(237, 26);
+            this.EpicoinAmount.TabIndex = 6;
+            this.EpicoinAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(469, 16);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(77, 20);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "Amount : ";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TextBoxAddress
             // 
@@ -155,7 +189,7 @@
             this.panel3.Controls.Add(this.ChainDifficulty);
             this.panel3.Controls.Add(this.ChainLenght);
             this.panel3.Controls.Add(this.ChainIsValid);
-            this.panel3.Controls.Add(this.progressBar1);
+            this.panel3.Controls.Add(this.NextBlockBar);
             this.panel3.Controls.Add(this.label14);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
@@ -170,6 +204,53 @@
             this.panel3.TabIndex = 3;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // ChainLastHash
+            // 
+            this.ChainLastHash.BackColor = System.Drawing.SystemColors.Control;
+            this.ChainLastHash.Location = new System.Drawing.Point(17, 250);
+            this.ChainLastHash.Name = "ChainLastHash";
+            this.ChainLastHash.ReadOnly = true;
+            this.ChainLastHash.Size = new System.Drawing.Size(481, 65);
+            this.ChainLastHash.TabIndex = 15;
+            this.ChainLastHash.Text = "";
+            // 
+            // ChainPending
+            // 
+            this.ChainPending.Location = new System.Drawing.Point(194, 351);
+            this.ChainPending.Name = "ChainPending";
+            this.ChainPending.ReadOnly = true;
+            this.ChainPending.Size = new System.Drawing.Size(148, 26);
+            this.ChainPending.TabIndex = 14;
+            this.ChainPending.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ChainLastIndex
+            // 
+            this.ChainLastIndex.Location = new System.Drawing.Point(159, 144);
+            this.ChainLastIndex.Name = "ChainLastIndex";
+            this.ChainLastIndex.ReadOnly = true;
+            this.ChainLastIndex.Size = new System.Drawing.Size(183, 26);
+            this.ChainLastIndex.TabIndex = 12;
+            this.ChainLastIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ChainDifficulty
+            // 
+            this.ChainDifficulty.Location = new System.Drawing.Point(101, 183);
+            this.ChainDifficulty.Name = "ChainDifficulty";
+            this.ChainDifficulty.ReadOnly = true;
+            this.ChainDifficulty.Size = new System.Drawing.Size(241, 26);
+            this.ChainDifficulty.TabIndex = 11;
+            this.ChainDifficulty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ChainDifficulty.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // ChainLenght
+            // 
+            this.ChainLenght.Location = new System.Drawing.Point(128, 104);
+            this.ChainLenght.Name = "ChainLenght";
+            this.ChainLenght.ReadOnly = true;
+            this.ChainLenght.Size = new System.Drawing.Size(214, 26);
+            this.ChainLenght.TabIndex = 10;
+            this.ChainLenght.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // ChainIsValid
             // 
             this.ChainIsValid.Location = new System.Drawing.Point(101, 59);
@@ -179,13 +260,12 @@
             this.ChainIsValid.TabIndex = 9;
             this.ChainIsValid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // progressBar1
+            // NextBlockBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(14, 435);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(484, 27);
-            this.progressBar1.TabIndex = 8;
-            this.progressBar1.Value = 1;
+            this.NextBlockBar.Location = new System.Drawing.Point(14, 435);
+            this.NextBlockBar.Name = "NextBlockBar";
+            this.NextBlockBar.Size = new System.Drawing.Size(484, 27);
+            this.NextBlockBar.TabIndex = 8;
             // 
             // label14
             // 
@@ -283,6 +363,33 @@
             this.panel4.Size = new System.Drawing.Size(509, 165);
             this.panel4.TabIndex = 4;
             // 
+            // ServeurTransStatus
+            // 
+            this.ServeurTransStatus.Location = new System.Drawing.Point(181, 121);
+            this.ServeurTransStatus.Name = "ServeurTransStatus";
+            this.ServeurTransStatus.ReadOnly = true;
+            this.ServeurTransStatus.Size = new System.Drawing.Size(205, 26);
+            this.ServeurTransStatus.TabIndex = 17;
+            this.ServeurTransStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ServeurMinerStatus
+            // 
+            this.ServeurMinerStatus.Location = new System.Drawing.Point(137, 86);
+            this.ServeurMinerStatus.Name = "ServeurMinerStatus";
+            this.ServeurMinerStatus.ReadOnly = true;
+            this.ServeurMinerStatus.Size = new System.Drawing.Size(249, 26);
+            this.ServeurMinerStatus.TabIndex = 16;
+            this.ServeurMinerStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ServeurDataStatus
+            // 
+            this.ServeurDataStatus.Location = new System.Drawing.Point(133, 56);
+            this.ServeurDataStatus.Name = "ServeurDataStatus";
+            this.ServeurDataStatus.ReadOnly = true;
+            this.ServeurDataStatus.Size = new System.Drawing.Size(253, 26);
+            this.ServeurDataStatus.TabIndex = 15;
+            this.ServeurDataStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -321,6 +428,7 @@
             this.StopServeur.TabIndex = 1;
             this.StopServeur.Text = "Stop";
             this.StopServeur.UseVisualStyleBackColor = true;
+            this.StopServeur.Click += new System.EventHandler(this.StopServClick);
             // 
             // StartServeur
             // 
@@ -330,74 +438,13 @@
             this.StartServeur.TabIndex = 0;
             this.StartServeur.Text = "Start";
             this.StartServeur.UseVisualStyleBackColor = true;
-            // 
-            // ChainLenght
-            // 
-            this.ChainLenght.Location = new System.Drawing.Point(128, 104);
-            this.ChainLenght.Name = "ChainLenght";
-            this.ChainLenght.ReadOnly = true;
-            this.ChainLenght.Size = new System.Drawing.Size(214, 26);
-            this.ChainLenght.TabIndex = 10;
-            this.ChainLenght.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ChainDifficulty
-            // 
-            this.ChainDifficulty.Location = new System.Drawing.Point(101, 183);
-            this.ChainDifficulty.Name = "ChainDifficulty";
-            this.ChainDifficulty.ReadOnly = true;
-            this.ChainDifficulty.Size = new System.Drawing.Size(241, 26);
-            this.ChainDifficulty.TabIndex = 11;
-            this.ChainDifficulty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ChainDifficulty.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // ChainLastIndex
-            // 
-            this.ChainLastIndex.Location = new System.Drawing.Point(159, 144);
-            this.ChainLastIndex.Name = "ChainLastIndex";
-            this.ChainLastIndex.ReadOnly = true;
-            this.ChainLastIndex.Size = new System.Drawing.Size(183, 26);
-            this.ChainLastIndex.TabIndex = 12;
-            this.ChainLastIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ChainPending
-            // 
-            this.ChainPending.Location = new System.Drawing.Point(194, 351);
-            this.ChainPending.Name = "ChainPending";
-            this.ChainPending.ReadOnly = true;
-            this.ChainPending.Size = new System.Drawing.Size(148, 26);
-            this.ChainPending.TabIndex = 14;
-            this.ChainPending.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ServeurDataStatus
-            // 
-            this.ServeurDataStatus.Location = new System.Drawing.Point(133, 56);
-            this.ServeurDataStatus.Name = "ServeurDataStatus";
-            this.ServeurDataStatus.ReadOnly = true;
-            this.ServeurDataStatus.Size = new System.Drawing.Size(253, 26);
-            this.ServeurDataStatus.TabIndex = 15;
-            this.ServeurDataStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ServeurMinerStatus
-            // 
-            this.ServeurMinerStatus.Location = new System.Drawing.Point(137, 86);
-            this.ServeurMinerStatus.Name = "ServeurMinerStatus";
-            this.ServeurMinerStatus.ReadOnly = true;
-            this.ServeurMinerStatus.Size = new System.Drawing.Size(249, 26);
-            this.ServeurMinerStatus.TabIndex = 16;
-            this.ServeurMinerStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ServeurTransStatus
-            // 
-            this.ServeurTransStatus.Location = new System.Drawing.Point(181, 121);
-            this.ServeurTransStatus.Name = "ServeurTransStatus";
-            this.ServeurTransStatus.ReadOnly = true;
-            this.ServeurTransStatus.Size = new System.Drawing.Size(205, 26);
-            this.ServeurTransStatus.TabIndex = 17;
-            this.ServeurTransStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.StartServeur.Click += new System.EventHandler(this.StartServClick);
             // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label20);
+            this.panel5.Controls.Add(this.TransactionLog);
             this.panel5.Controls.Add(this.ToAddressTrans);
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.AmountTrans);
@@ -408,6 +455,41 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(509, 333);
             this.panel5.TabIndex = 18;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(18, 264);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(48, 20);
+            this.label20.TabIndex = 22;
+            this.label20.Text = "Log : ";
+            // 
+            // TransactionLog
+            // 
+            this.TransactionLog.Location = new System.Drawing.Point(16, 290);
+            this.TransactionLog.Name = "TransactionLog";
+            this.TransactionLog.ReadOnly = true;
+            this.TransactionLog.Size = new System.Drawing.Size(481, 26);
+            this.TransactionLog.TabIndex = 21;
+            // 
+            // ToAddressTrans
+            // 
+            this.ToAddressTrans.Location = new System.Drawing.Point(16, 124);
+            this.ToAddressTrans.Name = "ToAddressTrans";
+            this.ToAddressTrans.Size = new System.Drawing.Size(481, 121);
+            this.ToAddressTrans.TabIndex = 18;
+            this.ToAddressTrans.Text = "";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(91, 12);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(92, 20);
+            this.label15.TabIndex = 17;
+            this.label15.Text = "Transaction";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AmountTrans
             // 
@@ -445,63 +527,16 @@
             this.SendTransaction.TabIndex = 1;
             this.SendTransaction.Text = "Send";
             this.SendTransaction.UseVisualStyleBackColor = true;
+            this.SendTransaction.Click += new System.EventHandler(this.SendTransactionClick);
             // 
-            // label15
+            // timerAmount
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(91, 12);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(92, 20);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "Transaction";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timerAmount.Interval = 2000;
+            this.timerAmount.Tick += new System.EventHandler(this.timerAmount_Tick);
             // 
-            // ToAddressTrans
+            // timerServeur
             // 
-            this.ToAddressTrans.Location = new System.Drawing.Point(16, 124);
-            this.ToAddressTrans.Name = "ToAddressTrans";
-            this.ToAddressTrans.Size = new System.Drawing.Size(481, 158);
-            this.ToAddressTrans.TabIndex = 18;
-            this.ToAddressTrans.Text = "";
-            // 
-            // ChainLastHash
-            // 
-            this.ChainLastHash.BackColor = System.Drawing.SystemColors.Control;
-            this.ChainLastHash.Location = new System.Drawing.Point(17, 250);
-            this.ChainLastHash.Name = "ChainLastHash";
-            this.ChainLastHash.ReadOnly = true;
-            this.ChainLastHash.Size = new System.Drawing.Size(481, 65);
-            this.ChainLastHash.TabIndex = 15;
-            this.ChainLastHash.Text = "";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(469, 16);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(77, 20);
-            this.label18.TabIndex = 5;
-            this.label18.Text = "Amount : ";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // EpicoinAmount
-            // 
-            this.EpicoinAmount.Location = new System.Drawing.Point(552, 13);
-            this.EpicoinAmount.Name = "EpicoinAmount";
-            this.EpicoinAmount.ReadOnly = true;
-            this.EpicoinAmount.Size = new System.Drawing.Size(237, 26);
-            this.EpicoinAmount.TabIndex = 6;
-            this.EpicoinAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(801, 16);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(61, 20);
-            this.label19.TabIndex = 7;
-            this.label19.Text = "Epicoin";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timerServeur.Tick += new System.EventHandler(this.timerServeur_Tick);
             // 
             // Serveur
             // 
@@ -515,6 +550,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Serveur";
             this.Text = "Epicoin Serveur";
+            this.Load += new System.EventHandler(this.Serveur_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -551,7 +587,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar NextBlockBar;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox ChainIsValid;
@@ -573,5 +609,9 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox EpicoinAmount;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Timer timerAmount;
+        private System.Windows.Forms.Timer timerServeur;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox TransactionLog;
     }
 }

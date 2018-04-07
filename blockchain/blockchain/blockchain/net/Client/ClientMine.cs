@@ -33,9 +33,8 @@ namespace blockchain
                 {
                     this._tcpClient.Connect(this.host, this.port);
                 }
-                catch (Exception e)
-                {
-                }
+                catch
+                {}
             }
             this.log.Write("[CM] Worker connected");
             Console.WriteLine("[CM] Worker connected");
@@ -57,7 +56,7 @@ namespace blockchain
                     Console.WriteLine("[CM] Block received");
                 }
             }
-            catch (Exception e)
+            catch
             {
                 return;
             }

@@ -141,15 +141,20 @@ namespace blockchain
                     break;
                 }
                 byte[] buffer = this.GenData();
-                clientStream.Write(buffer, 0, buffer.Length);
-                buffer = null;
-                bytesRead = clientStream.Read(bufferblock, 0, 4096);
-                clientStream.Flush();
-                bool NotWrong = this.AnalyzeMine(bufferblock);
-                if (!NotWrong)
+                try
                 {
-                    break;
+                    clientStream.Write(buffer, 0, buffer.Length);
+                    buffer = null;
+                    bytesRead = clientStream.Read(bufferblock, 0, 4096);
+                    clientStream.Flush();
+                    bool NotWrong = this.AnalyzeMine(bufferblock);
+                    if (!NotWrong)
+                    {
+                        break;
+                    }
                 }
+                catch
+                { }
             }
             tcpClient.Client.Disconnect(true);
             tcpClient.Close();
@@ -159,7 +164,12 @@ namespace blockchain
 
         private void Listen()
         {
-            this.ServeurChain.Start();
+            try
+            {
+                this.ServeurChain.Start();
+            }
+            catch (SocketException)
+            { return; }
             Console.WriteLine("[SM] Miner Serveur started");
             while (Epicoin.Continue)
             {
@@ -178,6 +188,7 @@ namespace blockchain
                 client.Close();
             }
             this.ServeurChain.Stop();
+            this.ServeurChain = null;
             Console.WriteLine("[SM] Miner Serveur closed");
             return;
         }

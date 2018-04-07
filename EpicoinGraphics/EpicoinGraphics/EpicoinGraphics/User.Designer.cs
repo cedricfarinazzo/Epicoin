@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.EpicoinAmount = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.TextBoxAddress = new System.Windows.Forms.TextBox();
             this.TextBoxName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,6 +47,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.SendTransaction = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.RefreshChainStats = new System.Windows.Forms.Button();
             this.ChainLastHash = new System.Windows.Forms.RichTextBox();
             this.ChainLastIndex = new System.Windows.Forms.TextBox();
             this.ChainDifficulty = new System.Windows.Forms.TextBox();
@@ -52,10 +57,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.EpicoinAmount = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.RefreshChainStats = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.TransactionLog = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -94,6 +98,35 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1029, 84);
             this.panel2.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(775, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 20);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Epicoin";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // EpicoinAmount
+            // 
+            this.EpicoinAmount.Location = new System.Drawing.Point(532, 10);
+            this.EpicoinAmount.Name = "EpicoinAmount";
+            this.EpicoinAmount.ReadOnly = true;
+            this.EpicoinAmount.Size = new System.Drawing.Size(237, 26);
+            this.EpicoinAmount.TabIndex = 5;
+            this.EpicoinAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(451, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Amount : ";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TextBoxAddress
             // 
@@ -134,6 +167,8 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.TransactionLog);
             this.panel5.Controls.Add(this.ToAddressTrans);
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.AmountTrans);
@@ -149,7 +184,7 @@
             // 
             this.ToAddressTrans.Location = new System.Drawing.Point(16, 124);
             this.ToAddressTrans.Name = "ToAddressTrans";
-            this.ToAddressTrans.Size = new System.Drawing.Size(481, 158);
+            this.ToAddressTrans.Size = new System.Drawing.Size(481, 129);
             this.ToAddressTrans.TabIndex = 18;
             this.ToAddressTrans.Text = "";
             // 
@@ -199,6 +234,7 @@
             this.SendTransaction.TabIndex = 1;
             this.SendTransaction.Text = "Send";
             this.SendTransaction.UseVisualStyleBackColor = true;
+            this.SendTransaction.Click += new System.EventHandler(this.SendTransactionClick);
             // 
             // panel3
             // 
@@ -217,6 +253,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(503, 367);
             this.panel3.TabIndex = 20;
+            // 
+            // RefreshChainStats
+            // 
+            this.RefreshChainStats.Location = new System.Drawing.Point(22, 12);
+            this.RefreshChainStats.Name = "RefreshChainStats";
+            this.RefreshChainStats.Size = new System.Drawing.Size(128, 30);
+            this.RefreshChainStats.TabIndex = 16;
+            this.RefreshChainStats.Text = "Refresh";
+            this.RefreshChainStats.UseVisualStyleBackColor = true;
+            this.RefreshChainStats.Click += new System.EventHandler(this.RefreshChainClick);
             // 
             // ChainLastHash
             // 
@@ -305,43 +351,28 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Blockchain";
             // 
-            // label4
+            // timer1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(451, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Amount : ";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 10000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // EpicoinAmount
+            // TransactionLog
             // 
-            this.EpicoinAmount.Location = new System.Drawing.Point(532, 10);
-            this.EpicoinAmount.Name = "EpicoinAmount";
-            this.EpicoinAmount.ReadOnly = true;
-            this.EpicoinAmount.Size = new System.Drawing.Size(237, 26);
-            this.EpicoinAmount.TabIndex = 5;
-            this.EpicoinAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TransactionLog.Location = new System.Drawing.Point(16, 314);
+            this.TransactionLog.Name = "TransactionLog";
+            this.TransactionLog.ReadOnly = true;
+            this.TransactionLog.Size = new System.Drawing.Size(481, 26);
+            this.TransactionLog.TabIndex = 19;
             // 
-            // label5
+            // label6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(775, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 20);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Epicoin";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // RefreshChainStats
-            // 
-            this.RefreshChainStats.Location = new System.Drawing.Point(22, 12);
-            this.RefreshChainStats.Name = "RefreshChainStats";
-            this.RefreshChainStats.Size = new System.Drawing.Size(128, 30);
-            this.RefreshChainStats.TabIndex = 16;
-            this.RefreshChainStats.Text = "Refresh";
-            this.RefreshChainStats.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 288);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 20);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Log : ";
             // 
             // User
             // 
@@ -354,6 +385,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "User";
             this.Text = "Epicoin User";
+            this.Load += new System.EventHandler(this.User_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -396,5 +428,8 @@
         private System.Windows.Forms.TextBox EpicoinAmount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button RefreshChainStats;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TransactionLog;
     }
 }

@@ -29,9 +29,109 @@ namespace EpicoinGraphics
             InitializeComponent();
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
+            base.OnFormClosing(e);
+            Epicoin.ExportWallet();
+            Epicoin.Continue = false;
+            Environment.Exit(0);
+        }
 
+        private void label9_Click(object sender, EventArgs e)
+        {}
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            RefreshChain();
+        }
+
+        protected void RefreshChainClick(object sender, EventArgs e)
+        {
+            RefreshChain();
+        }
+
+        protected void RefreshChain()
+        {
+            Blockchain chain = Epicoin.ClientData();
+            if (chain != null)
+            {
+                Block last = chain.GetLatestBlock();
+                this.ChainLenght.Text = chain.Chainlist.Count.ToString();
+                this.ChainLenght.Refresh();
+                this.ChainLastIndex.Text = last.Index.ToString();
+                this.ChainLastIndex.Refresh();
+                this.ChainLastHash.Text = last.Hashblock.ToString();
+                this.ChainLastHash.Refresh();
+                this.ChainDifficulty.Text = chain.Difficulty.ToString();
+                this.ChainDifficulty.Refresh();
+
+                this.EpicoinAmount.Text = Epicoin.Wallet.TotalAmount().ToString();
+                this.EpicoinAmount.Refresh();
+            }
+            else
+            {
+                Console.WriteLine("Error");
+            }
+        }
+
+        protected void SendTransactionClick(object sender, EventArgs e)
+        {
+            this.TransactionLog.Text = "";
+            bool error = false;
+            string ToAddress = this.ToAddressTrans.Text;
+            string Samount = this.AmountTrans.Text;
+            if (ToAddress == "" || Samount == "")
+            {
+                error = true;    
+            }
+            int amount = 0;
+            if (!error)
+            {
+                
+                try
+                {
+                    amount = int.Parse(Samount);
+                    if (amount <= 0)
+                    {
+                        throw new Exception();
+                    }
+                }
+                catch
+                {
+                    error = true;
+                }
+            }
+            
+            if (!error)
+            {
+                List<DataTransaction> ltrans = Epicoin.Wallet.GenTransactions(amount, ToAddress);
+                foreach (var trans in ltrans)
+                {
+                    error = error || Epicoin.ClientTrans(trans);
+                }
+            }
+
+            if (error)
+            {
+                this.TransactionLog.Text = "Failed";
+                this.TransactionLog.Refresh();
+            }
+            else
+            {
+                this.ToAddressTrans.Text = "";
+                this.ToAddressTrans.Refresh();
+                this.AmountTrans.Text = "";
+                this.AmountTrans.Refresh();
+                this.TransactionLog.Text = "Success";
+                this.TransactionLog.Refresh();
+            }
+        }
+
+        private void User_Load(object sender, EventArgs e)
+        {
+            this.TextBoxName.Text = Epicoin.Wallet.Name;
+            this.TextBoxAddress.Text = Epicoin.Wallet.Address[0];
+            timer1.Start();
         }
     }
 }

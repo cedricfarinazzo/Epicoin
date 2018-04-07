@@ -24,6 +24,7 @@ namespace blockchain
 
         private void InitServeur()
         {
+            this.ServeurChain = null;
             this.ServeurChain = TcpListener.Create(this.port);
         }
 
@@ -81,7 +82,12 @@ namespace blockchain
 
         private void Listen()
         {
-            this.ServeurChain.Start();
+            try
+            {
+                this.ServeurChain.Start();
+            }
+            catch (SocketException)
+            { return; }
             Console.WriteLine("[ST] Transaction Serveur started");
             while (Epicoin.Continue)
             {
@@ -98,6 +104,7 @@ namespace blockchain
                 client.Close();
             }
             this.ServeurChain.Stop();
+            this.ServeurChain = null;
             Console.WriteLine("[ST] Transaction Serveur closed");
             return;
         }

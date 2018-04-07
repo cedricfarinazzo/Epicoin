@@ -35,8 +35,14 @@ namespace blockchain
         public void GetAmount()
         {
             this.Amount = new List<int>();
-            ClientGet cget = new ClientGet(Epicoin.host, Epicoin.getport);
-            cget.Get();
+            ClientGet cget;
+            try
+			{
+				cget = new ClientGet(Epicoin.host, Epicoin.getport);
+				cget.Get();
+			}
+			catch(Exception)
+			{ return; }
             Blockchain chain = cget.chain;
             if (chain == null)
             {

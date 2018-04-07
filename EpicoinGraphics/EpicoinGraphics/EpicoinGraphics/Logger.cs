@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace blockchain
 {
@@ -30,6 +31,21 @@ namespace blockchain
             }
 
             return log;
+        }
+
+        public string Last()
+        {
+            try
+            {
+                string msg = this.buffer[0];
+                this.buffer.RemoveAt(0);
+                return msg;
+            }
+            catch(Exception)
+            {
+                return null;
+            }
+            
         }
     }
 }
