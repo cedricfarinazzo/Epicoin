@@ -26,8 +26,7 @@ namespace blockchain
         public static Logger log;
         
         public static void Serveur(string namearg = null)
-        {
-            Epicoin.Continue = false;            
+        {        
             ImportWallet();
             if (Wallet == null)
             {
