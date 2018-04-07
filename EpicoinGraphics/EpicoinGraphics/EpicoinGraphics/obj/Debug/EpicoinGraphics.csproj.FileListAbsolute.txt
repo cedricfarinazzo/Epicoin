@@ -5,6 +5,7 @@ C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\E
 C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\bin\Debug\Newtonsoft.Json.dll
 C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\bin\Debug\OpenCL.Net.dll
 C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\bin\Debug\Newtonsoft.Json.xml
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Debug\EpicoinGraphics.csprojResolveAssemblyReference.cache
 C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Debug\EpicoinGraphics.Menu.resources
 C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Debug\EpicoinGraphics.Miner.resources
 C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Debug\EpicoinGraphics.Properties.Resources.resources
