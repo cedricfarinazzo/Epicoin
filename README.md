@@ -10,11 +10,8 @@ Ainsi elle permet de réaliser des transactions sécurisées et anonymes.
 - Télécharger l'archive epicoin.zip dans l'onglet Release et dézipper l'archive.
 - Ouvrer les ports 4246, 4247, 4248 sur votre routeur ou votre pare-feu permettant à Epicoin de communiquer avec le serveur.
 
-### Prérequis pour PC n'ayant pas de processeur Intel
+### Prérequis
 
-Mono est requis pour pouvoir utiliser Epicoin.
-
-- windows : ???
 - Linux : installer le packet mono ou mono-complete
 
 ### Windows
@@ -28,11 +25,7 @@ Mono est requis pour pouvoir utiliser Epicoin.
 ```
 chmod +x epicoin.exe
 ```
-- enfin pour éxecuter le programme pour les proceseurs intel
-```
-./epicoin.exe
-```
--pour les autres processeurs 
+- enfin pour éxecuter le programme
 ```
 mono epicoin.exe
 ```
