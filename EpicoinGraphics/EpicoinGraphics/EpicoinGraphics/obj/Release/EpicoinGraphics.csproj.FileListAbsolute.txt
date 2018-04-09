@@ -16,3 +16,5 @@ C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\E
 C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.csproj.CopyComplete
 C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.exe
 C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.pdb
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.csprojResolveAssemblyReference.cache
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\bin\Release\System.Diagnostics.PerformanceCounter.dll

@@ -13,7 +13,7 @@ namespace blockchain
         
         public static bool Continue = true;
 
-        public static readonly string host = "accer.ddns.net"; //IPAddress.Loopback.ToString(); //"accer.ddns.net";
+        public static string host = "accer.ddns.net"; //IPAddress.Loopback.ToString(); //"accer.ddns.net";
         public static readonly int mineport = 4246;
         public static readonly int transport = 4247;
         public static readonly int getport = 4248;

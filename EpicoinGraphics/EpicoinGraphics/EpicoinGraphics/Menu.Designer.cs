@@ -37,6 +37,8 @@ namespace EpicoinGraphics
             this.m_MinerButton = new System.Windows.Forms.Button();
             this.m_UserButton = new System.Windows.Forms.Button();
             this.m_ServeurButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.HostBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +65,8 @@ namespace EpicoinGraphics
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.HostBox);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.m_MinerButton);
             this.panel2.Controls.Add(this.m_UserButton);
             this.panel2.Controls.Add(this.m_ServeurButton);
@@ -83,7 +87,7 @@ namespace EpicoinGraphics
             // 
             // m_UserButton
             // 
-            this.m_UserButton.Location = new System.Drawing.Point(361, 184);
+            this.m_UserButton.Location = new System.Drawing.Point(361, 194);
             this.m_UserButton.Name = "m_UserButton";
             this.m_UserButton.Size = new System.Drawing.Size(101, 32);
             this.m_UserButton.TabIndex = 2;
@@ -93,13 +97,30 @@ namespace EpicoinGraphics
             // 
             // m_ServeurButton
             // 
-            this.m_ServeurButton.Location = new System.Drawing.Point(361, 88);
+            this.m_ServeurButton.Location = new System.Drawing.Point(361, 108);
             this.m_ServeurButton.Name = "m_ServeurButton";
             this.m_ServeurButton.Size = new System.Drawing.Size(101, 32);
             this.m_ServeurButton.TabIndex = 1;
             this.m_ServeurButton.Text = "Serveur";
             this.m_ServeurButton.UseVisualStyleBackColor = true;
             this.m_ServeurButton.Click += new System.EventHandler(this.ServeurClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(268, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Host : ";
+            // 
+            // HostBox
+            // 
+            this.HostBox.Location = new System.Drawing.Point(329, 50);
+            this.HostBox.Name = "HostBox";
+            this.HostBox.Size = new System.Drawing.Size(192, 26);
+            this.HostBox.TabIndex = 5;
+            this.HostBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Menu
             // 
@@ -112,36 +133,16 @@ namespace EpicoinGraphics
             this.Controls.Add(this.panel1);
             this.Name = "Menu";
             this.Text = "EpicoinGraphics";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private void ServeurClick(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            Serveur serv = new Serveur();
-            serv.ShowDialog();
-        }
-
-        private void MinerClick(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            Miner miner = new Miner();
-            miner.ShowDialog();
-            
-        }
-
-        private void UserClick(object sender, EventArgs e)
-        {
-            this.Visible = false;
-            User user = new User();
-            user.ShowDialog();
-        }
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
@@ -149,6 +150,8 @@ namespace EpicoinGraphics
         private System.Windows.Forms.Button m_MinerButton;
         private System.Windows.Forms.Button m_UserButton;
         private System.Windows.Forms.Button m_ServeurButton;
+        private TextBox HostBox;
+        private Label label2;
     }
 }
 
