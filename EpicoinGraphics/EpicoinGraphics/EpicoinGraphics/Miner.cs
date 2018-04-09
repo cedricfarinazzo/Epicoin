@@ -110,6 +110,10 @@ namespace EpicoinGraphics
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (perfcpu == null)
+            {
+                return;
+            }
             float fcpu = perfcpu.NextValue();
             if (fcpu > cpubar.Maximum)
             {
@@ -124,10 +128,17 @@ namespace EpicoinGraphics
         {
             this.TextBoxName.Text = Epicoin.Wallet.Name;
             this.TextBoxAddress.Text = Epicoin.Wallet.Address[0];
-            perfcpu = new PerformanceCounter("Processor Information", "% Processor Time", "_Total");
+            try
+            {
+                perfcpu = new PerformanceCounter("Processor Information", "% Processor Time", "_Total");
+            }
+            catch
+            {
+                return;
+            }
             timer1.Start();
         }
 
-        PerformanceCounter perfcpu;
+        PerformanceCounter perfcpu = null;
     }
 }
