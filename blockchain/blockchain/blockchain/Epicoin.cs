@@ -24,6 +24,55 @@ namespace blockchain
         public static Wallet Wallet = null;
 
         public static Logger log;
+
+        public static void ServeurWithMenu(string namearg = null)
+        {
+            ImportWallet();
+            if (Wallet == null)
+            {
+                string name = "";
+                if (namearg == null)
+                {
+                    Console.Write("Your name : ");
+                    name = ReadLine();
+                }
+                else
+                {
+                    name = namearg;
+                }
+
+                CreateWallet(name);   
+                ExportWallet();
+            }
+            
+            
+            Console.WriteLine("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
+            
+            
+            Console.WriteLine("Init Blockchain ...");
+            ImportChain();
+            if (Coin == null)
+            {
+                Init();
+            }
+
+            Thread block = new Thread(CreateBlock) {Priority = ThreadPriority.Highest};
+            Thread data = new Thread(ServeurData) {Priority = ThreadPriority.Lowest};
+            Thread mine = new Thread(ServeurMine) {Priority = ThreadPriority.Normal};
+            Thread transaction = new Thread(ServeurTrans) {Priority = ThreadPriority.Normal};
+            Thread saveChain = new Thread(SaveBlockchain) {Priority = ThreadPriority.Lowest};
+
+            block.Start();
+            data.Start();
+            mine.Start();
+            transaction.Start();
+            Thread.Sleep(1000);
+            saveChain.Start();
+            Console.WriteLine("\nAll serveur online\n\n\n");
+            while (true)
+            {               
+            }
+        }
         
         public static void Serveur(string namearg = null)
         {        

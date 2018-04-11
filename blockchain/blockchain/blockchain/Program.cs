@@ -16,7 +16,7 @@ namespace blockchain
 
             if (status == null)
             {
-                Console.WriteLine("Choose between [S]Serveur, [M]Miner, [U]User");
+                Console.WriteLine("Choose between [S]Serveur, [SW] Serveur without menu, [M]Miner, [U]User");
                 Console.Write("\n status : ");
                 status = Epicoin.ReadLine();
             }
@@ -33,6 +33,11 @@ namespace blockchain
             {
                 Epicoin.User(namearg);
             }
+            if (status == "SW")
+            {
+                Epicoin.ServeurWithMenu(namearg);
+            }
+            
             Environment.Exit(Environment.ExitCode);
         }
     }
