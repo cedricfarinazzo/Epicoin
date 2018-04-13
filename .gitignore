@@ -3,3 +3,6 @@ blockchain.epi
 .vs/
 .idea/
 log.out
+*.zip
+*.tar.gz
+
