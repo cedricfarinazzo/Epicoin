@@ -1,0 +1,16 @@
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/.NETFramework,Version=v4.6.1.AssemblyAttribute.cs
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.Menu.resources
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.Miner.resources
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.Properties.Resources.resources
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.Serveur.resources
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.User.resources
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.Resources.resources
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Release/EpicoinGraphics.exe.config
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Release/EpicoinGraphics.pdb
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Release/EpicoinGraphics.exe
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.exe
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.pdb
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Release/System.Diagnostics.PerformanceCounter.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Release/Cloo.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Release/Newtonsoft.Json.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Release/OpenCL.Net.dll
