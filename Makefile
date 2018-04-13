@@ -1,3 +1,4 @@
+InstallDir=/usr/local/bin/epicoin
 EpicoinGraphics=EpicoinGraphics/EpicoinGraphics/EpicoinGraphics
 EpicoinTerm=blockchain/blockchain/blockchain
 Release=Release/Epicoin
@@ -70,3 +71,12 @@ install-dep-apt:
 
 install-dep-arch:
 	sudo pacman -S mono
+
+install: check release
+	@if [ ! -d $(InstallDir) ]; then sudo mkdir $(InstallDir); fi
+	@sudo cp $(Release)/EpicoinTerm/* $(InstallDir)
+	@sudo cp install/epicoin $(InstallDir)
+	@sudo chmod 755 $(InstallDir)/epicoin
+	@sudo cp install/epicoin.service /etc/systemd/system/epicoin.service
+	
+
