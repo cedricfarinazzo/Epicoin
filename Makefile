@@ -3,10 +3,12 @@ EpicoinTerm=blockchain/blockchain/blockchain
 Release=Release/Epicoin
 CURRENT_DIR=$(shell pwd)
 
-.PHONY: check clean
+OK=yes
+
+.PHONY: check clean build buildTerm buildGraphics clean-build clean-release release release-zip release-tar.gz update
 .SILENT: clean update clean-release clean-build
 
-update:
+update: check
 	git pull
 
 buildGraphics: 
@@ -44,4 +46,8 @@ release-tar.gz: release
 	tar -zcvf Epicoin.tar.gz $(Release)
 
 check:
-	echo "ok"
+	@type mono > /dev/null 2>&1 || (OK=no; echo "mono not found. Please install mono-complete or mono")	
+	@type xbuild > /dev/null 2>&1 || (OK=no; echo "xbuild not found. Please install mono-complete or mono")
+	@echo "Check dependency: "
+	@if [ "$(OK)" = "yes" ]; then echo "    success"; else echo "    failed"; fi
+
