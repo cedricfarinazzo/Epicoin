@@ -35,17 +35,47 @@
     <Reference Include="Cloo, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\Cloo.dll</HintPath>
     </Reference>
+    <Reference Include="HttpMachine, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\HttpMachine.PCL.3.1.0\lib\netstandard1.0\HttpMachine.dll</HintPath>
+    </Reference>
+    <Reference Include="IHttpMachine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\HttpMachine.PCL.3.1.0\lib\netstandard1.0\IHttpMachine.dll</HintPath>
+    </Reference>
+    <Reference Include="ISimpleHttpServer, Version=4.2.3.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\SimpleHttpListener.4.2.3\lib\netstandard1.3\ISimpleHttpServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ISocketLite.PCL, Version=4.2.1.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\SocketLite.PCL.4.2.1\lib\net45\ISocketLite.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Nat, Version=1.2.24.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Mono.Nat.1.2.24.0\lib\net40\Mono.Nat.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Ssdp, Version=1.0.3.0, Culture=neutral, PublicKeyToken=1b9e6d771899610e">
+      <HintPath>..\packages\Mono.Ssdp.1.0.3.0\lib\net45\Mono.Ssdp.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="OpenCL.Net, Version=2.2.9.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\OpenCL.Net.2.2.9.0\lib\net40\OpenCL.Net.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleHttpServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\SimpleHttpListener.4.2.3\lib\netstandard1.3\SimpleHttpServer.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketLite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\SocketLite.PCL.4.2.1\lib\net45\SocketLite.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive, Version=4.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263">
+      <HintPath>..\packages\System.Reactive.4.0.0-preview00001\lib\net46\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -60,10 +90,13 @@
     <Compile Include="net\BlockchainNetwork.cs" />
     <Compile Include="net\Client\ClientGet.cs" />
     <Compile Include="net\Client\ClientMine.cs" />
+    <Compile Include="net\Client\ClientPeer.cs" />
     <Compile Include="net\Client\ClientTrans.cs" />
     <Compile Include="net\Serveur\ServeurGet.cs" />
     <Compile Include="net\Serveur\ServeurMine.cs" />
+    <Compile Include="net\Serveur\ServeurPeer.cs" />
     <Compile Include="net\Serveur\ServeurTrans.cs" />
+    <Compile Include="net\UPnP.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />

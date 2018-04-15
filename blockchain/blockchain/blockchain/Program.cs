@@ -35,7 +35,7 @@ namespace blockchain
             }
             if (status == "SW")
             {
-                Epicoin.ServeurWithMenu(namearg);
+                Epicoin.ServeurWithoutMenu(namearg);
             }
             
             Environment.Exit(Environment.ExitCode);

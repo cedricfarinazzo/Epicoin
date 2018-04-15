@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using Newtonsoft.Json;
 
 namespace blockchain
@@ -38,6 +39,11 @@ namespace blockchain
         public static Wallet UnserializeWallet(string s)
         {
             return JsonConvert.DeserializeObject<Wallet>(s);
+        }
+
+        public static List<string> UnserializeStringList(string s)
+        {
+            return JsonConvert.DeserializeObject<List<string>>(s);
         }
     }
 }

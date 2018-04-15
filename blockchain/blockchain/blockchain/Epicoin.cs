@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Threading;
 
@@ -17,6 +18,9 @@ namespace blockchain
         public static readonly int mineport = 4246;
         public static readonly int transport = 4247;
         public static readonly int getport = 4248;
+        public static readonly int peerport = 4249;
+
+        public static List<string> PeerList = new List<string>(){"accer.ddns.net"};
 
         public static readonly string walletfile = "wallet.epi";
         public static readonly string blockchainfile = "blockchain.epi";
@@ -25,7 +29,7 @@ namespace blockchain
 
         public static Logger log;
 
-        public static void ServeurWithMenu(string namearg = null)
+        public static void ServeurWithoutMenu(string namearg = null)
         {
             ImportWallet();
             if (Wallet == null)
@@ -55,18 +59,24 @@ namespace blockchain
             {
                 Init();
             }
+            
+            Epicoin.OpenAllPort();
 
             Thread block = new Thread(CreateBlock) {Priority = ThreadPriority.Highest};
             Thread data = new Thread(ServeurData) {Priority = ThreadPriority.Lowest};
             Thread mine = new Thread(ServeurMine) {Priority = ThreadPriority.Normal};
             Thread transaction = new Thread(ServeurTrans) {Priority = ThreadPriority.Normal};
             Thread saveChain = new Thread(SaveBlockchain) {Priority = ThreadPriority.Lowest};
+            Thread peerServ = new Thread(ServeurPeer) {Priority = ThreadPriority.Normal};
+            Thread peerClient = new Thread(ClientPeer) {Priority = ThreadPriority.BelowNormal};
 
             block.Start();
             data.Start();
             mine.Start();
             transaction.Start();
+            peerServ.Start();
             Thread.Sleep(1000);
+            peerClient.Start();
             saveChain.Start();
             Console.WriteLine("\nAll serveur online\n\n\n");
             while (true)
@@ -97,25 +107,30 @@ namespace blockchain
             
             Console.WriteLine("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
             
-            
             Console.WriteLine("Init Blockchain ...");
             ImportChain();
             if (Coin == null)
             {
                 Init();
             }
+            
+            Epicoin.OpenAllPort();
 
             Thread block = new Thread(CreateBlock) {Priority = ThreadPriority.Highest};
             Thread data = new Thread(ServeurData) {Priority = ThreadPriority.Lowest};
             Thread mine = new Thread(ServeurMine) {Priority = ThreadPriority.Normal};
             Thread transaction = new Thread(ServeurTrans) {Priority = ThreadPriority.Normal};
             Thread saveChain = new Thread(SaveBlockchain) {Priority = ThreadPriority.Lowest};
+            Thread peerServ = new Thread(ServeurPeer) {Priority = ThreadPriority.Normal};
+            Thread peerClient = new Thread(ClientPeer) {Priority = ThreadPriority.BelowNormal};
 
             block.Start();
             data.Start();
             mine.Start();
             transaction.Start();
+            peerServ.Start();
             Thread.Sleep(1000);
+            peerClient.Start();
             saveChain.Start();
             Console.WriteLine("\nAll serveur online\n\n\n");
             
@@ -457,6 +472,24 @@ namespace blockchain
             }
         }
 
+        public static void ServeurPeer()
+        {
+            blockchain.ServeurPeer peer = new ServeurPeer(host, peerport);
+            Thread.CurrentThread.Abort();
+            return;
+        }
+
+        public static void ClientPeer()
+        {
+            int timeout = 42 * 1000;
+            while (Epicoin.Continue)
+            {
+                blockchain.ClientPeer peer = new ClientPeer(Epicoin.peerport, Epicoin.PeerList);
+                peer.Send();
+                Thread.Sleep(timeout);
+            }
+        }
+
         public static void CreateWallet(string name)
         {
             ImportWallet();
@@ -527,6 +560,11 @@ namespace blockchain
                 Thread.Sleep(time);
             }
             return;
+        }
+
+        public static void OpenAllPort()
+        {
+            UPnP upnp = new UPnP();
         }
     }
 }
