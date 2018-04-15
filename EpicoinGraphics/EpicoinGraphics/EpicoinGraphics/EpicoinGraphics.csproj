@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientPeer.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -71,6 +72,8 @@
     <Compile Include="Serveur.Designer.cs">
       <DependentUpon>Serveur.cs</DependentUpon>
     </Compile>
+    <Compile Include="ServeurPeer.cs" />
+    <Compile Include="UPnP.cs" />
     <Compile Include="User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +124,39 @@
     </Reference>
     <Reference Include="OpenCL.Net, Version=2.2.9.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\blockchain\blockchain\packages\OpenCL.Net.2.2.9.0\lib\net40\OpenCL.Net.dll</HintPath>
+    </Reference>
+	<Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\..\..\blockchain\blockchain\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive, Version=4.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263">
+      <HintPath>..\..\..\blockchain\blockchain\packages\System.Reactive.4.0.0-preview00001\lib\net46\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\..\..\blockchain\blockchain\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+	    <Reference Include="SimpleHttpServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\blockchain\blockchain\packages\SimpleHttpListener.4.2.3\lib\netstandard1.3\SimpleHttpServer.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketLite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\blockchain\blockchain\packages\SocketLite.PCL.4.2.1\lib\net45\SocketLite.dll</HintPath>
+    </Reference>
+	<Reference Include="HttpMachine, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\blockchain\blockchain\packages\HttpMachine.PCL.3.1.0\lib\netstandard1.0\HttpMachine.dll</HintPath>
+    </Reference>
+    <Reference Include="IHttpMachine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\blockchain\blockchain\packages\HttpMachine.PCL.3.1.0\lib\netstandard1.0\IHttpMachine.dll</HintPath>
+    </Reference>
+    <Reference Include="ISimpleHttpServer, Version=4.2.3.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\blockchain\blockchain\packages\SimpleHttpListener.4.2.3\lib\netstandard1.3\ISimpleHttpServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ISocketLite.PCL, Version=4.2.1.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\blockchain\blockchain\packages\SocketLite.PCL.4.2.1\lib\net45\ISocketLite.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Nat, Version=1.2.24.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\blockchain\blockchain\packages\Mono.Nat.1.2.24.0\lib\net40\Mono.Nat.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Ssdp, Version=1.0.3.0, Culture=neutral, PublicKeyToken=1b9e6d771899610e">
+      <HintPath>..\..\..\blockchain\blockchain\packages\Mono.Ssdp.1.0.3.0\lib\net45\Mono.Ssdp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

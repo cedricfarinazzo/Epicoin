@@ -33,6 +33,9 @@ namespace EpicoinGraphics
             {
                 Epicoin.Init();
             }
+
+            Epicoin.OpenAllPort();
+
             InitializeComponent();
 
         }
@@ -85,12 +88,16 @@ namespace EpicoinGraphics
             this.mine = new Thread(Epicoin.ServeurMine) { Priority = ThreadPriority.Normal };
             this.transaction = new Thread(Epicoin.ServeurTrans) { Priority = ThreadPriority.Normal };
             this.saveChain = new Thread(Epicoin.SaveBlockchain) { Priority = ThreadPriority.BelowNormal };
-
+            this.peerServ = new Thread(Epicoin.ServeurPeer) { Priority = ThreadPriority.Normal };
+            this.peerClient = new Thread(Epicoin.ClientPeer) { Priority = ThreadPriority.BelowNormal };
+            
             this.block.Start();
             this.data.Start();
             this.mine.Start();
             this.transaction.Start();
+            this.peerServ.Start();
             Thread.Sleep(1000);
+            this.peerClient.Start();
             this.saveChain.Start();
         }
 
@@ -104,12 +111,16 @@ namespace EpicoinGraphics
             this.mine = null;
             this.transaction = null;
             this.saveChain = null;
+            this.peerClient = null;
+            this.peerServ = null;
         }
 
         protected Thread block = null;
         protected Thread data = null;
         protected Thread mine = null;
         protected Thread transaction = null;
+        protected Thread peerServ = null;
+        protected Thread peerClient = null;
         protected Thread saveChain = null;
 
         private void Serveur_Load(object sender, EventArgs e)
