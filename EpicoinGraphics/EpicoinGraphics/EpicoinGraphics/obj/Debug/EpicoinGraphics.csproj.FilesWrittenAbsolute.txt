@@ -14,3 +14,14 @@
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/Cloo.dll
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/Newtonsoft.Json.dll
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/OpenCL.Net.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/System.Net.Sockets.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/System.Reactive.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/System.ValueTuple.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/SimpleHttpServer.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/SocketLite.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/HttpMachine.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/IHttpMachine.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/ISimpleHttpServer.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/ISocketLite.PCL.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/Mono.Nat.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/Mono.Ssdp.dll
