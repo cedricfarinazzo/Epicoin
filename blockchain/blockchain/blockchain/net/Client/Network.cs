@@ -8,10 +8,10 @@ namespace blockchain.Client
     public static class Network
     {
 
-        public static void Connect(IPAddress address, int port)
+        public static void Connect(string address, int port)
         {
             DataClient.Initialize(address, port);
-            DataClient.Client.Client.Connect(new IPEndPoint(DataClient.Address, DataClient.Port));
+            DataClient.Client.Client.Connect(DataClient.Address, DataClient.Port);
         }
         
         private static Protocol ReceiveMessage()

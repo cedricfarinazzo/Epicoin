@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>EpicoinGraphics</RootNamespace>
     <AssemblyName>EpicoinGraphics</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -50,8 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientPeer.cs" />
-    <Compile Include="Logger.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,8 +70,6 @@
     <Compile Include="Serveur.Designer.cs">
       <DependentUpon>Serveur.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServeurPeer.cs" />
-    <Compile Include="UPnP.cs" />
     <Compile Include="User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,7 +121,7 @@
     <Reference Include="OpenCL.Net, Version=2.2.9.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\blockchain\blockchain\packages\OpenCL.Net.2.2.9.0\lib\net40\OpenCL.Net.dll</HintPath>
     </Reference>
-	<Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <HintPath>..\..\..\blockchain\blockchain\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
     </Reference>
     <Reference Include="System.Reactive, Version=4.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263">
@@ -134,13 +130,13 @@
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
       <HintPath>..\..\..\blockchain\blockchain\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
-	    <Reference Include="SimpleHttpServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="SimpleHttpServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\blockchain\blockchain\packages\SimpleHttpListener.4.2.3\lib\netstandard1.3\SimpleHttpServer.dll</HintPath>
     </Reference>
     <Reference Include="SocketLite, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\blockchain\blockchain\packages\SocketLite.PCL.4.2.1\lib\net45\SocketLite.dll</HintPath>
     </Reference>
-	<Reference Include="HttpMachine, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="HttpMachine, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\blockchain\blockchain\packages\HttpMachine.PCL.3.1.0\lib\netstandard1.0\HttpMachine.dll</HintPath>
     </Reference>
     <Reference Include="IHttpMachine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -160,31 +156,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Blockchain\Block.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Blockchain\Blockchain.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Blockchain\Transaction.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Blockchain\Wallet.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\DataContainer\DataMine.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\DataContainer\DataTransaction.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Epicoin.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\BlockchainNetwork.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\Client\ClientGet.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\Client\ClientMine.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\Client\ClientTrans.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\Serveur\ServeurGet.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\Serveur\ServeurMine.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\net\Serveur\ServeurTrans.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\TestOpenCl.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Tools\Hash.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Tools\Rsa.cs" />
-    <Compile Include="..\..\..\blockchain\blockchain\blockchain\Tools\Serialyze.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\..\..\blockchain\blockchain\blockchain\OpenClkernel\sha256_kernal.cl" />
-    <Content Include="..\..\..\blockchain\blockchain\blockchain\OpenClkernel\sha256_kernal_wMin.cl" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="..\..\..\blockchain\blockchain\blockchain\Properties\Resources.resx" />
+    <ProjectReference Include="..\..\..\blockchain\blockchain\blockchain\blockchain.csproj">
+      <Project>{618f1784-90a7-4b8e-8da1-f837fce1d3cd}</Project>
+      <Name>blockchain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

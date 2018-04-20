@@ -31,5 +31,12 @@ namespace blockchain
 
             return log;
         }
+
+        public string pop()
+        {
+            string text = Read();
+            this.buffer.Clear();
+            return text;
+        }
     }
 }

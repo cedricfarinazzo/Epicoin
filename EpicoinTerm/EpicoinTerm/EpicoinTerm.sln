@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpicoinTerm", "EpicoinTerm\EpicoinTerm.csproj", "{F51EDA87-2388-4214-A173-0A51E96A9D1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blockchain", "..\..\blockchain\blockchain\blockchain\blockchain.csproj", "{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F51EDA87-2388-4214-A173-0A51E96A9D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F51EDA87-2388-4214-A173-0A51E96A9D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F51EDA87-2388-4214-A173-0A51E96A9D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F51EDA87-2388-4214-A173-0A51E96A9D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

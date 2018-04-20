@@ -1,0 +1,9 @@
+/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/bin/Debug/epicoin.exe
+/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/bin/Debug/epicoin.exe.mdb
+/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/bin/Debug/blockchain.dll
+/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/bin/Debug/Newtonsoft.Json.dll
+/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/bin/Debug/Mono.Nat.dll
+/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/bin/Debug/Newtonsoft.Json.xml
+/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/obj/Debug/EpicoinTerm.csprojResolveAssemblyReference.cache
+/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/obj/Debug/epicoin.exe
+/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/obj/Debug/epicoin.exe.mdb

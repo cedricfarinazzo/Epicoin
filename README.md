@@ -8,7 +8,8 @@ Ainsi elle permet de réaliser des transactions sécurisées et anonymes.
 ## Comment l'utiliser ?
 
 - Télécharger l'archive epicoin.zip dans l'onglet Release et dézipper l'archive.
-- Ouvrer les ports 4246, 4247, 4248 sur votre routeur ou votre pare-feu permettant à Epicoin de communiquer avec le serveur.
+- (Pour un Serveur) Ouvrer le port 4248 sur votre routeur ou votre pare-feu permettant 
+à Epicoin de communiquer avec le serveur.
 
 ### Prérequis
 
@@ -47,8 +48,6 @@ Il contient la totalité de la blockchain actuelle.
 
 ## Ports utilisés
 
-- TCP 4246
-- TCP 4247
 - TCP 4248
 
 ## Contributions

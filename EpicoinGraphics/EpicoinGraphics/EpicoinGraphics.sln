@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpicoinGraphics", "EpicoinGraphics\EpicoinGraphics.csproj", "{0377349F-6308-4946-8F2C-01934F33D22E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blockchain", "..\..\blockchain\blockchain\blockchain\blockchain.csproj", "{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0377349F-6308-4946-8F2C-01934F33D22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0377349F-6308-4946-8F2C-01934F33D22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0377349F-6308-4946-8F2C-01934F33D22E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

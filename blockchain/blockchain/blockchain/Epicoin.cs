@@ -69,7 +69,9 @@ namespace blockchain
             saveChain.Start();
             Console.WriteLine("\nAll serveur online\n\n\n");
             
-            client = new Client.Client(IPAddress.Parse(host), port);
+            
+            
+            client = new Client.Client(host, port);
             while (true)
             {               
             }
@@ -230,7 +232,7 @@ namespace blockchain
         {
             Console.WriteLine("\n\n        Blochain Epicoin Miner Client \n\n");
             
-            client = new Client.Client(IPAddress.Parse(host), port);
+            client = new Client.Client(host, port);
             
             ImportWallet();
             if (Wallet == null)
@@ -293,6 +295,8 @@ namespace blockchain
                 ExportWallet();
             }
 
+            client = new Client.Client(host, port);
+            
             Console.WriteLine("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
 
             while (Continue)
@@ -314,6 +318,8 @@ namespace blockchain
                 if (action == "1")
                 {
                     Continue = false;
+                    DataClient.Continue = false;
+                    DataServer.Continue = false;
                     ExportWallet();
                     break;
                 }
@@ -333,7 +339,7 @@ namespace blockchain
                         Console.WriteLine("Chain difficulty : " + chain.Difficulty);
                         Block last = chain.GetLatestBlock();
                         Console.WriteLine("Last Block " + last.Index + " : " + last.Hashblock);
-                        Console.WriteLine("pending Transaction : " + (Coin.Pending.Count + (Coin.BlockToMines.Count * Block.nb_trans)));
+                        Console.WriteLine("pending Transaction : " + (chain.Pending.Count + (chain.BlockToMines.Count * Block.nb_trans)));
                     }
                     else
                     {
@@ -372,7 +378,7 @@ namespace blockchain
                     string display = "";
                     foreach (var trans in ltrans)
                     {
-                        display += client.SendTransaction(trans);
+                        display += client.SendTransaction(trans) + "\n";
                     }
                     Console.WriteLine(display);
                 }

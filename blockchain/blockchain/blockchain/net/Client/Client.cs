@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Net;
+using System.Threading;
 
 namespace blockchain.Client
 {    
     public class Client
     {
-        public Client(IPAddress address, int port)
+        public Client(string address, int port)
         {
             Network.Connect(address, port);
         }
@@ -26,6 +27,7 @@ namespace blockchain.Client
         {
             while (DataClient.Continue)
             {
+                Thread.Sleep(1000);
                 DataMine data;
                 try
                 {

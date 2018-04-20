@@ -10,7 +10,7 @@ namespace blockchain
         protected int difficulty = 5;
         protected List<Block> Chain = null;
 
-        protected List<Transaction> PendingTransactions;
+        public List<Transaction> PendingTransactions;
         
         protected int miningReward = 10;
         

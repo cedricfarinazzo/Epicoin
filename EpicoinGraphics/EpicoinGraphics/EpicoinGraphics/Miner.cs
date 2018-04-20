@@ -46,9 +46,11 @@ namespace EpicoinGraphics
             if (!this.work)
             {
                 Epicoin.Continue = true;
+                blockchain.Client.DataClient.Continue = true;
+                DataServer.Continue = true;
                 this.work = true;
-                this.worker = new Thread(Epicoin.ClientMine) { Priority = ThreadPriority.Highest };
-                this.worker.Start(Epicoin.Wallet);
+                this.worker = new Thread(Epicoin.Mine) { Priority = ThreadPriority.Highest };
+                this.worker.Start(Epicoin.Wallet.Address[0]);
                 logWorker = new Thread(UpdateLog);
                 logWorker.Start();
             }
@@ -66,6 +68,8 @@ namespace EpicoinGraphics
                 catch(Exception)
                 { }
                 Epicoin.Continue = false;
+                blockchain.Client.DataClient.Continue = false;
+                DataServer.Continue = false;
                 this.worker.Abort();
                 this.worker = null;
                 this.work = false;
@@ -86,7 +90,7 @@ namespace EpicoinGraphics
         {
             try
             {
-                string msg = Epicoin.log.Last();
+                string msg = Epicoin.log.pop();
                 if (msg != null)
                 {
                     this.LogMiner.AppendText(msg + "\n");

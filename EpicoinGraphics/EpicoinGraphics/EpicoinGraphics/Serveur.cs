@@ -34,7 +34,6 @@ namespace EpicoinGraphics
                 Epicoin.Init();
             }
 
-            Epicoin.OpenAllPort();
 
             InitializeComponent();
 
@@ -83,44 +82,32 @@ namespace EpicoinGraphics
         protected void StartServ()
         {
             Epicoin.Continue = true;
+            blockchain.Client.DataClient.Continue = true;
+            DataServer.Continue = true;
             this.block = new Thread(Epicoin.CreateBlock) { Priority = ThreadPriority.Highest };
-            this.data = new Thread(Epicoin.ServeurData) { Priority = ThreadPriority.Lowest };
-            this.mine = new Thread(Epicoin.ServeurMine) { Priority = ThreadPriority.Normal };
-            this.transaction = new Thread(Epicoin.ServeurTrans) { Priority = ThreadPriority.Normal };
+            this.server = new Thread(Epicoin.server.Start) { Priority = ThreadPriority.Highest };
             this.saveChain = new Thread(Epicoin.SaveBlockchain) { Priority = ThreadPriority.BelowNormal };
-            this.peerServ = new Thread(Epicoin.ServeurPeer) { Priority = ThreadPriority.Normal };
-            this.peerClient = new Thread(Epicoin.ClientPeer) { Priority = ThreadPriority.BelowNormal };
             
             this.block.Start();
-            this.data.Start();
-            this.mine.Start();
-            this.transaction.Start();
-            this.peerServ.Start();
+            this.server.Start();
             Thread.Sleep(1000);
-            this.peerClient.Start();
             this.saveChain.Start();
         }
 
         protected void StopServ()
         {
             Epicoin.Continue = false;
+            blockchain.Client.DataClient.Continue = false;
+            DataServer.Continue = false;
             Epicoin.ExportChain();
             Epicoin.ExportWallet();
             this.block = null;
-            this.data = null;
-            this.mine = null;
-            this.transaction = null;
+            this.server = null;
             this.saveChain = null;
-            this.peerClient = null;
-            this.peerServ = null;
         }
 
         protected Thread block = null;
-        protected Thread data = null;
-        protected Thread mine = null;
-        protected Thread transaction = null;
-        protected Thread peerServ = null;
-        protected Thread peerClient = null;
+        protected Thread server = null;
         protected Thread saveChain = null;
 
         private void Serveur_Load(object sender, EventArgs e)
@@ -146,9 +133,9 @@ namespace EpicoinGraphics
 
         private void timerServeur_Tick(object sender, EventArgs e)
         {
-            bool datastatus = this.data != null && Epicoin.Continue;
-            bool minestatus = this.mine != null && Epicoin.Continue;
-            bool transactionstatus = this.transaction != null && Epicoin.Continue;
+            bool datastatus = blockchain.Client.DataClient.Continue;
+            bool minestatus = blockchain.Client.DataClient.Continue;
+            bool transactionstatus = blockchain.Client.DataClient.Continue;
 
             this.ServeurDataStatus.Text = datastatus.ToString();
             this.ServeurMinerStatus.Text = minestatus.ToString();
@@ -205,29 +192,24 @@ namespace EpicoinGraphics
                 }
             }
 
+            string display = "";
             if (!error)
             {
                 List<DataTransaction> ltrans = Epicoin.Wallet.GenTransactions(amount, ToAddress);
+                
                 foreach (var trans in ltrans)
                 {
-                    error = error || Epicoin.ClientTrans(trans);
+                    display += Epicoin.client.SendTransaction(trans) + "\n";
                 }
             }
 
-            if (error)
-            {
-                this.TransactionLog.Text = "Failed";
-                this.TransactionLog.Refresh();
-            }
-            else
-            {
-                this.ToAddressTrans.Text = "";
-                this.ToAddressTrans.Refresh();
-                this.AmountTrans.Text = "";
-                this.AmountTrans.Refresh();
-                this.TransactionLog.Text = "Success";
-                this.TransactionLog.Refresh();
-            }
+            this.ToAddressTrans.Text = "";
+            this.ToAddressTrans.Refresh();
+            this.AmountTrans.Text = "";
+            this.AmountTrans.Refresh();
+            this.TransactionLog.Text = display;
+            this.TransactionLog.Refresh();
+
         }
     }
 }

@@ -1,6 +1,7 @@
 InstallDir=/usr/local/bin/epicoin
+Blockchain=blockchain/blockchain/blockchain
 EpicoinGraphics=EpicoinGraphics/EpicoinGraphics/EpicoinGraphics
-EpicoinTerm=blockchain/blockchain/blockchain
+EpicoinTerm=EpicoinTerm/EpicoinTerm/EpicoinTerm
 Release=Release/Epicoin
 CURRENT_DIR=$(shell pwd)
 
@@ -20,17 +21,23 @@ endef
 update: check
 	git pull
 
+buildLibrairy:
+	msbuild /p:Configuration=Debug /verbosity:quiet $(Blockchain)/blockchain.csproj
+	msbuild /p:Configuration=Release /verbosity:quiet $(Blockchain)/blockchain.csproj
+
 buildGraphics: 
-	xbuild /p:Configuration=Debug /verbosity:quiet $(EpicoinGraphics)/EpicoinGraphics.csproj
-	xbuild /p:Configuration=Release /verbosity:quiet $(EpicoinGraphics)/EpicoinGraphics.csproj
+	msbuild /p:Configuration=Debug /verbosity:quiet $(EpicoinGraphics)/EpicoinGraphics.csproj
+	msbuild /p:Configuration=Release /verbosity:quiet $(EpicoinGraphics)/EpicoinGraphics.csproj
 
 buildTerm: 
-	xbuild /p:Configuration=Debug /verbosity:quiet $(EpicoinTerm)/blockchain.csproj
-	xbuild /p:Configuration=Release /verbosity:quiet $(EpicoinTerm)/blockchain.csproj
+	msbuild /p:Configuration=Debug /verbosity:quiet $(EpicoinTerm)/EpicoinTerm.csproj
+	msbuild /p:Configuration=Release /verbosity:quiet $(EpicoinTerm)/EpicoinTerm.csproj
 
-build: buildGraphics buildTerm
+build: buildLibrairy buildTerm buildGraphics
 	
 clean-build:
+	rm -rf $(Blockchain)/bin
+	rm -rf $(Blockchain)/obj
 	rm -rf $(EpicoinGraphics)/bin
 	rm -rf $(EpicoinGraphics)/obj
 	rm -rf $(EpicoinTerm)/bin
@@ -56,7 +63,7 @@ release-tar.gz: release
 
 check:
 	@type mono > /dev/null 2>&1 || (OK=no; echo "mono not found. Please install mono-complete or mono")	
-	@type xbuild > /dev/null 2>&1 || (OK=no; echo "xbuild not found. Please install mono-complete or mono")
+	@type msbuild > /dev/null 2>&1 || (OK=no; echo msbuild not found. Please install mono-complete or mono")
 	@echo "Check dependency: "
 	@if [ "$(OK)" = "yes" ]; then echo "    success"; else echo "    failed. Run make install-dependency" && exit 1 ; fi
 

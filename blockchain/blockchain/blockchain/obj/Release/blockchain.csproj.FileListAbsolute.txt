@@ -1,0 +1,8 @@
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/blockchain.dll
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/blockchain.dll.mdb
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/Mono.Nat.dll
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/Newtonsoft.Json.dll
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/Newtonsoft.Json.xml
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Release/blockchain.csprojResolveAssemblyReference.cache
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Release/blockchain.dll
+/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Release/blockchain.dll.mdb

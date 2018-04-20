@@ -26,6 +26,7 @@ namespace EpicoinGraphics
                 Epicoin.CreateWallet(name);
                 Epicoin.ExportWallet();
             }
+            Epicoin.client = new blockchain.Client.Client(Epicoin.host, Epicoin.port);
             InitializeComponent();
         }
 
@@ -52,7 +53,7 @@ namespace EpicoinGraphics
 
         protected void RefreshChain()
         {
-            Blockchain chain = Epicoin.ClientData();
+            Blockchain chain = Epicoin.client.GetBlockchain();
             if (chain != null)
             {
                 Block last = chain.GetLatestBlock();
@@ -101,30 +102,24 @@ namespace EpicoinGraphics
                     error = true;
                 }
             }
-            
+            string display = "";
             if (!error)
             {
                 List<DataTransaction> ltrans = Epicoin.Wallet.GenTransactions(amount, ToAddress);
+                
                 foreach (var trans in ltrans)
                 {
-                    error = error || Epicoin.ClientTrans(trans);
+                    display += Epicoin.client.SendTransaction(trans) + "\n";
                 }
             }
 
-            if (error)
-            {
-                this.TransactionLog.Text = "Failed";
-                this.TransactionLog.Refresh();
-            }
-            else
-            {
-                this.ToAddressTrans.Text = "";
-                this.ToAddressTrans.Refresh();
-                this.AmountTrans.Text = "";
-                this.AmountTrans.Refresh();
-                this.TransactionLog.Text = "Success";
-                this.TransactionLog.Refresh();
-            }
+            this.ToAddressTrans.Text = "";
+            this.ToAddressTrans.Refresh();
+            this.AmountTrans.Text = "";
+            this.AmountTrans.Refresh();
+            this.TransactionLog.Text = display;
+            this.TransactionLog.Refresh();
+            
         }
 
         private void User_Load(object sender, EventArgs e)

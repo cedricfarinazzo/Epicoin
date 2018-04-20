@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blockchain", "blockchain\blockchain.csproj", "{E96B9790-98DE-4CBD-8A71-AE96E812F6E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blockchain", "blockchain\blockchain.csproj", "{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,10 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E96B9790-98DE-4CBD-8A71-AE96E812F6E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E96B9790-98DE-4CBD-8A71-AE96E812F6E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E96B9790-98DE-4CBD-8A71-AE96E812F6E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E96B9790-98DE-4CBD-8A71-AE96E812F6E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E96B9790-98DE-4CBD-8A71-AE96E812F6E9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{618F1784-90A7-4B8E-8DA1-F837FCE1D3CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

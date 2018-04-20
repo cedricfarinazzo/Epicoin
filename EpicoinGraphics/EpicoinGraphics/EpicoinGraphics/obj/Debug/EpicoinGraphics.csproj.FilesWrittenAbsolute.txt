@@ -25,3 +25,7 @@
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/ISocketLite.PCL.dll
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/Mono.Nat.dll
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/Mono.Ssdp.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Debug/.NETFramework,Version=v4.7.1.AssemblyAttribute.cs
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/blockchain.dll
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/blockchain.dll.mdb
+/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Debug/blockchain.pdb
