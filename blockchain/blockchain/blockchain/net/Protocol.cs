@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace blockchain
 {
@@ -13,7 +14,6 @@ namespace blockchain
         AskBlockToMine,
         MinedBlock,
         AskPeer,
-        SendPeer
     }
     
     [Serializable]
@@ -22,7 +22,7 @@ namespace blockchain
         public Protocol(MessageType type)
         {
             this.Type = type;
-            this.Message = null;
+            this.Message = "";
             this.Transaction = null;
             this.Mine = null;
             this.Block = null;
@@ -35,5 +35,6 @@ namespace blockchain
         public DataMine Mine { get; set; }
         public Block Block { get; set; }
         public Blockchain Chain { get; set; }
+        public List<string> PeerList { get; set; }
     }
 }

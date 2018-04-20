@@ -2,13 +2,13 @@
 
 namespace blockchain
 {
-    public class DataClient
+    public class DataTcpClient
     {
         public TcpClient Client { get; }
         
         public bool IsQueued { get; set; }
 
-        public DataClient(TcpClient client)
+        public DataTcpClient(TcpClient client)
         {
             this.Client = client;
             this.IsQueued = false;

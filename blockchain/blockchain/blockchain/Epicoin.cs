@@ -60,8 +60,6 @@ namespace blockchain
                 Init();
             }
             
-            Epicoin.OpenAllPort();
-
             Thread block = new Thread(CreateBlock) {Priority = ThreadPriority.Highest};
             Thread data = new Thread(ServeurData) {Priority = ThreadPriority.Lowest};
             Thread mine = new Thread(ServeurMine) {Priority = ThreadPriority.Normal};
@@ -114,7 +112,6 @@ namespace blockchain
                 Init();
             }
             
-            Epicoin.OpenAllPort();
 
             Thread block = new Thread(CreateBlock) {Priority = ThreadPriority.Highest};
             Thread data = new Thread(ServeurData) {Priority = ThreadPriority.Lowest};
@@ -560,11 +557,6 @@ namespace blockchain
                 Thread.Sleep(time);
             }
             return;
-        }
-
-        public static void OpenAllPort()
-        {
-            UPnP upnp = new UPnP();
         }
     }
 }

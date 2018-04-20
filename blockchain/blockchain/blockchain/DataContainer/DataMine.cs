@@ -1,5 +1,8 @@
-﻿namespace blockchain
+﻿using System;
+
+namespace blockchain
 {
+    [Serializable]
     public class DataMine
     {
         public int difficulty;
