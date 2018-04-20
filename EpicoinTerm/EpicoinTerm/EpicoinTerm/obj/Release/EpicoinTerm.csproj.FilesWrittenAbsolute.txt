@@ -1,9 +1,0 @@
-/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/obj/Release/.NETFramework,Version=v4.7.1.AssemblyAttribute.cs
-/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/bin/Release/epicoin.pdb
-/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/bin/Release/epicoin.exe
-/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/obj/Release/epicoin.exe
-/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/obj/Release/epicoin.pdb
-/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/bin/Release/blockchain.dll
-/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/bin/Release/blockchain.pdb
-/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/bin/Release/Mono.Nat.dll
-/home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/bin/Release/Newtonsoft.Json.dll

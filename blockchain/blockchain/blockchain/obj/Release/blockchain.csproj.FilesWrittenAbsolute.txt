@@ -1,9 +1,0 @@
-/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Release/.NETFramework,Version=v4.7.1.AssemblyAttribute.cs
-/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/blockchain.pdb
-/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/blockchain.dll
-/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Release/blockchain.dll
-/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Release/blockchain.pdb
-/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/Mono.Nat.dll
-/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/Newtonsoft.Json.dll
-/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/bin/Release/blockchain.dll.mdb
-/home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Release/blockchain.dll.mdb

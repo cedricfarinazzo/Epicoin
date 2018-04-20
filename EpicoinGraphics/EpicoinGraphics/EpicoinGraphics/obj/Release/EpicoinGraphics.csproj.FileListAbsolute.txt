@@ -7,7 +7,6 @@
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Release/System.Diagnostics.PerformanceCounter.dll
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/bin/Release/Newtonsoft.Json.xml
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.csprojResolveAssemblyReference.cache
-/home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.csproj.EpicoinGraphics.exe.config
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.Menu.resources
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.Miner.resources
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.Properties.Resources.resources
