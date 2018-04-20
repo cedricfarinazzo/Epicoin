@@ -33,7 +33,7 @@ namespace EpicoinGraphics
             {
                 Epicoin.Init();
             }
-
+            Epicoin.server = new Server(Epicoin.port,Epicoin.Coin);
 
             InitializeComponent();
 
@@ -43,6 +43,8 @@ namespace EpicoinGraphics
         {
             base.OnFormClosing(e);
             Epicoin.Continue = false;
+            blockchain.Client.DataClient.Continue = false;
+            DataServer.Continue = false;
             StopServ();
             Epicoin.ExportChain();
             Epicoin.ExportWallet();
@@ -81,6 +83,7 @@ namespace EpicoinGraphics
 
         protected void StartServ()
         {
+            Epicoin.server = new Server(Epicoin.port,Epicoin.Coin);
             Epicoin.Continue = true;
             blockchain.Client.DataClient.Continue = true;
             DataServer.Continue = true;
@@ -88,10 +91,12 @@ namespace EpicoinGraphics
             this.server = new Thread(Epicoin.server.Start) { Priority = ThreadPriority.Highest };
             this.saveChain = new Thread(Epicoin.SaveBlockchain) { Priority = ThreadPriority.BelowNormal };
             
+            
             this.block.Start();
             this.server.Start();
             Thread.Sleep(1000);
             this.saveChain.Start();
+            Epicoin.client = new blockchain.Client.Client(Epicoin.host, Epicoin.port);
         }
 
         protected void StopServ()
@@ -104,6 +109,8 @@ namespace EpicoinGraphics
             this.block = null;
             this.server = null;
             this.saveChain = null;
+            Epicoin.server = null;
+            Epicoin.client = null;
         }
 
         protected Thread block = null;
@@ -122,7 +129,15 @@ namespace EpicoinGraphics
         {
             if (Epicoin.Continue)
             {
-                this.EpicoinAmount.Text = Epicoin.Wallet.TotalAmount().ToString();
+                try
+                {
+                    this.EpicoinAmount.Text = Epicoin.Wallet.TotalAmount().ToString();
+                }
+                catch (Exception exception)
+                {
+                    this.EpicoinAmount.Text = "Server offline";
+                }
+                
             }
             else
             {

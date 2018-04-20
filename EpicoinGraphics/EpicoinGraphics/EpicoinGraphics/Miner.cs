@@ -24,6 +24,8 @@ namespace EpicoinGraphics
                 Epicoin.ExportWallet();
             }
             
+            Epicoin.client = new blockchain.Client.Client(Epicoin.host, Epicoin.port);
+            
             InitializeComponent();
         }
 
