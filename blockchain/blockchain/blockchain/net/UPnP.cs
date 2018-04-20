@@ -15,10 +15,10 @@ namespace blockchain
         private void DeviceFound(object sender, DeviceEventArgs args)
         {
             INatDevice device = device = args.Device;
-            device.CreatePortMap(new Mapping(Protocol.Tcp, Epicoin.getport, Epicoin.getport));
-            device.CreatePortMap(new Mapping(Protocol.Tcp, Epicoin.mineport, Epicoin.mineport));
-            device.CreatePortMap(new Mapping(Protocol.Tcp, Epicoin.peerport, Epicoin.peerport));
-            device.CreatePortMap(new Mapping(Protocol.Tcp, Epicoin.transport, Epicoin.transport));
+            device.CreatePortMap(new Mapping(Mono.Nat.Protocol.Tcp, Epicoin.getport, Epicoin.getport));
+            device.CreatePortMap(new Mapping(Mono.Nat.Protocol.Tcp, Epicoin.mineport, Epicoin.mineport));
+            device.CreatePortMap(new Mapping(Mono.Nat.Protocol.Tcp, Epicoin.peerport, Epicoin.peerport));
+            device.CreatePortMap(new Mapping(Mono.Nat.Protocol.Tcp, Epicoin.transport, Epicoin.transport));
  
             foreach (Mapping portMap in device.GetAllMappings())
             {
@@ -31,10 +31,10 @@ namespace blockchain
         private void DeviceLost(object sender, DeviceEventArgs args)
         {
             INatDevice device = args.Device;           
-            device.DeletePortMap(new Mapping(Protocol.Tcp, Epicoin.getport, Epicoin.getport));
-            device.DeletePortMap(new Mapping(Protocol.Tcp, Epicoin.mineport, Epicoin.mineport));
-            device.DeletePortMap(new Mapping(Protocol.Tcp, Epicoin.peerport, Epicoin.peerport));
-            device.DeletePortMap(new Mapping(Protocol.Tcp, Epicoin.transport, Epicoin.transport));
+            device.DeletePortMap(new Mapping(Mono.Nat.Protocol.Tcp, Epicoin.getport, Epicoin.getport));
+            device.DeletePortMap(new Mapping(Mono.Nat.Protocol.Tcp, Epicoin.mineport, Epicoin.mineport));
+            device.DeletePortMap(new Mapping(Mono.Nat.Protocol.Tcp, Epicoin.peerport, Epicoin.peerport));
+            device.DeletePortMap(new Mapping(Mono.Nat.Protocol.Tcp, Epicoin.transport, Epicoin.transport));
         }
     }
 }

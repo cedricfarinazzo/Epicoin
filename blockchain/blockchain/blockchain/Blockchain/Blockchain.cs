@@ -320,5 +320,73 @@ namespace blockchain
             
             return amount;
         }
+
+        public void Merge(Blockchain newChain)
+        {
+            if (!newChain.IsvalidChain())
+            {
+                return;
+            }
+            if (newChain.Chainlist.Count > this.Chain.Count)
+            {
+                this.Chain = newChain.Chainlist;
+                this.Validate();
+            }
+            else if (newChain.Chainlist.Count == this.Chain.Count)
+            {
+                int i;
+                for (i = 0; i < this.Chain.Count; i++)
+                {
+                    if (this.Chain[i].Index != newChain.Chainlist[i].Index)
+                    {
+                        break;
+                    }
+                    
+                    if (this.Chain[i].nonce != newChain.Chainlist[i].nonce)
+                    {
+                        break;
+                    }
+                    
+                    if (this.Chain[i].PreviousHash != newChain.Chainlist[i].PreviousHash)
+                    {
+                        break;
+                    }
+                    
+                    if (this.Chain[i].Hashblock != newChain.Chainlist[i].Hashblock)
+                    {
+                        break;
+                    }
+                    
+                    if (this.Chain[i].Timestamp != newChain.Chainlist[i].Timestamp)
+                    {
+                        break;
+                    }
+                    
+                    if (this.Chain[i].Data != newChain.Chainlist[i].Data)
+                    {
+                        break;
+                    }
+                }
+
+                if (i < this.Chain.Count)
+                {
+                    for (; i < this.Chain.Count; i++)
+                    {
+                        List<Transaction> transList = this.Chain[i].Data;
+                        this.Chain[i] = newChain.Chainlist[i];
+                        foreach (var e in transList)
+                        {
+                            this.AddTransaction(e);
+                        }
+                    }
+                    
+                }
+                this.Validate();
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
