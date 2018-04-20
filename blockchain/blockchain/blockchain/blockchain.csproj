@@ -91,17 +91,6 @@
     <Compile Include="net\Client\DataClient.cs" />
     <Compile Include="net\Client\Network.cs" />
     <Compile Include="net\Formatter.cs" />
-    <Compile Include="net\old\BlockchainNetwork.cs" />
-    <Compile Include="net\old\ClientGet.cs" />
-    <Compile Include="net\old\ClientMine.cs" />
-    <Compile Include="net\old\ClientPeer.cs" />
-    <Compile Include="net\old\ClientSyncChain.cs" />
-    <Compile Include="net\old\ClientTrans.cs" />
-    <Compile Include="net\old\ServeurGet.cs" />
-    <Compile Include="net\old\ServeurMine.cs" />
-    <Compile Include="net\old\ServeurPeer.cs" />
-    <Compile Include="net\old\ServeurSyncChain.cs" />
-    <Compile Include="net\old\ServeurTrans.cs" />
     <Compile Include="net\Protocol.cs" />
     <Compile Include="net\Server\DataTcpClient.cs" />
     <Compile Include="net\Server\DataServer.cs" />

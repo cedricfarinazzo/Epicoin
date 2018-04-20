@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Dynamic;
 using System.Net;
 using System.Net.Sockets;
-using SimpleHttpServer.Helper;
 
 namespace blockchain
 {
@@ -31,7 +29,7 @@ namespace blockchain
             Tasks = new Queue<DataTcpClient>();
             _sock = new Socket(hosAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
             Chain = chain;
-            PeerList = new List<string>();
+            PeerList = new List<string>() {"accer.ddns.net"};
         }
 
 

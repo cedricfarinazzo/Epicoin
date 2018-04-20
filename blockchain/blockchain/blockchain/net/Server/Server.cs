@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
-using Mono.Ssdp;
 
 namespace blockchain
 {
@@ -58,6 +56,7 @@ namespace blockchain
                 try
                 {
                     Socket clientSocket = DataServer._sock.Accept();
+                    Console.WriteLine("[S] Accept connection from " + clientSocket.RemoteEndPoint.ToString());
                     TcpClient client = new TcpClient
                     {
                         Client = clientSocket
@@ -135,34 +134,42 @@ namespace blockchain
             switch (msg.Type)
             {
                 case MessageType.AskBlocknumber:
+                    Console.WriteLine("[SINFO][AskBlockNumber] request from " + client.Client.Client.RemoteEndPoint.ToString());
                     resp = RequestServer.AskBlockNumber(msg);
                     break;
                         
                 case MessageType.AskBlockToMine:
+                    Console.WriteLine("[SINFO][AskBlockToMine] request from " + client.Client.Client.RemoteEndPoint.ToString());
                     resp = RequestServer.AskBlockToMine(msg);
                     break;
                     
                 case MessageType.AskChain:
+                    Console.WriteLine("[SINFO][AskChain] request from " + client.Client.Client.RemoteEndPoint.ToString());
                     resp = RequestServer.AskChain(msg);
                     break;
                     
                 case MessageType.AskLastestBlock:
+                    Console.WriteLine("[SINFO][AskLatestBlock] request from " + client.Client.Client.RemoteEndPoint.ToString());
                     resp = RequestServer.AskLastestBlock(msg);
                     break;
                     
                 case MessageType.AskPeer:
+                    Console.WriteLine("[SINFO][AskPeer] request from " + client.Client.Client.RemoteEndPoint.ToString());
                     resp = RequestServer.AskPeer(msg);
                     break;
                     
                 case MessageType.MinedBlock:
+                    Console.WriteLine("[SINFO][MinedBlock] request from " + client.Client.Client.RemoteEndPoint.ToString());
                     resp = RequestServer.MinedBlock(msg);
                     break;
                     
                 case MessageType.Transaction:
+                    Console.WriteLine("[SINFO][Transaction] request from " + client.Client.Client.RemoteEndPoint.ToString());
                     resp = RequestServer.Transaction(msg);
                     break;
                     
                 default:
+                    Console.WriteLine("[SINFO][Unknown] request from " + client.Client.Client.RemoteEndPoint.ToString());
                     resp = new Protocol(MessageType.Error)
                         { Message = "You did something, but I don't know what." };
                     break;

@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
 using System.Threading;
+using blockchain.Client;
 
 namespace blockchain
 {
@@ -15,21 +14,19 @@ namespace blockchain
         public static bool Continue = true;
 
         public static string host = "accer.ddns.net"; //IPAddress.Loopback.ToString(); //"accer.ddns.net";
-        public static readonly int mineport = 4246;
-        public static readonly int transport = 4247;
-        public static readonly int getport = 4248;
-        public static readonly int peerport = 4249;
-
-        public static List<string> PeerList = new List<string>(){"accer.ddns.net"};
+        public static readonly int port = 4248;
 
         public static readonly string walletfile = "wallet.epi";
         public static readonly string blockchainfile = "blockchain.epi";
+        
+        public static Server server = null;
+        public static Client.Client client = null;
 
         public static Wallet Wallet = null;
 
         public static Logger log;
 
-        public static void ServeurWithoutMenu(string namearg = null)
+        public static void Serveur(string namearg = null)
         {
             ImportWallet();
             if (Wallet == null)
@@ -60,28 +57,29 @@ namespace blockchain
                 Init();
             }
             
+            server = new Server(port, Coin);
+            
+            
             Thread block = new Thread(CreateBlock) {Priority = ThreadPriority.Highest};
-            Thread data = new Thread(ServeurData) {Priority = ThreadPriority.Lowest};
-            Thread mine = new Thread(ServeurMine) {Priority = ThreadPriority.Normal};
-            Thread transaction = new Thread(ServeurTrans) {Priority = ThreadPriority.Normal};
+            Thread ThServer = new Thread(server.Start) {Priority = ThreadPriority.Highest};
             Thread saveChain = new Thread(SaveBlockchain) {Priority = ThreadPriority.Lowest};
-            Thread peerServ = new Thread(ServeurPeer) {Priority = ThreadPriority.Normal};
-            Thread peerClient = new Thread(ClientPeer) {Priority = ThreadPriority.BelowNormal};
 
             block.Start();
-            data.Start();
-            mine.Start();
-            transaction.Start();
-            peerServ.Start();
-            Thread.Sleep(1000);
-            peerClient.Start();
+            ThServer.Start();
             saveChain.Start();
             Console.WriteLine("\nAll serveur online\n\n\n");
+            
+            client = new Client.Client(IPAddress.Parse(host), port);
             while (true)
             {               
             }
+
+            Continue = false;
+            DataClient.Continue = false;
+            DataServer.Continue = false;
         }
         
+        /*
         public static void Serveur(string namearg = null)
         {        
             ImportWallet();
@@ -226,10 +224,13 @@ namespace blockchain
             }
             Console.WriteLine("\nbye!");
         }
+        */
 
         public static void Miner(string namearg = null)
         {
             Console.WriteLine("\n\n        Blochain Epicoin Miner Client \n\n");
+            
+            client = new Client.Client(IPAddress.Parse(host), port);
             
             ImportWallet();
             if (Wallet == null)
@@ -251,17 +252,18 @@ namespace blockchain
 
             Console.WriteLine("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
             
-            
             Console.WriteLine("\n\n Enter to stop miner ...\n");
             
             Console.WriteLine("Start miner ...");
 
-            Thread worker = new Thread(ClientMine) {Priority = ThreadPriority.Highest};
-            worker.Start(Wallet);
+            Thread worker = new Thread(Mine) {Priority = ThreadPriority.Highest};
+            worker.Start(Wallet.Address[0]);
 
             ReadLine();
             
             Continue = false;
+            DataClient.Continue = false;
+            DataServer.Continue = false;
 
             worker.Abort();
             worker = null;
@@ -322,7 +324,7 @@ namespace blockchain
                 }
                 else if (action == "3")
                 {
-                    Blockchain chain = ClientData();
+                    Blockchain chain = client.GetBlockchain();
                     if (chain != null)
                     {
                         Console.WriteLine("     Chain " + Blockchain.Name);
@@ -331,6 +333,7 @@ namespace blockchain
                         Console.WriteLine("Chain difficulty : " + chain.Difficulty);
                         Block last = chain.GetLatestBlock();
                         Console.WriteLine("Last Block " + last.Index + " : " + last.Hashblock);
+                        Console.WriteLine("pending Transaction : " + (Coin.Pending.Count + (Coin.BlockToMines.Count * Block.nb_trans)));
                     }
                     else
                     {
@@ -366,22 +369,12 @@ namespace blockchain
                     }
 
                     List<DataTransaction> ltrans = Wallet.GenTransactions(amount, ToAddress);
-                    bool error = false;
+                    string display = "";
                     foreach (var trans in ltrans)
                     {
-                        error = error || ClientTrans(trans);
+                        display += client.SendTransaction(trans);
                     }
-
-                    if (error)
-                    {
-                        Console.WriteLine("Error");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Transaction sended");
-                    }
-                    
-                    
+                    Console.WriteLine(display);
                 }
                 else
                 {
@@ -414,79 +407,12 @@ namespace blockchain
             }
             return;
         }
+
+        public static void Mine(object o)
+        {
+            client.Mine((string)o);
+        }
         
-        // network
-
-        public static void ServeurMine()
-        {
-            blockchain.ServeurMine serveurMine = new ServeurMine(Coin, host, mineport);
-            Thread.CurrentThread.Abort();
-            return;
-        }
-
-        public static void ClientMine(object worker)
-        {
-            ClientMine cminer = new ClientMine(host, mineport, (Wallet) worker);
-            Epicoin.log = cminer.log;
-            cminer.Work();
-            return;
-        }
-
-        public static void ServeurData()
-        {
-            blockchain.ServeurGet serveurGet= new ServeurGet(Coin, host, getport);
-            Thread.CurrentThread.Abort();
-            return;
-        }
-
-        public static Blockchain ClientData()
-        {
-            ClientGet cget = new ClientGet(host, getport);
-            cget.Get();
-            return cget.chain;
-        }
-
-        public static void ServeurTrans()
-        {
-            blockchain.ServeurTrans serveurTrans = new ServeurTrans(Coin, host, transport);
-            Thread.CurrentThread.Abort();
-            return;
-        }
-
-        public static bool ClientTrans(DataTransaction trans)
-        {
-            blockchain.ClientTrans ctrans = new ClientTrans(host, transport, trans);
-            ctrans.Send();
-            return ctrans.error;
-        }
-
-        public static void Transaction(Wallet sender, string toAddress, int amount)
-        {
-            List<DataTransaction> listTrans = sender.GenTransactions(amount, toAddress);
-            foreach (var trans in listTrans)
-            {
-                ClientTrans(trans);
-            }
-        }
-
-        public static void ServeurPeer()
-        {
-            blockchain.ServeurPeer peer = new ServeurPeer(host, peerport);
-            Thread.CurrentThread.Abort();
-            return;
-        }
-
-        public static void ClientPeer()
-        {
-            int timeout = 42 * 1000;
-            while (Epicoin.Continue)
-            {
-                blockchain.ClientPeer peer = new ClientPeer(Epicoin.peerport, Epicoin.PeerList);
-                peer.Send();
-                Thread.Sleep(timeout);
-            }
-        }
-
         public static void CreateWallet(string name)
         {
             ImportWallet();
@@ -560,3 +486,75 @@ namespace blockchain
         }
     }
 }
+// network
+        /*
+        public static void ServeurMine()
+        {
+            blockchain.ServeurMine serveurMine = new ServeurMine(Coin, host, mineport);
+            Thread.CurrentThread.Abort();
+            return;
+        }
+
+        public static void ClientMine(object worker)
+        {
+            ClientMine cminer = new ClientMine(host, mineport, (Wallet) worker);
+            Epicoin.log = cminer.log;
+            cminer.Work();
+            return;
+        }
+
+        public static void ServeurData()
+        {
+            blockchain.ServeurGet serveurGet= new ServeurGet(Coin, host, getport);
+            Thread.CurrentThread.Abort();
+            return;
+        }
+
+        public static Blockchain ClientData()
+        {
+            ClientGet cget = new ClientGet(host, getport);
+            cget.Get();
+            return cget.chain;
+        }
+
+        public static void ServeurTrans()
+        {
+            blockchain.ServeurTrans serveurTrans = new ServeurTrans(Coin, host, transport);
+            Thread.CurrentThread.Abort();
+            return;
+        }
+
+        public static bool ClientTrans(DataTransaction trans)
+        {
+            blockchain.ClientTrans ctrans = new ClientTrans(host, transport, trans);
+            ctrans.Send();
+            return ctrans.error;
+        }
+
+        public static void Transaction(Wallet sender, string toAddress, int amount)
+        {
+            List<DataTransaction> listTrans = sender.GenTransactions(amount, toAddress);
+            foreach (var trans in listTrans)
+            {
+                ClientTrans(trans);
+            }
+        }
+
+        public static void ServeurPeer()
+        {
+            blockchain.ServeurPeer peer = new ServeurPeer(host, peerport);
+            Thread.CurrentThread.Abort();
+            return;
+        }
+
+        public static void ClientPeer()
+        {
+            int timeout = 42 * 1000;
+            while (Epicoin.Continue)
+            {
+                blockchain.ClientPeer peer = new ClientPeer(Epicoin.peerport, Epicoin.PeerList);
+                peer.Send();
+                Thread.Sleep(timeout);
+            }
+        }
+        */

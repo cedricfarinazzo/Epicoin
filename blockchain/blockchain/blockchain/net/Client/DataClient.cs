@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
 
 namespace blockchain.Client
@@ -12,6 +11,8 @@ namespace blockchain.Client
         public static bool Continue { get; set; }
 
         public static TcpClient Client { get; set; }
+
+        public static Logger log;
         
         public static void Initialize(IPAddress hosAddress, int port)
         {
@@ -20,6 +21,7 @@ namespace blockchain.Client
             Continue = true;
             Socket _sock = new Socket(hosAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
             Client = new TcpClient() {Client = _sock};
+            log = new Logger();
         }
     }
 }

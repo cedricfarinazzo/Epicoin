@@ -17,7 +17,7 @@ namespace blockchain
         private void DeviceFound(object sender, DeviceEventArgs args)
         {
             INatDevice device = device = args.Device;
-            device.CreatePortMap(new Mapping(Mono.Nat.Protocol.Tcp, Epicoin.getport, this.port));
+            device.CreatePortMap(new Mapping(Mono.Nat.Protocol.Tcp, this.port, this.port));
  
             foreach (Mapping portMap in device.GetAllMappings())
             {
@@ -30,7 +30,7 @@ namespace blockchain
         private void DeviceLost(object sender, DeviceEventArgs args)
         {
             INatDevice device = args.Device;           
-            device.DeletePortMap(new Mapping(Mono.Nat.Protocol.Tcp, Epicoin.getport, this.port));
+            device.DeletePortMap(new Mapping(Mono.Nat.Protocol.Tcp, this.port, this.port));
         }
     }
 }

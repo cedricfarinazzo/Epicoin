@@ -110,7 +110,7 @@ namespace blockchain.Client
             return receiveMessage.Block;
         }
         
-        public static Block SendMinedBlock(DataMine mine)
+        public static string SendMinedBlock(DataMine mine)
         {
             Protocol reqProtocol = new Protocol(MessageType.MinedBlock) {Mine = mine};
             byte[] buffer = Formatter.ToByteArray(reqProtocol);
@@ -121,12 +121,7 @@ namespace blockchain.Client
                 throw new Exception(receiveMessage.Message);
             }
 
-            if (receiveMessage.Block == null)
-            {
-                return null;
-            }
-
-            return receiveMessage.Block;
+            return receiveMessage.Message;
         }
 
         public static string SendTransaction(DataTransaction trans)
