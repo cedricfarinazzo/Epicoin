@@ -182,7 +182,7 @@ namespace blockchain
         }
 
         
-        public bool NetworkMinePendingTransaction(string minerAdress, Block b, long miningtime)
+        public bool NetworkMinePendingTransaction(string minerAdress, Block b, long miningtime, int difficuty)
         {
             try
             {
@@ -192,6 +192,17 @@ namespace blockchain
                     {
                         return false;
                     }
+                }
+                
+                string target = "";
+                for (int i = 0; i < difficulty; i++)
+                {
+                    target += "0";
+                }
+
+                if (target != b.Hashblock.Substring(0, difficuty))
+                {
+                    return false;
                 }
                 
                 this.AddBlock(b);

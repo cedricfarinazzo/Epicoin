@@ -156,7 +156,8 @@ namespace blockchain
                 return new Protocol(MessageType.Error) {Message = "Block invalid"};
             }
             
-            bool succes = DataServer.Chain.NetworkMinePendingTransaction(dataMine.address, dataMine.block, dataMine.timemining);
+            bool succes = DataServer.Chain.NetworkMinePendingTransaction(dataMine.address, dataMine.block, dataMine.timemining, dataMine.difficulty);
+            
             if (succes)
             {
                 return new Protocol(MessageType.Response) {Message = "Sucess"};
