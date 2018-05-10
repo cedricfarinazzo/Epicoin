@@ -1,0 +1,11 @@
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\EpicoinWebSite\EpicoinWebSite\bin\Debug\netcoreapp2.0\EpicoinWebSite.deps.json
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\EpicoinWebSite\EpicoinWebSite\bin\Debug\netcoreapp2.0\EpicoinWebSite.runtimeconfig.json
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\EpicoinWebSite\EpicoinWebSite\bin\Debug\netcoreapp2.0\EpicoinWebSite.runtimeconfig.dev.json
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\EpicoinWebSite\EpicoinWebSite\bin\Debug\netcoreapp2.0\EpicoinWebSite.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\EpicoinWebSite\EpicoinWebSite\bin\Debug\netcoreapp2.0\EpicoinWebSite.pdb
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\EpicoinWebSite\EpicoinWebSite\obj\Debug\netcoreapp2.0\EpicoinWebSite.csprojResolveAssemblyReference.cache
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\EpicoinWebSite\EpicoinWebSite\obj\Debug\netcoreapp2.0\EpicoinWebSite.csproj.CoreCompileInputs.cache
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\EpicoinWebSite\EpicoinWebSite\obj\Debug\netcoreapp2.0\EpicoinWebSite.AssemblyInfoInputs.cache
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\EpicoinWebSite\EpicoinWebSite\obj\Debug\netcoreapp2.0\EpicoinWebSite.AssemblyInfo.cs
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\EpicoinWebSite\EpicoinWebSite\obj\Debug\netcoreapp2.0\EpicoinWebSite.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\EpicoinWebSite\EpicoinWebSite\obj\Debug\netcoreapp2.0\EpicoinWebSite.pdb
