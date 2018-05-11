@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using Newtonsoft.Json;
+using blockchain.datacontainer;
+using blockchain.blockchain;
 
-namespace blockchain
+namespace blockchain.tools
 {
     static public class Serialyze
     {

@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using Newtonsoft.Json;
 
-namespace blockchain
+namespace blockchain.net
 {
     internal static class Formatter
     {

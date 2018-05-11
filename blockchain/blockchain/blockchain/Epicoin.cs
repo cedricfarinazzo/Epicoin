@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading;
-using blockchain.Client;
+using blockchain.net;
+using blockchain.net.client;
+using blockchain.net.server;
+using blockchain.datacontainer;
+using blockchain.tools;
+using blockchain.blockchain;
 
 namespace blockchain
 {
@@ -20,7 +25,7 @@ namespace blockchain
         public static readonly string blockchainfile = "blockchain.epi";
         
         public static Server server = null;
-        public static Client.Client client = null;
+        public static Client client = null;
 
         public static Wallet Wallet = null;
 
@@ -71,7 +76,7 @@ namespace blockchain
             
             
             
-            client = new Client.Client(host, port);
+            client = new Client(host, port);
             while (true)
             {               
             }
@@ -232,7 +237,7 @@ namespace blockchain
         {
             Console.WriteLine("\n\n        Blochain Epicoin Miner Client \n\n");
             
-            client = new Client.Client(host, port);
+            client = new Client(host, port);
             
             ImportWallet();
             if (Wallet == null)
@@ -295,7 +300,7 @@ namespace blockchain
                 ExportWallet();
             }
 
-            client = new Client.Client(host, port);
+            client = new Client(host, port);
             
             Console.WriteLine("\nYour epicoin address : " + Wallet.Address[0] + "\n\n");
 

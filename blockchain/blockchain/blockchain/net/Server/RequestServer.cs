@@ -1,6 +1,9 @@
 ﻿using System;
+using blockchain.datacontainer;
+using blockchain.tools;
+using blockchain.blockchain;
 
-namespace blockchain
+namespace blockchain.net.server
 {
     public static class RequestServer
     {

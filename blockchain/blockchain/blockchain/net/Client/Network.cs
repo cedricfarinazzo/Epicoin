@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
+using blockchain.datacontainer;
+using blockchain.blockchain;
 
-namespace blockchain.Client
+namespace blockchain.net.client
 {
     public static class Network
     {
@@ -11,7 +13,14 @@ namespace blockchain.Client
         public static void Connect(string address, int port)
         {
             DataClient.Initialize(address, port);
-            DataClient.Client.Client.Connect(DataClient.Address, DataClient.Port);
+            try
+            {
+                DataClient.Client.Client.Connect(DataClient.Address, DataClient.Port);
+            }
+            catch (Exception e)
+            {
+                DataClient.Client.Client.Connect(DataClient.IpAddressEntry.AddressList, port);
+            }
         }
         
         private static Protocol ReceiveMessage()

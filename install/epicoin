@@ -14,12 +14,13 @@ cd /usr/local/bin/epicoin
 case "$1" in
   start)
      echo "Démarrage d'epicoin server"
-     mono epicoin.exe SW
+     mono epicoin.exe SW &
+	 cpulimit -P mono -l 50 &
      ;;
   stop)
     echo -n "Arret d'epicoin"
     ps aux | grep -i epicoin.exe | awk {'print $2'} | xargs kill
-
+	ps aux | grep -i cpulimit | awk {'print $2'} | xargs kill
     ;;
   *)
     echo "Usage: $0 {start|stop}"

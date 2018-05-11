@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using blockchain.tools;
+using blockchain.datacontainer;
 
-namespace blockchain
+namespace blockchain.blockchain
 {
     public class Wallet
     {

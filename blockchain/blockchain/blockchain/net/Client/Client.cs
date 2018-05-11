@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Net;
 using System.Threading;
+using blockchain.datacontainer;
+using blockchain.blockchain;
 
-namespace blockchain.Client
+namespace blockchain.net.client
 {    
     public class Client
     {

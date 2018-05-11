@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using blockchain.tools;
 
-namespace blockchain
+namespace blockchain.blockchain
 {
     public class Block
     {

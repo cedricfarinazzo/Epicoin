@@ -1,6 +1,6 @@
 ﻿using System.Net.Sockets;
 
-namespace blockchain
+namespace blockchain.net.server
 {
     public class DataTcpClient
     {

@@ -14,10 +14,9 @@ namespace Epicoin.Controllers
             return View();
         }
 
-        public string Index2()
+        public ActionResult Terms()
         {
-            return
-                "test";
+            return View();
         }
     }
 }

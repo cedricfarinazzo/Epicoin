@@ -1,7 +1,7 @@
 ﻿using System;
 using Mono.Nat;
 
-namespace blockchain
+namespace blockchain.net.server
 {
     public class UPnP
     {

@@ -3,7 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Xml.Serialization;
 
-namespace blockchain
+namespace blockchain.tools
 {
     public static class Rsa
     {

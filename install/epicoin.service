@@ -11,8 +11,11 @@ Type=simple
 ## here we can set custom environment variables
 #Environment=AUTOSSH_GATETIME=0
 #Environment=AUTOSSH_PORT=0
+WorkingDirectory=/usr/local/bin/epicoin
 ExecStart=/usr/local/bin/epicoin start
 ExecStop=/usr/local/bin/epicoin stop
+Restart=always
+RestartSec=10
 ### NOTE: you can have multiple `ExecStop` lines
 # don't use 'nobody' if your script needs to access user files
 # (if User is not set the service will run as root)

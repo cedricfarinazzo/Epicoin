@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using blockchain.datacontainer;
+using blockchain.blockchain;
 
-namespace blockchain
+namespace blockchain.net
 {
     public enum MessageType
     {

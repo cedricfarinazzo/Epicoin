@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
+using blockchain.blockchain;
 
-namespace blockchain
+namespace blockchain.net.server
 {
     public static class DataServer
     {

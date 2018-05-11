@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace blockchain
+namespace blockchain.tools
 {
     public class Logger
     {

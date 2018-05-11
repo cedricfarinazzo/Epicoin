@@ -6,3 +6,13 @@
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Debug/blockchain.csprojResolveAssemblyReference.cache
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Debug/blockchain.dll
 /home/lecodeur/Documents/Epicoin/blockchain/blockchain/blockchain/obj/Debug/blockchain.dll.mdb
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\blockchain\blockchain\blockchain\bin\Debug\blockchain.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\blockchain\blockchain\blockchain\bin\Debug\blockchain.pdb
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\blockchain\blockchain\blockchain\bin\Debug\Mono.Nat.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\blockchain\blockchain\blockchain\bin\Debug\Newtonsoft.Json.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\blockchain\blockchain\blockchain\bin\Debug\Newtonsoft.Json.xml
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\blockchain\blockchain\blockchain\obj\Debug\blockchain.csprojResolveAssemblyReference.cache
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\blockchain\blockchain\blockchain\obj\Debug\blockchain.csproj.CoreCompileInputs.cache
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\blockchain\blockchain\blockchain\obj\Debug\blockchain.csproj.CopyComplete
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\blockchain\blockchain\blockchain\obj\Debug\blockchain.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\blockchain\blockchain\blockchain\obj\Debug\blockchain.pdb

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace blockchain
+namespace blockchain.datacontainer
 {
     [Serializable]
     public class DataTransaction

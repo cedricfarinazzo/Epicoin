@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace blockchain
+namespace blockchain.tools
 {
     public class Hash
     {

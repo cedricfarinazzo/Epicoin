@@ -1,6 +1,7 @@
 ﻿using System;
+using blockchain.blockchain;
 
-namespace blockchain
+namespace blockchain.datacontainer
 {
     [Serializable]
     public class DataMine

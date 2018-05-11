@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using blockchain.blockchain;
 
-namespace blockchain
+namespace blockchain.net.server
 {
     public class Server
     {
@@ -45,7 +47,7 @@ namespace blockchain
             }
             catch (Exception e)
             {
-                Console.WriteLine("[S] Exception during execution of the server");
+                Log(ConsoleColor.DarkRed, "[", "S", "] Exception during execution of the server");
                 Console.WriteLine(e);
                 throw;
             }
@@ -59,7 +61,7 @@ namespace blockchain
                 try
                 {
                     Socket clientSocket = DataServer._sock.Accept();
-                    Console.WriteLine("[S] Accept connection from " + clientSocket.RemoteEndPoint.ToString());
+                    Log(ConsoleColor.Green, "[", "S", "] Accept connection from " + clientSocket.RemoteEndPoint.ToString());
                     TcpClient client = new TcpClient
                     {
                         Client = clientSocket
@@ -134,49 +136,51 @@ namespace blockchain
 
             Protocol msg = Receive(client.Client);
             Protocol resp;
-            switch (msg.Type)
+            if (msg != null)
             {
-                case MessageType.AskBlocknumber:
-                    Console.WriteLine("[SINFO][AskBlockNumber] request from " + client.Client.Client.RemoteEndPoint.ToString());
-                    resp = RequestServer.AskBlockNumber(msg);
-                    break;
+                switch (msg.Type)
+                {
+                    case MessageType.AskBlocknumber:
+                        resp = RequestServer.AskBlockNumber(msg);
+                        break;
+                            
+                    case MessageType.AskBlockToMine:
+                        resp = RequestServer.AskBlockToMine(msg);
+                        break;
                         
-                case MessageType.AskBlockToMine:
-                    Console.WriteLine("[SINFO][AskBlockToMine] request from " + client.Client.Client.RemoteEndPoint.ToString());
-                    resp = RequestServer.AskBlockToMine(msg);
-                    break;
-                    
-                case MessageType.AskChain:
-                    Console.WriteLine("[SINFO][AskChain] request from " + client.Client.Client.RemoteEndPoint.ToString());
-                    resp = RequestServer.AskChain(msg);
-                    break;
-                    
-                case MessageType.AskLastestBlock:
-                    Console.WriteLine("[SINFO][AskLatestBlock] request from " + client.Client.Client.RemoteEndPoint.ToString());
-                    resp = RequestServer.AskLastestBlock(msg);
-                    break;
-                    
-                case MessageType.AskPeer:
-                    Console.WriteLine("[SINFO][AskPeer] request from " + client.Client.Client.RemoteEndPoint.ToString());
-                    resp = RequestServer.AskPeer(msg);
-                    break;
-                    
-                case MessageType.MinedBlock:
-                    Console.WriteLine("[SINFO][MinedBlock] request from " + client.Client.Client.RemoteEndPoint.ToString());
-                    resp = RequestServer.MinedBlock(msg);
-                    break;
-                    
-                case MessageType.Transaction:
-                    Console.WriteLine("[SINFO][Transaction] request from " + client.Client.Client.RemoteEndPoint.ToString());
-                    resp = RequestServer.Transaction(msg);
-                    break;
-                    
-                default:
-                    Console.WriteLine("[SINFO][Unknown] request from " + client.Client.Client.RemoteEndPoint.ToString());
-                    resp = new Protocol(MessageType.Error)
-                        { Message = "You did something, but I don't know what." };
-                    break;
+                    case MessageType.AskChain:
+                        resp = RequestServer.AskChain(msg);
+                        break;
+                        
+                    case MessageType.AskLastestBlock:
+                        resp = RequestServer.AskLastestBlock(msg);
+                        break;
+                        
+                    case MessageType.AskPeer:
+                        resp = RequestServer.AskPeer(msg);
+                        break;
+                        
+                    case MessageType.MinedBlock:
+                        resp = RequestServer.MinedBlock(msg);
+                        break;
+                        
+                    case MessageType.Transaction:
+                        resp = RequestServer.Transaction(msg);
+                        break;
+                        
+                    default:
+                        resp = new Protocol(MessageType.Error)
+                            { Message = "You did something, but I don't know what." };
+                        break;
+                }
             }
+            else
+            {
+                resp = new Protocol(MessageType.Error)
+                    { Message = "You did something, but I don't know what." };
+            }
+            LogRequest(msg.Type, client);
+            
             Send(client.Client, resp);
             client.IsQueued = false;
             return;
@@ -199,6 +203,37 @@ namespace blockchain
         {
             client.Client.Send(Formatter.ToByteArray(protocol));
             return;
+        }
+
+        public static void LogRequest(MessageType type, DataTcpClient client)
+        {
+            ConsoleColor c;
+            string stype = "";
+            if (type == null)
+            {
+                stype = "Unknown";
+                c = ConsoleColor.Red;
+            }
+            else if (type == MessageType.Error)
+            {
+                c = ConsoleColor.Red;
+                stype = type.ToString();
+            }
+            else
+            {
+                c = ConsoleColor.Green;
+                stype = type.ToString();
+            }
+            Log(c, "[", "SINFO", "][" + stype + "] request from " + client.Client.Client.RemoteEndPoint.ToString());
+        }
+        
+        public static void Log(ConsoleColor color, string pre, string middle, string suf)
+        {
+            Console.Write(pre);
+            Console.ForegroundColor = color;
+            Console.Write(middle);
+            Console.ResetColor();
+            Console.WriteLine(suf);
         }
         
     }

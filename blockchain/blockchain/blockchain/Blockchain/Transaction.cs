@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace blockchain
+namespace blockchain.blockchain
 {
     public class Transaction
     {
