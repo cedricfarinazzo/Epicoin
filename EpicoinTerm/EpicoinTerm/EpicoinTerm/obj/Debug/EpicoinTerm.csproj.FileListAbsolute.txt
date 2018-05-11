@@ -7,3 +7,15 @@
 /home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/obj/Debug/EpicoinTerm.csprojResolveAssemblyReference.cache
 /home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/obj/Debug/epicoin.exe
 /home/lecodeur/Documents/Epicoin/EpicoinTerm/EpicoinTerm/EpicoinTerm/obj/Debug/epicoin.exe.mdb
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinTerm\EpicoinTerm\EpicoinTerm\bin\Debug\epicoin.exe
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinTerm\EpicoinTerm\EpicoinTerm\bin\Debug\epicoin.pdb
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinTerm\EpicoinTerm\EpicoinTerm\bin\Debug\blockchain.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinTerm\EpicoinTerm\EpicoinTerm\bin\Debug\Mono.Nat.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinTerm\EpicoinTerm\EpicoinTerm\bin\Debug\Newtonsoft.Json.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinTerm\EpicoinTerm\EpicoinTerm\bin\Debug\blockchain.pdb
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinTerm\EpicoinTerm\EpicoinTerm\bin\Debug\Newtonsoft.Json.xml
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinTerm\EpicoinTerm\EpicoinTerm\obj\Debug\EpicoinTerm.csprojResolveAssemblyReference.cache
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinTerm\EpicoinTerm\EpicoinTerm\obj\Debug\EpicoinTerm.csproj.CoreCompileInputs.cache
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinTerm\EpicoinTerm\EpicoinTerm\obj\Debug\EpicoinTerm.csproj.CopyComplete
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinTerm\EpicoinTerm\EpicoinTerm\obj\Debug\epicoin.exe
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinTerm\EpicoinTerm\EpicoinTerm\obj\Debug\epicoin.pdb

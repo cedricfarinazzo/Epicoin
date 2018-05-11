@@ -15,3 +15,23 @@
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.csproj.GenerateResource.Cache
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.exe
 /home/lecodeur/Documents/Epicoin/EpicoinGraphics/EpicoinGraphics/EpicoinGraphics/obj/Release/EpicoinGraphics.exe.mdb
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\bin\Release\EpicoinGraphics.exe.config
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\bin\Release\EpicoinGraphics.exe
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\bin\Release\EpicoinGraphics.pdb
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\bin\Release\blockchain.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\bin\Release\Mono.Nat.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\bin\Release\Newtonsoft.Json.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\bin\Release\System.Diagnostics.PerformanceCounter.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\bin\Release\blockchain.pdb
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\bin\Release\Newtonsoft.Json.xml
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.csprojResolveAssemblyReference.cache
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.Menu.resources
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.Miner.resources
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.Properties.Resources.resources
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.Serveur.resources
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.User.resources
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.csproj.GenerateResource.cache
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.csproj.CoreCompileInputs.cache
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.csproj.CopyComplete
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.exe
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinGraphics\EpicoinGraphics\EpicoinGraphics\obj\Release\EpicoinGraphics.pdb

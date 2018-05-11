@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace blockchain.tools
 {
@@ -35,7 +36,7 @@ namespace blockchain.tools
         public string pop()
         {
             string text = Read();
-            this.buffer.Clear();
+            this.buffer = new List<string>();
             return text;
         }
     }

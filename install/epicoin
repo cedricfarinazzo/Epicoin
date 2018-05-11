@@ -15,7 +15,8 @@ case "$1" in
   start)
      echo "Démarrage d'epicoin server"
      mono epicoin.exe SW &
-	 cpulimit -P mono -l 50 &
+	 PID=$(ps -A -o cmd,pid | egrep "Server.exe " | head -n 1 | sed -r -e 's/.* ([0-9]+)$/\1/')
+	 cpulimit -P $PID -l 50 &
      ;;
   stop)
     echo -n "Arret d'epicoin"

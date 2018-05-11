@@ -13,8 +13,6 @@ namespace blockchain.net.client
         public static bool Continue { get; set; }
 
         public static TcpClient Client { get; set; }
-
-        public static Logger log;
         
         public static void Initialize(string hosAddress, int port)
         {
@@ -24,7 +22,6 @@ namespace blockchain.net.client
             Continue = true;
             Socket _sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             Client = new TcpClient() {Client = _sock};
-            log = new Logger();
         }
     }
 }

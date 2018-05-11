@@ -51,7 +51,7 @@ namespace blockchain.net.client
             Protocol receiveMessage = ReceiveMessage();
             if (receiveMessage.Type != MessageType.Response)
             {
-                throw new Exception(receiveMessage.Message);
+                return null;
             }
 
             if (receiveMessage.Block == null)
@@ -70,7 +70,7 @@ namespace blockchain.net.client
             Protocol receiveMessage = ReceiveMessage();
             if (receiveMessage.Type != MessageType.Response)
             {
-                throw new Exception(receiveMessage.Message);
+                return null;
             }
 
             if (receiveMessage.Mine == null)
@@ -89,7 +89,7 @@ namespace blockchain.net.client
             Protocol receiveMessage = ReceiveMessage();
             if (receiveMessage.Type != MessageType.Response)
             {
-                throw new Exception(receiveMessage.Message);
+                return null;
             }
 
             if (receiveMessage.Chain == null)
@@ -108,7 +108,7 @@ namespace blockchain.net.client
             Protocol receiveMessage = ReceiveMessage();
             if (receiveMessage.Type != MessageType.Response)
             {
-                throw new Exception(receiveMessage.Message);
+                return null;
             }
 
             if (receiveMessage.Block == null)
@@ -127,7 +127,7 @@ namespace blockchain.net.client
             Protocol receiveMessage = ReceiveMessage();
             if (receiveMessage.Type != MessageType.Response)
             {
-                throw new Exception(receiveMessage.Message);
+                return receiveMessage.Message;
             }
 
             return receiveMessage.Message;
@@ -141,7 +141,7 @@ namespace blockchain.net.client
             Protocol receiveMessage = ReceiveMessage();
             if (receiveMessage.Type != MessageType.Response)
             {
-                throw new Exception(receiveMessage.Message);
+                return receiveMessage.Message;
             }
 
             return receiveMessage.Message;

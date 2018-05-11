@@ -9,6 +9,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using blockchain;
+using blockchain.net.server;
+using blockchain.net.client;
+using blockchain.net;
+using blockchain.datacontainer;
+using blockchain.blockchain;
 
 namespace EpicoinGraphics
 {
@@ -43,7 +48,7 @@ namespace EpicoinGraphics
         {
             base.OnFormClosing(e);
             Epicoin.Continue = false;
-            blockchain.Client.DataClient.Continue = false;
+            DataClient.Continue = false;
             DataServer.Continue = false;
             StopServ();
             Epicoin.ExportChain();
@@ -85,7 +90,7 @@ namespace EpicoinGraphics
         {
             Epicoin.server = new Server(Epicoin.port,Epicoin.Coin);
             Epicoin.Continue = true;
-            blockchain.Client.DataClient.Continue = true;
+            DataClient.Continue = true;
             DataServer.Continue = true;
             this.block = new Thread(Epicoin.CreateBlock) { Priority = ThreadPriority.Highest };
             this.server = new Thread(Epicoin.server.Start) { Priority = ThreadPriority.Highest };
@@ -96,13 +101,13 @@ namespace EpicoinGraphics
             this.server.Start();
             Thread.Sleep(1000);
             this.saveChain.Start();
-            Epicoin.client = new blockchain.Client.Client(Epicoin.host, Epicoin.port);
+            Epicoin.client = new Client(Epicoin.host, Epicoin.port);
         }
 
         protected void StopServ()
         {
             Epicoin.Continue = false;
-            blockchain.Client.DataClient.Continue = false;
+            DataClient.Continue = false;
             DataServer.Continue = false;
             Epicoin.ExportChain();
             Epicoin.ExportWallet();
@@ -148,9 +153,9 @@ namespace EpicoinGraphics
 
         private void timerServeur_Tick(object sender, EventArgs e)
         {
-            bool datastatus = blockchain.Client.DataClient.Continue;
-            bool minestatus = blockchain.Client.DataClient.Continue;
-            bool transactionstatus = blockchain.Client.DataClient.Continue;
+            bool datastatus = DataClient.Continue;
+            bool minestatus = DataClient.Continue;
+            bool transactionstatus = DataClient.Continue;
 
             this.ServeurDataStatus.Text = datastatus.ToString();
             this.ServeurMinerStatus.Text = minestatus.ToString();

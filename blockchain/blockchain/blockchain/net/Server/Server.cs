@@ -26,7 +26,7 @@ namespace blockchain.net.server
 
         public void Start()
         {
-            Console.WriteLine("[S] Server Started.");
+            Log(ConsoleColor.Green, "[", "S", "] Server Started.");
             Thread accept = new Thread(AcceptClients);
             accept.Priority = ThreadPriority.AboveNormal;
             accept.IsBackground = true;

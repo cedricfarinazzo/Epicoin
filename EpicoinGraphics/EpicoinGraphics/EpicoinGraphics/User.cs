@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using blockchain;
+using blockchain.datacontainer;
+using blockchain.net.client;
+using blockchain.blockchain;
 
 namespace EpicoinGraphics
 {
@@ -26,7 +29,7 @@ namespace EpicoinGraphics
                 Epicoin.CreateWallet(name);
                 Epicoin.ExportWallet();
             }
-            Epicoin.client = new blockchain.Client.Client(Epicoin.host, Epicoin.port);
+            Epicoin.client = new Client(Epicoin.host, Epicoin.port);
             InitializeComponent();
         }
 

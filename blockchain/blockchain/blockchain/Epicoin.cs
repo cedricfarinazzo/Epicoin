@@ -33,6 +33,7 @@ namespace blockchain
 
         public static void Serveur(string namearg = null)
         {
+            host = "localhost";
             ImportWallet();
             if (Wallet == null)
             {
@@ -237,6 +238,10 @@ namespace blockchain
         {
             Console.WriteLine("\n\n        Blochain Epicoin Miner Client \n\n");
             
+            Console.WriteLine("Host: [Default: " + host + "]\nChoice: ");
+            host = ReadLine();
+            Console.WriteLine("\n");
+            
             client = new Client(host, port);
             
             ImportWallet();
@@ -281,6 +286,10 @@ namespace blockchain
         public static void User(string namearg = null)
         {
             Console.WriteLine("\n\n        Blochain Epicoin Client \n\n");
+            
+            Console.WriteLine("Host: [Default: " + host + "]\nChoice: ");
+            host = ReadLine();
+            Console.WriteLine("\n");
             
             ImportWallet();
             if (Wallet == null)

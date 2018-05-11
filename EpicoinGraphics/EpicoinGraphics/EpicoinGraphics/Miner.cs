@@ -4,6 +4,9 @@ using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
 using blockchain;
+using blockchain.net;
+using blockchain.net.client;
+using blockchain.net.server;
 
 namespace EpicoinGraphics
 {
@@ -24,7 +27,7 @@ namespace EpicoinGraphics
                 Epicoin.ExportWallet();
             }
             
-            Epicoin.client = new blockchain.Client.Client(Epicoin.host, Epicoin.port);
+            Epicoin.client = new Client(Epicoin.host, Epicoin.port);
             
             InitializeComponent();
         }
@@ -48,13 +51,15 @@ namespace EpicoinGraphics
             if (!this.work)
             {
                 Epicoin.Continue = true;
-                blockchain.Client.DataClient.Continue = true;
+                Epicoin.log = new blockchain.tools.Logger();
+                DataClient.Continue = true;
                 DataServer.Continue = true;
                 this.work = true;
                 this.worker = new Thread(Epicoin.Mine) { Priority = ThreadPriority.Highest };
                 this.worker.Start(Epicoin.Wallet.Address[0]);
                 logWorker = new Thread(UpdateLog);
                 logWorker.Start();
+                Invoke(new MethodInvoker(delegate { StartLog(); }));
             }
         }
 
@@ -70,8 +75,9 @@ namespace EpicoinGraphics
                 catch(Exception)
                 { }
                 Epicoin.Continue = false;
-                blockchain.Client.DataClient.Continue = false;
+                DataClient.Continue = false;
                 DataServer.Continue = false;
+                Epicoin.log = null;
                 this.worker.Abort();
                 this.worker = null;
                 this.work = false;
@@ -93,21 +99,28 @@ namespace EpicoinGraphics
             try
             {
                 string msg = Epicoin.log.pop();
-                if (msg != null)
+                if (msg != null && msg != "")
                 {
-                    this.LogMiner.AppendText(msg + "\n");
+                    this.LogMiner.AppendText(msg);
                 }
             }
             catch (Exception e)
-            { } 
+            { Console.WriteLine(e);  } 
             this.LogMiner.Refresh();
+        }
+
+        protected void StartLog()
+        {
+            this.LogMiner.AppendText("[CM] Start\n");
+            this.LogMiner.Refresh();
+            Thread.Sleep(100);
         }
 
         protected void StopLog()
         {
             this.LogMiner.AppendText("[CM] Stop\n");
             this.LogMiner.Refresh();
-            Thread.Sleep(1100);
+            Thread.Sleep(100);
         }
 
         protected Thread logWorker;
