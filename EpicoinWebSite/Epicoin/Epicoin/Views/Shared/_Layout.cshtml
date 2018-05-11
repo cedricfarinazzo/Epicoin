@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="~/Content/Site.css" media="screen,projection" />
+	<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
+	<title>@ViewBag.Title - Epicoin</title>
+	<script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+	<!--[if lt IE 10]>
+			<div class="disclaimer-error">
+				Vous utilisez un navigateur obsolète, veuillez le <a href="https://browser-update.org/update.html">mettre à jour</a>.
+			</div>
+	<![endif]-->
+	<noscript>
+		<div class="disclaimer disclaimer--error">
+			Veuillez utiliser un <a href="https://browser-update.org/update.html">navigateur internet moderne</a> avec JavaScript activé pour naviguer sur notre site web !
+		</div>
+	</noscript>
+
+	<header>
+		<!-- Navigation bar -->
+
+		<nav class="white" role="navigation">
+			<div class="nav-wrapper container">
+				<span id="logo-container">@Html.ActionLink("Epicoin", "Index", "Home", new { area = "" }, new { @class = "brand-logo" })</span>
+				<ul class="right hide-on-med-and-down">
+					<li>@Html.ActionLink("Commencer", "Index", "GetStarted", new { area = "" })</li>
+					<li>@Html.ActionLink("Obtenir des Epicoins", "Index", "GetEpicoin", new { area = "" })</li>
+					<li>@Html.ActionLink("Fonctionnement", "Index", "HowItWork", new { area = "" })</li>
+					<li>@Html.ActionLink("Contribuer", "Index", "Contribute", new { area = "" })</li>
+					<li>@Html.ActionLink("A propos", "Index", "About", new { area = "" })</li>
+				</ul>
+
+				<ul id="nav-mobile" class="side-nav">
+					<li>@Html.ActionLink("Commencer", "Index", "GetStarted", new { area = "" })</li>
+					<li>@Html.ActionLink("Obtenir des Epicoins", "Index", "GetEpicoin", new { area = "" })</li>
+					<li>@Html.ActionLink("Fonctionnement", "Index", "HowItWork", new { area = "" })</li>
+					<li>@Html.ActionLink("Contribuer", "Index", "Contribute", new { area = "" })</li>
+					<li>@Html.ActionLink("A propos", "Index", "About", new { area = "" })</li>
+				</ul>
+				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+			</div>
+		</nav>
+
+		<!-- Navigation bar end -->
+		<!-- Parralax banner start -->
+		<!--div class="section no-pad-bot">
+			<div class="container">
+				<br><br>
+				<h1 class="header center white-text">EPICOIN</h1>
+			</div>
+		</div-->
+		<div id="index-banner" class="parallax-container">
+			
+			
+			<div class="parallax"><img src="~/images/Blockchain-protocole.jpg" alt="Background Image" width="300px" /></div>
+		</div>
+
+		<!-- Parallax banner end -->
+
+	</header>
+
+	<section>
+		@RenderBody()
+	</section>
+
+	<footer class="page-footer blue darken-2 text-white">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Epicoin</h5>
+					<p class="grey-text text-lighten-4">
+						Epicoin est une nouvelle monnaie basée sur une blockchain codé en C#.
+						<br /><br />
+						<span class="center">C# forever and for everything !</span>
+					</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Liens utiles</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="https://github.com/cedricfarinazzo/Epicoin">GitHub</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				<p>&copy; @DateTime.Now.Year  -  Epicoin				@Html.ActionLink("Conditions générales", "Terms", "Home", new { area = "" }, new { @class = "grey-text text-lighten-4 right" }) </p>
+			</div>
+		</div>
+	</footer>
+	<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+	<script>
+		window.jQuery || document.write('https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js');
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script src="~/Scripts/Script.js"></script>
+</body>
+</html>

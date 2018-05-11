@@ -1,0 +1,107 @@
+﻿html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    padding-top: 2px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+nav ul a,
+nav .brand-logo,
+nav .button-collapse {
+	color: #455a64;
+}
+
+
+.border {
+	margin: 5px;
+	padding: 15px;
+	border: 3px solid black;
+	border-radius: 13px;
+	box-shadow: 4px 4px 6px black;
+}
+
+.message-list {
+	overflow: auto;
+}
+
+/*disclaimer*/
+.disclaimer {
+	width: 100%;
+	background: #696969;
+	position: relative;
+	text-align: center;
+	color: #fff;
+	margin: 0;
+	font-size: 14px;
+	line-height: 19px;
+	border: 1px solid rgba(0,0,0,.1);
+	padding: 7px
+}
+
+.disclaimer--error, .disclaimer-error {
+	background: #d21946
+}
+
+.disclaimer a, .disclaimer a:hover {
+	color: white;
+}
+
+/*cookie*/
+.cookie-alert {
+	position: fixed;
+	bottom: 20px;
+	right: 10px;
+	border-radius: 10px;
+	background: #2f2f2f;
+	color: #fff;
+	padding: 10px 15px;
+	width: 300px;
+	z-index: 100;
+	font-size: 0.6em;
+}
+
+.cookie-alert a {
+	display: block;
+	text-align: center;
+	padding: 5px 10px;
+	margin: 8px auto 0 auto;
+	border-radius: 10px;
+	background: transparent;
+	border: 2px solid #46A2D9;
+	color: #46A2D9;
+	transition: all .3s ease;
+}
+
+.cookie-alert a:hover {
+	background: #46A2D9;
+	color: #2f2f2f;
+}
+
+@media only screen and (max-width:480px) {
+	.cookie-alert {
+		text-align: center;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		widht: 100px;
+		max-width: 700px;
+		padding: 10px 30px;
+	}
+}
+
