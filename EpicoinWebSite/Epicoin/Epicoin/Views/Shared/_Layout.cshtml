@@ -29,19 +29,21 @@
 				<div class="nav-wrapper container">
 					<span id="logo-container">@Html.ActionLink("Epicoin", "Index", "Home", new { area = "" }, new { @class = "brand-logo" })</span>
 					<ul class="right hide-on-med-and-down">
-						<li>@Html.ActionLink("Commencer", "Index", "GetStarted", new { area = "" })</li>
-						<li>@Html.ActionLink("Obtenir des Epicoins", "Index", "GetEpicoin", new { area = "" })</li>
-						<li>@Html.ActionLink("Fonctionnement", "Index", "HowItWork", new { area = "" })</li>
-						<li>@Html.ActionLink("Contribuer", "Index", "Contribute", new { area = "" })</li>
-						<li>@Html.ActionLink("A propos", "Index", "About", new { area = "" })</li>
+						<li><a href="/GetStarted/">Commencer</a></li>
+						<li><a href="/GetEpicoin/">Obtenir des Epicoins</a></li>
+						<li><a href="/HowItWorks/">Fonctionnemnt</a></li>
+						<li><a href="/Blockchain/">Blockchain</a></li>
+						<li><a href="/Contribute/">Contribuer</a></li>
+						<li><a href="/Home/About/">A propos</a></li>
 					</ul>
 
 					<ul id="nav-mobile" class="side-nav">
-						<li>@Html.ActionLink("Commencer", "Index", "GetStarted", new { area = "" })</li>
-						<li>@Html.ActionLink("Obtenir des Epicoins", "Index", "GetEpicoin", new { area = "" })</li>
-						<li>@Html.ActionLink("Fonctionnement", "Index", "HowItWork", new { area = "" })</li>
-						<li>@Html.ActionLink("Contribuer", "Index", "Contribute", new { area = "" })</li>
-						<li>@Html.ActionLink("A propos", "Index", "About", new { area = "" })</li>
+						<li><a href="/GetStarted/">Commencer</a></li>
+						<li><a href="/GetEpicoin/">Obtenir des Epicoins</a></li>
+						<li><a href="/HowItWorks/">Fonctionnemnt</a></li>
+						<li><a href="/Blockchain/">Blockchain</a></li>
+						<li><a href="/Contribute/">Contribuer</a></li>
+						<li><a href="/Home/About/">A propos</a></li>
 					</ul>
 					<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 				</div>
