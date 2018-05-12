@@ -14,9 +14,11 @@ cd /usr/local/bin/epicoin
 case "$1" in
   start)
      echo "Démarrage d'epicoin server"
-     mono epicoin.exe SW &
-	 PID=$(ps -A -o cmd,pid | egrep "Server.exe " | head -n 1 | sed -r -e 's/.* ([0-9]+)$/\1/')
-	 cpulimit -P $PID -l 50 &
+     mono epicoin.exe S &
+	 sleep 3s
+	 echo "start with PID: $PID"
+	 PID=$(ps -A -o cmd,pid | egrep "epicoin.exe " | head -n 1 | sed -r -e 's/.* ([0-9]+)$/\1/')
+	 cpulimit -p $PID -l 50 
      ;;
   stop)
     echo -n "Arret d'epicoin"

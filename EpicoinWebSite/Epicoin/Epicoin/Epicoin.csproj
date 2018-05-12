@@ -171,7 +171,6 @@
     <Compile Include="Controllers\BlockchainController.cs" />
     <Compile Include="Controllers\ContributeController.cs" />
     <Compile Include="Controllers\GetEpicoinController.cs" />
-    <Compile Include="Controllers\GetStartedController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HowItWorksController.cs" />
     <Compile Include="Global.asax.cs">
@@ -185,7 +184,6 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\GetStarted\Index.cshtml" />
     <Content Include="Views\HowItWorks\Index.cshtml" />
     <Content Include="Views\GetEpicoin\Index.cshtml" />
     <Content Include="Views\Contribute\Index.cshtml" />
