@@ -83,6 +83,7 @@ namespace blockchain.net.client
         
         public static Blockchain AskChain()
         {
+            /*
             Protocol reqProtocol = new Protocol(MessageType.AskChain);
             byte[] buffer = Formatter.ToByteArray(reqProtocol);
             DataClient.Client.Client.Send(buffer, SocketFlags.None);
@@ -97,7 +98,20 @@ namespace blockchain.net.client
                 return null;
             }
 
-            return receiveMessage.Chain;
+            return receiveMessage.Chain;*/
+            int lenght = AskChainStats().Lenght;
+            Blockchain chain = new Blockchain("");
+            
+            for (int i = 0; i < lenght; i++)
+            {
+                Block b = AskBlockNumber(i);
+                if (b != null)
+                {
+                    chain.AddBlock(b);
+                }
+            }
+
+            return chain;
         }
         
         public static Block AskLatestBlock()
@@ -145,6 +159,20 @@ namespace blockchain.net.client
             }
 
             return receiveMessage.Message;
+        }
+
+        public static DataChainStats AskChainStats()
+        {
+            Protocol reqProtocol = new Protocol(MessageType.AskChainStats);
+            byte[] buffer = Formatter.ToByteArray(reqProtocol);
+            DataClient.Client.Client.Send(buffer, SocketFlags.None);
+            Protocol receiveMessage = ReceiveMessage();
+            if (receiveMessage.Type != MessageType.Response)
+            {
+                return null;
+            }
+
+            return receiveMessage.Stats;
         }
     }
 }

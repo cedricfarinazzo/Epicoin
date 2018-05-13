@@ -321,7 +321,8 @@ namespace blockchain
                 Console.WriteLine("2 : Export wallet");
                 Console.WriteLine("3 : Get Chain Stats");
                 Console.WriteLine("4 : Get Wallet Stats");
-                Console.WriteLine("5 : Create Transaction");   
+                Console.WriteLine("5 : Generate a new address");
+                Console.WriteLine("6 : Create Transaction");   
                 Console.WriteLine();
                 
                 Console.Write("action : ");
@@ -344,16 +345,15 @@ namespace blockchain
                 }
                 else if (action == "3")
                 {
-                    Blockchain chain = client.GetBlockchain();
-                    if (chain != null)
+                    DataChainStats stats = client.GetChainStats();
+                    if (stats != null)
                     {
                         Console.WriteLine("     Chain " + Blockchain.Name);
-                        Console.WriteLine("Chain is valid : " + chain.IsvalidChain());
-                        Console.WriteLine("Chain lenght : " + chain.Chainlist.Count);
-                        Console.WriteLine("Chain difficulty : " + chain.Difficulty);
-                        Block last = chain.GetLatestBlock();
-                        Console.WriteLine("Last Block " + last.Index + " : " + last.Hashblock);
-                        Console.WriteLine("pending Transaction : " + (chain.Pending.Count + (chain.BlockToMines.Count * Block.nb_trans)));
+                        Console.WriteLine("Chain is valid : " + stats.Valid);
+                        Console.WriteLine("Chain lenght : " + stats.Lenght);
+                        Console.WriteLine("Chain difficulty : " + stats.Difficulty);
+                        Console.WriteLine("Last Block " + stats.LastIndex + " : " + stats.LastBlockHash);
+                        Console.WriteLine("pending Transaction : " + stats.Pending);
                     }
                     else
                     {
@@ -361,13 +361,22 @@ namespace blockchain
                     }
 
                 }
+                else if (action == "5")
+                {
+                    string newaddress = Wallet.GenNewAddress();
+                    Console.WriteLine("New Epicoin Address : " + newaddress);
+                }
                 else if (action == "4")
                 {
                     Console.WriteLine("     Wallet : " + Wallet.Name);
-                    Console.WriteLine("Your epicoin address : " + Wallet.Address[0]);
+                    Console.WriteLine("Your epicoin address : ");
+                    foreach(var address in Wallet.Address)
+                    {
+                        Console.WriteLine(address);
+                    }
                     Console.WriteLine("Epicoin amount : " + Wallet.TotalAmount());
                 }
-                else if (action == "5")
+                else if (action == "6")
                 {
                     Console.Write("ToAddress : ");
                     string ToAddress = ReadLine();

@@ -125,7 +125,18 @@ namespace blockchain.net.client
             }
             
         }
-        
-        
+
+        public DataChainStats GetChainStats()
+        {
+            try
+            {
+                return Network.AskChainStats();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("[G] " + e.Message);
+                return null;
+            }
+        }
     }
 }

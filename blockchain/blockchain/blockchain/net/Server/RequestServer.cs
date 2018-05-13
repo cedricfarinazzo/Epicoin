@@ -175,5 +175,19 @@ namespace blockchain.net.server
         {
             return new Protocol(MessageType.Response) {PeerList = DataServer.PeerList};
         }
+
+        public static Protocol AskChainStats(Protocol prot)
+        {
+            DataChainStats stats = new DataChainStats();
+            stats.Valid = DataServer.Chain.IsvalidChain();
+            stats.LastBlockHash = DataServer.Chain.GetLatestBlock().Hashblock;
+            stats.LastIndex = DataServer.Chain.GetLatestIndex();
+            stats.Lenght = DataServer.Chain.Chainlist.Count;
+            stats.Pending = DataServer.Chain.Pending.Count + (DataServer.Chain.BlockToMines.Count * Block.nb_trans);
+            stats.Difficulty = DataServer.Chain.Difficulty;
+            stats.Name = Blockchain.Name;
+            return new Protocol(MessageType.Response) {Stats = stats};
+        }
+        
     }
 }

@@ -56,17 +56,16 @@ namespace EpicoinGraphics
 
         protected void RefreshChain()
         {
-            Blockchain chain = Epicoin.client.GetBlockchain();
-            if (chain != null)
+            DataChainStats stats = Epicoin.client.GetChainStats();
+            if (stats != null)
             {
-                Block last = chain.GetLatestBlock();
-                this.ChainLenght.Text = chain.Chainlist.Count.ToString();
+                this.ChainLenght.Text = stats.Lenght.ToString();
                 this.ChainLenght.Refresh();
-                this.ChainLastIndex.Text = last.Index.ToString();
+                this.ChainLastIndex.Text = stats.LastIndex.ToString();
                 this.ChainLastIndex.Refresh();
-                this.ChainLastHash.Text = last.Hashblock.ToString();
+                this.ChainLastHash.Text = stats.LastBlockHash;
                 this.ChainLastHash.Refresh();
-                this.ChainDifficulty.Text = chain.Difficulty.ToString();
+                this.ChainDifficulty.Text = stats.Difficulty.ToString();
                 this.ChainDifficulty.Refresh();
 
                 this.EpicoinAmount.Text = Epicoin.Wallet.TotalAmount().ToString();

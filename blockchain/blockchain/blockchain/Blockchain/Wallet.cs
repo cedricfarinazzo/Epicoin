@@ -26,12 +26,14 @@ namespace blockchain.blockchain
             this.Amount = new List<int>();
         }
 
-        public void GenNewAddress()
+        public string GenNewAddress()
         {
             string[] data = Rsa.GenKey(2048);
             this.PrivKey.Add(data[0]);
             this.PubKey.Add(data[1]);
-            this.Address.Add(Hash.CpuGenerate(data[1]));
+            string address = Hash.CpuGenerate(data[1]);
+            this.Address.Add(address);
+            return address;
         }
 
         public void GetAmount()

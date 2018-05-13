@@ -15,6 +15,7 @@ namespace blockchain.net
         AskBlocknumber,
         AskBlockToMine,
         MinedBlock,
+        AskChainStats,
         AskPeer,
     }
     
@@ -29,11 +30,13 @@ namespace blockchain.net
             this.Mine = null;
             this.Block = null;
             this.Chain = null;
+            this.Stats = null;
         }
         
         public MessageType Type { get; set; }
         public string Message { get; set; }
         public DataTransaction Transaction { get; set; }
+        public DataChainStats Stats { get; set; }
         public DataMine Mine { get; set; }
         public Block Block { get; set; }
         public Blockchain Chain { get; set; }

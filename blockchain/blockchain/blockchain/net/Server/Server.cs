@@ -168,6 +168,10 @@ namespace blockchain.net.server
                         resp = RequestServer.Transaction(msg);
                         break;
                         
+                    case MessageType.AskChainStats:
+                        resp = RequestServer.AskChainStats(msg);
+                        break;
+                        
                     default:
                         resp = new Protocol(MessageType.Error)
                             { Message = "You did something, but I don't know what." };

@@ -48,6 +48,7 @@
     <Compile Include="Blockchain\Blockchain.cs" />
     <Compile Include="Blockchain\Transaction.cs" />
     <Compile Include="Blockchain\Wallet.cs" />
+    <Compile Include="DataContainer\DataChainStats.cs" />
     <Compile Include="DataContainer\DataMine.cs" />
     <Compile Include="DataContainer\DataTransaction.cs" />
     <Compile Include="Epicoin.cs" />

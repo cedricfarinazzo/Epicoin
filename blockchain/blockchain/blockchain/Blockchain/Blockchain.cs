@@ -5,7 +5,7 @@ namespace blockchain.blockchain
 {
     public class Blockchain
     {
-        public static readonly string Name = "epicoin";
+        public static readonly string Name = "Epicoin";
         
         protected int difficulty = 5;
         protected List<Block> Chain = null;
