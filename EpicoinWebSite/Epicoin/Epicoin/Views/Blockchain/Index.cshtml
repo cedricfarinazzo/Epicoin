@@ -4,5 +4,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="center">Blockchain</h2>
+<h2 class="center">Epicoin Blockchain</h2>
 
+<div class="container">
+	<p class="center">Informations de la blockchain d'Epicoin</p>
+	<br />
+	<div class="info">
+		<p>Nom : @ViewData["Name"]</p>
+		<p>La chaine est valide : @ViewData["valid"]</p>
+		<p>Taille de la chaine : @ViewData["Lenght"]</p>
+		<p>Difficulté actuelle : @ViewData["Difficulty"]</p>
+		<p>Index du dernier block : @ViewData["LastIndex"]</p>
+		<p>Hash du dernier block : @ViewData["LastBlockHash"]</p>
+		<p>Nombre total d'Epicoin : @ViewData["TotalEpicoin"]</p>
+	</div>
+</div>

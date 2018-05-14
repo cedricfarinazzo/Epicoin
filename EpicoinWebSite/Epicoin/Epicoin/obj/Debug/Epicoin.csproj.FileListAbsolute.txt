@@ -104,3 +104,6 @@ C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\Epicoin\Epicoin\ob
 C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\Epicoin\Epicoin\obj\Debug\Epicoin.csproj.CopyComplete
 C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\Epicoin\Epicoin\obj\Debug\Epicoin.dll
 C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\Epicoin\Epicoin\obj\Debug\Epicoin.pdb
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\Epicoin\Epicoin\bin\blockchain.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\Epicoin\Epicoin\bin\Mono.Nat.dll
+C:\Users\FARINAZZO CEDRIC\Documents\C#\Epicoin\EpicoinWebSite\Epicoin\Epicoin\bin\blockchain.pdb

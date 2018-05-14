@@ -188,6 +188,7 @@
     <Content Include="Views\GetEpicoin\Index.cshtml" />
     <Content Include="Views\Contribute\Index.cshtml" />
     <Content Include="Views\Blockchain\Index.cshtml" />
+    <Content Include="Views\Home\Status.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -205,6 +206,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\blockchain\blockchain\blockchain\blockchain.csproj">
+      <Project>{618f1784-90a7-4b8e-8da1-f837fce1d3cd}</Project>
+      <Name>blockchain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
