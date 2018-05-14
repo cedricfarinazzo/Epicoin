@@ -50,7 +50,7 @@ namespace Epicoin.Controllers
             return View();
         }
 
-        public ActionResult Block(int id)
+        public ActionResult Block(int id = 0)
         {
             DataChainStats stats = null;
             Client client;
@@ -78,7 +78,7 @@ namespace Epicoin.Controllers
                 blockchain.blockchain.Block block = client.GetBlockNumber(id);
                 ViewData["Index"] = block.Index.ToString();
                 ViewData["HashBlock"] = block.Hashblock;
-                ViewData["Date"] = DateTime.Parse(block.Timestamp.ToString()).ToLocalTime();
+                ViewData["Date"] = DateTime.FromBinary(block.Timestamp);
                 ViewData["PreviousHash"] = block.PreviousHash;
                 ViewData["Nonce"] = block.nonce.ToString();
                 ViewData["Trans1"] = "";
@@ -88,7 +88,7 @@ namespace Epicoin.Controllers
                 List<blockchain.blockchain.Transaction> trans = block.Data;
                 for(int i = 0; i < trans.Count; i++)
                 {
-                    ViewData["Trans" + i.ToString()] = trans[i].ToString();
+                    ViewData["Trans" + (i+1).ToString()] = trans[i].ToString();
                 }
                 
 

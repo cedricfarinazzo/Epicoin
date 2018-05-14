@@ -61,6 +61,7 @@ namespace blockchain
             if (Coin == null)
             {
                 Init();
+                ExportChain();
             }
             
             server = new Server(port, Coin);
@@ -364,6 +365,7 @@ namespace blockchain
                 else if (action == "5")
                 {
                     string newaddress = Wallet.GenNewAddress();
+                    ExportWallet();
                     Console.WriteLine("New Epicoin Address : " + newaddress);
                 }
                 else if (action == "4")
