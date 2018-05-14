@@ -189,6 +189,8 @@
     <Content Include="Views\Contribute\Index.cshtml" />
     <Content Include="Views\Blockchain\Index.cshtml" />
     <Content Include="Views\Home\Status.cshtml" />
+    <Content Include="Views\Blockchain\Block.cshtml" />
+    <Content Include="Views\Blockchain\BlockNotFound.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -75,7 +75,7 @@ namespace blockchain.net.server
             {
                 int number = int.Parse(prot.Message);
                 Block b = DataServer.Chain.Chainlist[number];
-                return new Protocol(MessageType.AskBlocknumber) {Block = b};
+                return new Protocol(MessageType.Response) {Block = b};
             }
             catch (Exception e)
             {

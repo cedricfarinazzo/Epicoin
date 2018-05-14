@@ -33,6 +33,7 @@ namespace Epicoin.Controllers
                 ViewData["LastIndex"] = stats.LastIndex.ToString();
                 ViewData["LastBlockHash"] = stats.LastBlockHash;
                 ViewData["TotalEpicoin"] = (((stats.Lenght - 1) * 10) + 542).ToString();
+                ViewData["Pending"] = stats.Pending;
             }
             else
             {
@@ -43,8 +44,64 @@ namespace Epicoin.Controllers
                 ViewData["LastIndex"] = "Offline";
                 ViewData["LastBlockHash"] = "Offline";
                 ViewData["TotalEpicoin"] = "Offline";
+                ViewData["Pending"] = "Pending";
             }
 
+            return View();
+        }
+
+        public ActionResult Block(int id)
+        {
+            DataChainStats stats = null;
+            Client client;
+            try
+            {
+                client = new Client(blockchain.Epicoin.host, blockchain.Epicoin.port);
+                stats = client.GetChainStats();
+                if (stats == null)
+                {
+                    return View("~/Views/BlockChain/BlockNotFound.cshtml");
+                }
+
+                if (id >= stats.Lenght)
+                {
+                    return View("~/Views/BlockChain/BlockNotFound.cshtml");
+                }
+            }
+            catch (Exception)
+            {
+                return View("~/Views/BlockChain/BlockNotFound.cshtml");
+            }
+
+            try
+            {
+                blockchain.blockchain.Block block = client.GetBlockNumber(id);
+                ViewData["Index"] = block.Index.ToString();
+                ViewData["HashBlock"] = block.Hashblock;
+                ViewData["Date"] = DateTime.Parse(block.Timestamp.ToString()).ToLocalTime();
+                ViewData["PreviousHash"] = block.PreviousHash;
+                ViewData["Nonce"] = block.nonce.ToString();
+                ViewData["Trans1"] = "";
+                ViewData["Trans2"] = "";
+                ViewData["Trans3"] = "";
+
+                List<blockchain.blockchain.Transaction> trans = block.Data;
+                for(int i = 0; i < trans.Count; i++)
+                {
+                    ViewData["Trans" + i.ToString()] = trans[i].ToString();
+                }
+                
+
+                return View();
+            }
+            catch(Exception)
+            {
+                return View("~/Views/BlockChain/BlockNotFound.cshtml");
+            }
+        }
+
+        public ActionResult BlockNotFound()
+        {
             return View();
         }
     }

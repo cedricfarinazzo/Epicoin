@@ -1,0 +1,30 @@
+﻿
+@{
+	ViewBag.Title = "Block n°" + @ViewData["Index"];
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Block n° @ViewData["Index"]</h2>
+
+<div class="container">
+	<p class="center">Informations du block n° @ViewData["Index"]</p>
+	<br />
+	<div class="info">
+		<p>Index : @ViewData["Index"]</p>
+		<p>Date : @ViewData["Date"]</p>
+		<p>Hash : @ViewData["HashBlock"]</p>
+		<p>Nonce : @ViewData["Nonce"]</p>
+		<p>Hash du block précédent : @ViewData["PreviousHash"]</p>
+		
+		<br />
+		<div class="divider"></div>
+		<br />
+		<div class="transactions-list">
+			<h4 class="center"> Transactions </h4>
+			<p>@ViewData["Trans1"]</p>
+			<p>@ViewData["Trans2"]</p>
+			<p>@ViewData["Trans3"]</p>
+		</div>
+
+	</div>
+</div>
