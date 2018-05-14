@@ -116,6 +116,7 @@ namespace blockchain.blockchain
         {
             if (this.BlockToMines.Count != 0)
             {
+                this.BlockToMines[0].Index = GetLatestIndex() + 1;
                 this.BlockToMines[0].PreviousHash = this.GetLatestBlock().Hashblock;
                 this.BlockToMines[0].Timestamp = DateTime.Now.Ticks;
                 //Console.WriteLine("[NB] Next to block " + this.BlockToMines[0].Index + " with difficulty " + this.Difficulty);
